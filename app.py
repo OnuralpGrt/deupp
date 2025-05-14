@@ -6,6 +6,11 @@ import os
 from docx import Document
 import random
 from whitenoise import WhiteNoise
+import logging
+
+# Loglama ayarları
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')
@@ -19,11 +24,12 @@ app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 db = SQLAlchemy(app)
 
 # Veritabanını oluştur
-with app.app_context():
-    try:
+try:
+    with app.app_context():
         db.create_all()
-    except Exception as e:
-        print(f"Veritabanı oluşturma hatası: {e}")
+        logger.info("Veritabanı başarıyla oluşturuldu")
+except Exception as e:
+    logger.error(f"Veritabanı oluşturma hatası: {e}")
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -38,68 +44,95 @@ class User(db.Model):
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if 'user_id' not in session:
+        try:
+            if 'user_id' not in session:
+                return redirect(url_for('login'))
+            return f(*args, **kwargs)
+        except Exception as e:
+            logger.error(f"Login required hatası: {e}")
             return redirect(url_for('login'))
-        return f(*args, **kwargs)
     return decorated_function
 
 @app.route('/')
 def index():
-    if 'user_id' in session:
-        return redirect(url_for('home'))
-    return redirect(url_for('login'))
+    try:
+        if 'user_id' in session:
+            return redirect(url_for('home'))
+        return redirect(url_for('login'))
+    except Exception as e:
+        logger.error(f"Index route hatası: {e}")
+        return redirect(url_for('login'))
 
 @app.route('/home')
 @login_required
 def home():
-    user = User.query.get(session['user_id'])
-    return render_template('home.html', user=user)
+    try:
+        user = User.query.get(session['user_id'])
+        return render_template('home.html', user=user)
+    except Exception as e:
+        logger.error(f"Home route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar giriş yapın.')
+        return redirect(url_for('login'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+    try:
+        if request.method == 'POST':
+            email = request.form['email']
+            password = request.form['password']
+            
+            user = User.query.filter_by(email=email).first()
+            if user and check_password_hash(user.password, password):
+                session['user_id'] = user.id
+                return redirect(url_for('home'))
+            else:
+                flash('Geçersiz email veya şifre!')
         
-        user = User.query.filter_by(email=email).first()
-        if user and check_password_hash(user.password, password):
-            session['user_id'] = user.id
-            return redirect(url_for('home'))
-        else:
-            flash('Geçersiz email veya şifre!')
-    
-    return render_template('login.html')
+        return render_template('login.html')
+    except Exception as e:
+        logger.error(f"Login route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
+        return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        name = request.form['name']
-        surname = request.form['surname']
-        email = request.form['email']
-        password = request.form['password']
-        city = request.form['city']
-        native_language = request.form['native_language']
+    try:
+        if request.method == 'POST':
+            name = request.form['name']
+            surname = request.form['surname']
+            email = request.form['email']
+            password = request.form['password']
+            city = request.form['city']
+            native_language = request.form['native_language']
+            
+            user = User.query.filter_by(email=email).first()
+            if user:
+                flash('Bu email adresi zaten kayıtlı!')
+                return redirect(url_for('register'))
+            
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(name=name, surname=surname, email=email, password=hashed_password, city=city, native_language=native_language)
+            
+            db.session.add(new_user)
+            db.session.commit()
+            
+            flash('Kayıt başarılı! Şimdi giriş yapabilirsiniz.')
+            return redirect(url_for('login'))
         
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Bu email adresi zaten kayıtlı!')
-            return redirect(url_for('register'))
-        
-        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-        new_user = User(name=name, surname=surname, email=email, password=hashed_password, city=city, native_language=native_language)
-        
-        db.session.add(new_user)
-        db.session.commit()
-        
-        flash('Kayıt başarılı! Şimdi giriş yapabilirsiniz.')
-        return redirect(url_for('login'))
-    
-    return render_template('register.html')
+        return render_template('register.html')
+    except Exception as e:
+        logger.error(f"Register route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
+        return render_template('register.html')
 
 @app.route('/logout')
 def logout():
-    session.pop('user_id', None)
-    return redirect(url_for('login'))
+    try:
+        session.pop('user_id', None)
+        return redirect(url_for('login'))
+    except Exception as e:
+        logger.error(f"Logout route hatası: {e}")
+        return redirect(url_for('login'))
 
 def read_qa_from_docx(level):
     qa_pairs = []
