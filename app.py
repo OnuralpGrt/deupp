@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///users.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PREFERRED_URL_SCHEME'] = 'https'
 
@@ -235,45 +235,49 @@ def diktat():
 @app.route('/grammar')
 @login_required
 def grammar():
-    a1_exercises = [
-        {'title': 'Grammatik Übung 1', 'file': 'grammar.html'},
-        {'title': 'Grammatik Übung 2', 'file': 'grammar2.html'},
-        {'title': 'Grammatik Übung 3', 'file': 'grammar3.html'},
-        {'title': 'Grammatik Übung 4', 'file': 'grammar4.html'}
-    ]
-    
-    a2_exercises = [
-        {'title': 'Grammatik Übung 5', 'file': 'grammar5.html'},
-        {'title': 'Grammatik Übung 6', 'file': 'grammar6.html'},
-        {'title': 'Grammatik Übung 7', 'file': 'grammar7.html'},
-        {'title': 'Grammatik Übung 8', 'file': 'grammar8.html'}
-    ]
-    
-    b1_exercises = [
-        {'title': 'Grammatik Übung 9', 'file': 'grammar9.html'},
-        {'title': 'Grammatik Übung 10', 'file': 'grammar10.html'},
-        {'title': 'Grammatik Übung 11', 'file': 'grammar11.html'},
-        {'title': 'Grammatik Übung 12', 'file': 'grammar12.html'}
-    ]
-    
-    b2_exercises = [
-        {'title': 'Grammatik Übung 13', 'file': 'grammar13.html'},
-        {'title': 'Grammatik Übung 14', 'file': 'grammar14.html'},
-        {'title': 'Grammatik Übung 15', 'file': 'grammar15.html'},
-        {'title': 'Grammatik Übung 16', 'file': 'grammar16.html'},
-        {'title': 'Grammatik Übung 17', 'file': 'grammar17.html'}
-    ]
-    
-    return render_template('grammar_list.html',
-                         a1_exercises=a1_exercises,
-                         a2_exercises=a2_exercises,
-                         b1_exercises=b1_exercises,
-                         b2_exercises=b2_exercises)
+    try:
+        exercises = {
+            'A1': [
+                {'title': 'Grammatik Übung 1', 'file': 'grammar1.html'},
+                {'title': 'Grammatik Übung 2', 'file': 'grammar2.html'},
+                {'title': 'Grammatik Übung 3', 'file': 'grammar3.html'},
+                {'title': 'Grammatik Übung 4', 'file': 'grammar4.html'}
+            ],
+            'A2': [
+                {'title': 'Grammatik Übung 5', 'file': 'grammar5.html'},
+                {'title': 'Grammatik Übung 6', 'file': 'grammar6.html'},
+                {'title': 'Grammatik Übung 7', 'file': 'grammar7.html'},
+                {'title': 'Grammatik Übung 8', 'file': 'grammar8.html'}
+            ],
+            'B1': [
+                {'title': 'Grammatik Übung 9', 'file': 'grammar9.html'},
+                {'title': 'Grammatik Übung 10', 'file': 'grammar10.html'},
+                {'title': 'Grammatik Übung 11', 'file': 'grammar11.html'},
+                {'title': 'Grammatik Übung 12', 'file': 'grammar12.html'}
+            ],
+            'B2': [
+                {'title': 'Grammatik Übung 13', 'file': 'grammar13.html'},
+                {'title': 'Grammatik Übung 14', 'file': 'grammar14.html'},
+                {'title': 'Grammatik Übung 15', 'file': 'grammar15.html'},
+                {'title': 'Grammatik Übung 16', 'file': 'grammar16.html'},
+                {'title': 'Grammatik Übung 17', 'file': 'grammar17.html'}
+            ]
+        }
+        return render_template('grammar_list.html', exercises=exercises)
+    except Exception as e:
+        logger.error(f"Grammar route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
+        return redirect(url_for('home'))
 
 @app.route('/grammar/<exercise>')
 @login_required
 def grammar_exercise(exercise):
-    return render_template(exercise)
+    try:
+        return render_template(exercise)
+    except Exception as e:
+        logger.error(f"Grammar exercise route hatası: {e}")
+        flash('Alıştırma bulunamadı.')
+        return redirect(url_for('grammar'))
 
 @app.route('/musik')
 @login_required
@@ -283,43 +287,47 @@ def musik():
 @app.route('/leseverstehen')
 @login_required
 def leseverstehen():
-    a1_exercises = [
-        {'title': 'Leseverstehen 1', 'file': 'leseverstehen1.html'},
-        {'title': 'Leseverstehen 2', 'file': 'leseverstehen2.html'},
-        {'title': 'Leseverstehen 3', 'file': 'leseverstehen3.html'}
-    ]
-    
-    a2_exercises = [
-        {'title': 'Leseverstehen 4', 'file': 'leseverstehen4.html'},
-        {'title': 'Leseverstehen 5', 'file': 'leseverstehen5.html'},
-        {'title': 'Leseverstehen 6', 'file': 'leseverstehen6.html'}
-    ]
-    
-    b1_exercises = [
-        {'title': 'Leseverstehen 7', 'file': 'leseverstehen7.html'},
-        {'title': 'Leseverstehen 8', 'file': 'leseverstehen8.html'},
-        {'title': 'Leseverstehen 9', 'file': 'leseverstehen9.html'},
-        {'title': 'Leseverstehen 10', 'file': 'leseverstehen10.html'},
-        {'title': 'Leseverstehen 11', 'file': 'leseverstehen11.html'},
-        {'title': 'Leseverstehen 12', 'file': 'leseverstehen12.html'},
-        {'title': 'Leseverstehen 13', 'file': 'leseverstehen13.html'},
-        {'title': 'Leseverstehen 14', 'file': 'leseverstehen14.html'}
-    ]
-    
-    b2_exercises = [
-        {'title': 'Leseverstehen 15', 'file': 'leseverstehen15.html'}
-    ]
-    
-    return render_template('leseverstehen_list.html',
-                         a1_exercises=a1_exercises,
-                         a2_exercises=a2_exercises,
-                         b1_exercises=b1_exercises,
-                         b2_exercises=b2_exercises)
+    try:
+        exercises = {
+            'A1': [
+                {'title': 'Leseverstehen 1', 'file': 'leseverstehen1.html'},
+                {'title': 'Leseverstehen 2', 'file': 'leseverstehen2.html'},
+                {'title': 'Leseverstehen 3', 'file': 'leseverstehen3.html'}
+            ],
+            'A2': [
+                {'title': 'Leseverstehen 4', 'file': 'leseverstehen4.html'},
+                {'title': 'Leseverstehen 5', 'file': 'leseverstehen5.html'},
+                {'title': 'Leseverstehen 6', 'file': 'leseverstehen6.html'}
+            ],
+            'B1': [
+                {'title': 'Leseverstehen 7', 'file': 'leseverstehen7.html'},
+                {'title': 'Leseverstehen 8', 'file': 'leseverstehen8.html'},
+                {'title': 'Leseverstehen 9', 'file': 'leseverstehen9.html'},
+                {'title': 'Leseverstehen 10', 'file': 'leseverstehen10.html'},
+                {'title': 'Leseverstehen 11', 'file': 'leseverstehen11.html'},
+                {'title': 'Leseverstehen 12', 'file': 'leseverstehen12.html'},
+                {'title': 'Leseverstehen 13', 'file': 'leseverstehen13.html'},
+                {'title': 'Leseverstehen 14', 'file': 'leseverstehen14.html'}
+            ],
+            'B2': [
+                {'title': 'Leseverstehen 15', 'file': 'leseverstehen15.html'}
+            ]
+        }
+        return render_template('leseverstehen_list.html', exercises=exercises)
+    except Exception as e:
+        logger.error(f"Leseverstehen route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
+        return redirect(url_for('home'))
 
 @app.route('/leseverstehen/<exercise>')
 @login_required
 def leseverstehen_exercise(exercise):
-    return render_template(exercise)
+    try:
+        return render_template(exercise)
+    except Exception as e:
+        logger.error(f"Leseverstehen exercise route hatası: {e}")
+        flash('Alıştırma bulunamadı.')
+        return redirect(url_for('leseverstehen'))
 
 @app.route('/multiple_choice')
 @login_required
@@ -355,43 +363,47 @@ def kommunikation():
 @app.route('/wortschatz')
 @login_required
 def wortschatz():
-    a1_exercises = [
-        {'title': 'Wortschatz 1', 'file': 'wortschatz1.html'},
-        {'title': 'Wortschatz 2', 'file': 'wortschatz2.html'},
-        {'title': 'Wortschatz 3', 'file': 'wortschatz3.html'},
-        {'title': 'Wortschatz 4', 'file': 'wortschatz4.html'}
-    ]
-    
-    a2_exercises = [
-        {'title': 'Wortschatz 5', 'file': 'wortschatz5.html'},
-        {'title': 'Wortschatz 6', 'file': 'wortschatz6.html'},
-        {'title': 'Wortschatz 7', 'file': 'wortschatz7.html'},
-        {'title': 'Wortschatz 8', 'file': 'wortschatz8.html'}
-    ]
-    
-    b1_exercises = [
-        {'title': 'Wortschatz 9', 'file': 'wortschatz9.html'},
-        {'title': 'Wortschatz 10', 'file': 'wortschatz10.html'},
-        {'title': 'Wortschatz 11', 'file': 'wortschatz11.html'},
-        {'title': 'Wortschatz 12', 'file': 'wortschatz12.html'}
-    ]
-    
-    b2_exercises = [
-        {'title': 'Wortschatz 13', 'file': 'wortschatz13.html'},
-        {'title': 'Wortschatz 14', 'file': 'wortschatz14.html'},
-        {'title': 'Wortschatz 15', 'file': 'wortschatz15.html'}
-    ]
-    
-    return render_template('wortschatz_list.html',
-                         a1_exercises=a1_exercises,
-                         a2_exercises=a2_exercises,
-                         b1_exercises=b1_exercises,
-                         b2_exercises=b2_exercises)
+    try:
+        exercises = {
+            'A1': [
+                {'title': 'Wortschatz 1', 'file': 'wortschatz1.html'},
+                {'title': 'Wortschatz 2', 'file': 'wortschatz2.html'},
+                {'title': 'Wortschatz 3', 'file': 'wortschatz3.html'},
+                {'title': 'Wortschatz 4', 'file': 'wortschatz4.html'}
+            ],
+            'A2': [
+                {'title': 'Wortschatz 5', 'file': 'wortschatz5.html'},
+                {'title': 'Wortschatz 6', 'file': 'wortschatz6.html'},
+                {'title': 'Wortschatz 7', 'file': 'wortschatz7.html'},
+                {'title': 'Wortschatz 8', 'file': 'wortschatz8.html'}
+            ],
+            'B1': [
+                {'title': 'Wortschatz 9', 'file': 'wortschatz9.html'},
+                {'title': 'Wortschatz 10', 'file': 'wortschatz10.html'},
+                {'title': 'Wortschatz 11', 'file': 'wortschatz11.html'},
+                {'title': 'Wortschatz 12', 'file': 'wortschatz12.html'}
+            ],
+            'B2': [
+                {'title': 'Wortschatz 13', 'file': 'wortschatz13.html'},
+                {'title': 'Wortschatz 14', 'file': 'wortschatz14.html'},
+                {'title': 'Wortschatz 15', 'file': 'wortschatz15.html'}
+            ]
+        }
+        return render_template('wortschatz_list.html', exercises=exercises)
+    except Exception as e:
+        logger.error(f"Wortschatz route hatası: {e}")
+        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
+        return redirect(url_for('home'))
 
 @app.route('/wortschatz/<exercise>')
 @login_required
 def wortschatz_exercise(exercise):
-    return render_template(exercise)
+    try:
+        return render_template(exercise)
+    except Exception as e:
+        logger.error(f"Wortschatz exercise route hatası: {e}")
+        flash('Alıştırma bulunamadı.')
+        return redirect(url_for('wortschatz'))
 
 @app.route('/zuordnung')
 @login_required
