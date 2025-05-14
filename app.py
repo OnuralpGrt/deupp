@@ -18,6 +18,13 @@ app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
 
 db = SQLAlchemy(app)
 
+# Veritabanını oluştur
+with app.app_context():
+    try:
+        db.create_all()
+    except Exception as e:
+        print(f"Veritabanı oluşturma hatası: {e}")
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -26,9 +33,6 @@ class User(db.Model):
     password = db.Column(db.String(200), nullable=False)
     city = db.Column(db.String(100), nullable=False)
     native_language = db.Column(db.String(100), nullable=False)
-
-with app.app_context():
-    db.create_all()
 
 # Oturum kontrolü için decorator
 def login_required(f):
