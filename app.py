@@ -56,12 +56,10 @@ def login_required(f):
 @app.route('/')
 def index():
     try:
-        if 'user_id' in session:
-            return redirect(url_for('home'))
-        return redirect(url_for('login'))
+        return render_template('home.html')
     except Exception as e:
         logger.error(f"Index route hatası: {e}")
-        return redirect(url_for('login'))
+        return "Bir hata oluştu"
 
 @app.route('/home')
 @login_required
@@ -233,7 +231,6 @@ def diktat():
     return render_template('diktat.html')
 
 @app.route('/grammar')
-@login_required
 def grammar():
     try:
         exercises = {
@@ -266,18 +263,15 @@ def grammar():
         return render_template('grammar_list.html', exercises=exercises)
     except Exception as e:
         logger.error(f"Grammar route hatası: {e}")
-        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
-        return redirect(url_for('home'))
+        return "Bir hata oluştu"
 
 @app.route('/grammar/<exercise>')
-@login_required
 def grammar_exercise(exercise):
     try:
         return render_template(exercise)
     except Exception as e:
         logger.error(f"Grammar exercise route hatası: {e}")
-        flash('Alıştırma bulunamadı.')
-        return redirect(url_for('grammar'))
+        return "Alıştırma bulunamadı"
 
 @app.route('/musik')
 @login_required
@@ -285,7 +279,6 @@ def musik():
     return render_template('musik.html')
 
 @app.route('/leseverstehen')
-@login_required
 def leseverstehen():
     try:
         exercises = {
@@ -316,18 +309,15 @@ def leseverstehen():
         return render_template('leseverstehen_list.html', exercises=exercises)
     except Exception as e:
         logger.error(f"Leseverstehen route hatası: {e}")
-        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
-        return redirect(url_for('home'))
+        return "Bir hata oluştu"
 
 @app.route('/leseverstehen/<exercise>')
-@login_required
 def leseverstehen_exercise(exercise):
     try:
         return render_template(exercise)
     except Exception as e:
         logger.error(f"Leseverstehen exercise route hatası: {e}")
-        flash('Alıştırma bulunamadı.')
-        return redirect(url_for('leseverstehen'))
+        return "Alıştırma bulunamadı"
 
 @app.route('/multiple_choice')
 @login_required
@@ -361,7 +351,6 @@ def kommunikation():
     return render_template('kommunikation.html')
 
 @app.route('/wortschatz')
-@login_required
 def wortschatz():
     try:
         exercises = {
@@ -392,18 +381,15 @@ def wortschatz():
         return render_template('wortschatz_list.html', exercises=exercises)
     except Exception as e:
         logger.error(f"Wortschatz route hatası: {e}")
-        flash('Bir hata oluştu. Lütfen tekrar deneyin.')
-        return redirect(url_for('home'))
+        return "Bir hata oluştu"
 
 @app.route('/wortschatz/<exercise>')
-@login_required
 def wortschatz_exercise(exercise):
     try:
         return render_template(exercise)
     except Exception as e:
         logger.error(f"Wortschatz exercise route hatası: {e}")
-        flash('Alıştırma bulunamadı.')
-        return redirect(url_for('wortschatz'))
+        return "Alıştırma bulunamadı"
 
 @app.route('/zuordnung')
 @login_required
