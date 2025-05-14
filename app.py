@@ -5,11 +5,17 @@ from functools import wraps
 import os
 from docx import Document
 import random
+from whitenoise import WhiteNoise
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///users.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['PREFERRED_URL_SCHEME'] = 'https'
+
+# WhiteNoise'u ekle
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/')
+
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -455,4 +461,5 @@ def grammar36():
     return render_template('grammar36.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002) 
+    port = int(os.environ.get('PORT', 5002))
+    app.run(host='0.0.0.0', port=port) 
