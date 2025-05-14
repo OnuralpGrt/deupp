@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Präpositionen und Endungen A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Präpositionen und Endungen - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Präpositionen und Endungen.</h3>
+            <p>Verwenden Sie: wegen, innerhalb, trotz, während, außerhalb, statt, aufgrund</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p><input type="text" data-answer="wegen" id="answer1"> <input type="text" data-answer="des" id="answer2"> <input type="text" data-answer="schlechten" id="answer3"> <input type="text" data-answer="Ergebnisses" id="answer4"> der letzten Prüfung habe ich mich entschlossen, Nachhilfe zu bekommen.</p>
+                
+                <p><input type="text" data-answer="trotz" id="answer5"> <input type="text" data-answer="der" id="answer6"> Schneeanfälle fuhren viele Menschen zur Arbeit mit ihren Autos und aufgrund dessen gab es Unfälle auf der Autobahn.</p>
+                
+                <p><input type="text" data-answer="innerhalb" id="answer7"> von zwei Wochen habe ich viele Prüfungen.</p>
+                
+                <p><input type="text" data-answer="während" id="answer8"> <input type="text" data-answer="der" id="answer9"> Rede hat der Minister einige sprachliche Fehler gemacht.</p>
+                
+                <p><input type="text" data-answer="trotz" id="answer10"> <input type="text" data-answer="des" id="answer11"> <input type="text" data-answer="unterhaltsamen" id="answer12"> <input type="text" data-answer="Essens" id="answer13"> musste ich leider gehen, weil ich einen anderen wichtigen Termin hatte.</p>
+                
+                <p><input type="text" data-answer="innerhalb" id="answer14"> <input type="text" data-answer="des" id="answer15"> <input type="text" data-answer="Geländes" id="answer16"> darf man nicht barfuß laufen.</p>
+                
+                <p><input type="text" data-answer="wegen" id="answer17"> <input type="text" data-answer="seines" id="answer18"> <input type="text" data-answer="Geständnisses" id="answer19"> wollte seine Freundin die Beziehung nicht weiterführen.</p>
+                
+                <p>Es wäre besser, wenn die Studenten <input type="text" data-answer="statt" id="answer20"> <input type="text" data-answer="der" id="answer21"> <input type="text" data-answer="vielen" id="answer22"> Prüfungen Projektarbeit machen.</p>
+                
+                <p><input type="text" data-answer="trotz" id="answer23"> <input type="text" data-answer="des" id="answer24"> <input type="text" data-answer="Lärms" id="answer25">, der von der Straße kommt, haben die Studenten konzentriert gelernt.</p>
+                
+                <p><input type="text" data-answer="trotz" id="answer26"> <input type="text" data-answer="der" id="answer27"> Falschaussage des Zeugen hat man den Angeklagten freigesprochen.</p>
+                
+                <p>Das Hotelpersonal hat sich <input type="text" data-answer="während" id="answer28"> <input type="text" data-answer="des" id="answer29"> <input type="text" data-answer="Aufenthalts" id="answer30"> gegenüber den Gästen freundlich verhalten.</p>
+                
+                <p><input type="text" data-answer="statt" id="answer31"> <input type="text" data-answer="einer" id="answer32"> Restauration wurde das Gebäude abgerissen.</p>
+                
+                <p><input type="text" data-answer="wegen" id="answer33"> <input type="text" data-answer="ihrer" id="answer34"> <input type="text" data-answer="akuten" id="answer35"> Krankheit musste sie in Rente gehen.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

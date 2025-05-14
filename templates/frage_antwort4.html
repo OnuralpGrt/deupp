@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .question-answer {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+        }
+
+        .user-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - A2</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe: Schreiben Sie die Antworten in ganzen Sätzen</h2>
+            
+            <div class="question-answer">
+                <div class="question">Wie heißt die Hauptstadt von Frankreich?</div>
+                <input type="text" class="user-input" data-correct="Die Hauptstadt von Frankreich heißt Paris.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wer ist der erste Präsident der USA?</div>
+                <input type="text" class="user-input" data-correct="Der erste Präsident der USA ist George Washington.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie heißt die Hauptstadt von Deutschland?</div>
+                <input type="text" class="user-input" data-correct="Die Hauptstadt von Deutschland ist Berlin.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Welches Land liegt südlich von Deutschland?</div>
+                <input type="text" class="user-input" data-correct="Österreich liegt südlich von Deutschland.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie heißt der größte Fluss in Deutschland?</div>
+                <input type="text" class="user-input" data-correct="Der größte Fluss in Deutschland heißt der Rhein.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie viele Kontinente gibt es?</div>
+                <input type="text" class="user-input" data-correct="Es gibt sieben Kontinente.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie viele Monate hat ein Jahr?</div>
+                <input type="text" class="user-input" data-correct="Ein Jahr hat zwölf Monate.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Welches Tier ist der König der Tiere?</div>
+                <input type="text" class="user-input" data-correct="Der König der Tiere ist der Löwe.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie viele Tage hat eine Woche?</div>
+                <input type="text" class="user-input" data-correct="Eine Woche hat sieben Tage.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Was trinken die Menschen in Deutschland normalerweise zum Frühstück?</div>
+                <input type="text" class="user-input" data-correct="Die Menschen in Deutschland trinken normalerweise Kaffee zum Frühstück.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie heißt der höchste Berg der Welt?</div>
+                <input type="text" class="user-input" data-correct="Der höchste Berg der Welt heißt Mount Everest.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Welcher Feiertag ist am 25. Dezember?</div>
+                <input type="text" class="user-input" data-correct="Der Feiertag am 25. Dezember ist Weihnachten.">
+            </div>
+
+            <div class="question-answer">
+                <div class="question">Wie viele Farben hat der Regenbogen?</div>
+                <input type="text" class="user-input" data-correct="Der Regenbogen hat sieben Farben.">
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.user-input');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach((input, index) => {
+                const correctAnswer = input.getAttribute('data-correct');
+                const userAnswer = input.value.trim();
+                
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Personalpronomen A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personalpronomen - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Personalpronomen (ich, du, er, sie, es, wir, ihr, sie)</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p><input type="text" data-answer="ich" id="answer1"> bin Student.</p>
+                <p><input type="text" data-answer="du" id="answer2"> lernst Deutsch.</p>
+                <p><input type="text" data-answer="er" id="answer3"> spielt Fußball.</p>
+                <p><input type="text" data-answer="sie" id="answer4"> liest ein Buch.</p>
+                <p><input type="text" data-answer="es" id="answer5"> regnet heute.</p>
+                <p><input type="text" data-answer="wir" id="answer6"> gehen ins Kino.</p>
+                <p><input type="text" data-answer="ihr" id="answer7"> habt Zeit.</p>
+                <p><input type="text" data-answer="sie" id="answer8"> kommen aus Deutschland.</p>
+                <p>Woher kommst <input type="text" data-answer="du" id="answer9">?</p>
+                <p>Wie heißt <input type="text" data-answer="er" id="answer10">?</p>
+                <p>Wo wohnt <input type="text" data-answer="sie" id="answer11">?</p>
+                <p>Wie geht <input type="text" data-answer="es" id="answer12"> dir?</p>
+                <p>Woher kommen <input type="text" data-answer="wir" id="answer13">?</p>
+                <p>Habt <input type="text" data-answer="ihr" id="answer14"> Zeit?</p>
+                <p>Wo sind <input type="text" data-answer="sie" id="answer15">?</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

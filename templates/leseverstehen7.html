@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .checkbox-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - A2</h1>
+        
+        <div class="exercise">
+            <h2>Mein erster Tag in einer neuen Stadt</h2>
+            
+            <div class="text">
+                <p>Hallo! Ich heiße Tom und ich reise sehr viel. Auf meinem Blog und auf Instagram berichte ich über meine Abenteuer. Heute erzähle ich euch, wie ich den ersten Tag in einer neuen Stadt verbringe.</p>
+                <p>Wenn ich ankomme, gehe ich zuerst spazieren. Ich nehme kein Taxi und keine U-Bahn. Zu Fuß sehe ich mehr von der Stadt. Ich suche einen Park oder einen schönen Platz. Dort setze ich mich kurz hin und beobachte die Menschen. So bekomme ich ein erstes Gefühl für die Stadt.</p>
+                <p>Danach esse ich in einem kleinen Restaurant oder Café. Ich frage die Kellner, was typisch für die Stadt ist. Meistens haben sie gute Tipps!</p>
+                <p>Am Nachmittag mache ich eine Stadtführung. Oft gibt es kostenlose Führungen. Ein Guide erklärt wichtige Orte und erzählt Geschichten. So lerne ich viel über die Kultur und die Geschichte.</p>
+                <p>Hier sind meine drei goldenen Tipps für euren ersten Tag:</p>
+                <ul>
+                    <li>Lauft viel zu Fuß! Ihr entdeckt kleine Straßen und schöne Plätze.</li>
+                    <li>Fragt die Einheimischen nach Empfehlungen! Sie kennen die besten Orte.</li>
+                    <li>Nehmt euch Zeit! Rennt nicht von einer Sehenswürdigkeit zur nächsten!</li>
+                </ul>
+                <p>So wird euer erster Tag in einer neuen Stadt ein echtes Abenteuer!</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>Tom geht zu Fuß durch die Stadt, wenn er ankommt.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q1" value="a"> a) Warum fährt Tom gleich Taxi?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q1" value="b" data-correct="true"> b) Was macht Tom nach seiner Ankunft?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q1" value="c"> c) Wohin fliegt Tom zuerst?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom setzt sich in einen Park oder auf einen Platz.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2" value="a"> a) Wo übernachtet Tom in der neuen Stadt?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2" value="b" data-correct="true"> b) Wo bekommt er den ersten Eindruck von der Stadt?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q2" value="c" data-correct="true"> c) Wo entspannt sich Tom am Anfang?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom isst in kleinen Restaurants oder Cafés.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q3" value="a" data-correct="true"> a) Wo isst Tom am ersten Tag?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q3" value="b"> b) Was kocht Tom am ersten Tag?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q3" value="c"> c) Was trinkt Tom unterwegs?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom fragt Kellner nach typischen Gerichten.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q4" value="a"> a) Wen fragt Tom nach einem Stadtplan?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q4" value="b" data-correct="true"> b) Wen fragt Tom nach Essenstipps?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q4" value="c" data-correct="true"> c) Wie erfährt Tom die Spezialitäten der Stadt?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom nimmt oft an kostenlosen Stadtführungen teil.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q5" value="a" data-correct="true"> a) An welchen Touren beteiligt sich Tom oft?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q5" value="b"> b) Welche Museen besucht Tom am ersten Tag?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q5" value="c"> c) Welche Busse benutzt Tom für die Stadtrundfahrt?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom rät, zu Fuß durch die Stadt zu gehen.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q6" value="a"> a) Was rät Tom für einen entspannten Abend?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q6" value="b" data-correct="true"> b) Was empfiehlt Tom für die erste Stadterkundung?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q6" value="c"> c) Was schlägt Tom für eine Reise ans Meer vor?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Tom meint, man soll sich am ersten Tag Zeit lassen.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q7" value="a" data-correct="true"> a) Was sagt Tom über das Tempo am ersten Tag?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q7" value="b"> b) Was sagt Tom über die Hotels in der Stadt?
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="q7" value="c"> c) Welchen Tipp gibt Tom über die Sehenswürdigkeiten der Stadt?
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOptions = question.querySelectorAll('input[type="checkbox"]:checked');
+                const correctOptions = question.querySelectorAll('input[data-correct="true"]');
+                
+                if (selectedOptions.length === 0) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie mindestens eine Antwort.<br>`;
+                    allCorrect = false;
+                } else {
+                    let isCorrect = true;
+                    selectedOptions.forEach(option => {
+                        if (!option.hasAttribute('data-correct')) {
+                            isCorrect = false;
+                        }
+                    });
+                    correctOptions.forEach(option => {
+                        if (!option.checked) {
+                            isCorrect = false;
+                        }
+                    });
+
+                    if (isCorrect) {
+                        feedback += `Frage ${index + 1}: Richtig!<br>`;
+                    } else {
+                        feedback += `Frage ${index + 1}: Falsch! Die richtigen Antworten sind: ${Array.from(correctOptions).map(opt => opt.value).join(', ')}<br>`;
+                        allCorrect = false;
+                    }
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

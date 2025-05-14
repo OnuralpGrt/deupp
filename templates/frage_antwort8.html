@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .question-answer {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .question {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .answer-select {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .answers-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .answer-option {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - B2</h1>
+        
+        <div class="exercise">
+            <h2>Ordnen Sie die Antworten den Fragen zu</h2>
+            
+            <div class="answers-box">
+                <h3>Antworten:</h3>
+                <div class="answer-option">1: Wenn sie keine Arbeit haben, fühlen sie sich unsicher und das führt zur Depression.</div>
+                <div class="answer-option">2: Nein, weil ich das anstrengend finde.</div>
+                <div class="answer-option">3: Guten Kontakt mit meinen Kollegen und Kolleginnen, natürlich auch mit meinem Chef oder meiner Chefin.</div>
+                <div class="answer-option">4: So können sie herausfinden, ob der Bewerber die notwendigen Qualifikationen erfüllt.</div>
+                <div class="answer-option">5: Für mich ist es am wichtigsten, dass der Beruf mich weiterentwickeln kann.</div>
+                <div class="answer-option">6: Man kann seine Kommunikationsfähigkeit erweitern.</div>
+                <div class="answer-option">7: Da ich seit der Pandemie Homeoffice arbeite, habe ich mich daran gewöhnt.</div>
+                <div class="answer-option">8: Sie sollten für ein angenehmes Arbeitsfeld sorgen.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">a. Was brauchen Sie, um am Arbeitsplatz zufrieden zu sein?</div>
+                <select class="answer-select" data-correct="3">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">b. Was steht für Sie bei der Berufswahl an erster Stelle?</div>
+                <select class="answer-select" data-correct="5">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">c. Was sollten die Vorgesetzten am Arbeitsplatz vor allem schaffen?</div>
+                <select class="answer-select" data-correct="8">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">d. Wann sind die Menschen heutzutage nicht glücklich?</div>
+                <select class="answer-select" data-correct="1">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">e. Würden Sie gerne von zu Hause aus arbeiten?</div>
+                <select class="answer-select" data-correct="7">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">f. Würden Sie sich selbstständig machen?</div>
+                <select class="answer-select" data-correct="2">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">g. Warum erwarten Arbeitgeber immer Erfahrung?</div>
+                <select class="answer-select" data-correct="4">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">h. Welches Ziel hat ein Praktikum?</div>
+                <select class="answer-select" data-correct="6">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const selects = document.querySelectorAll('.answer-select');
+            let allCorrect = true;
+            let feedback = '';
+
+            selects.forEach((select, index) => {
+                const correctAnswer = select.getAttribute('data-correct');
+                const userAnswer = select.value;
+                
+                if (userAnswer === correctAnswer) {
+                    feedback += `Frage ${String.fromCharCode(97 + index)}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${String.fromCharCode(97 + index)}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

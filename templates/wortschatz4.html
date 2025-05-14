@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 150px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-options {
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B2</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Verben mit Vorsilbe "be-" in richtiger Konjugation.</p>
+            
+            <div class="word-options">bewerben - beschränken – bemängeln - beantworten - beziehen - beherrschen - besitzen – bestätigen - behaupten – beeinflussen - beschreiben</div>
+            
+            <div class="text">
+                <p>1. <input type="text" class="input-field" data-answer="Beschreiben"> Sie bitte Ihre Erfahrungen und Ereignisse, die für Ihre Berufswahl <input type="text" class="input-field" data-answer="beeinflusst"> haben?</p>
+                <p>2. Ich <input type="text" class="input-field" data-answer="besitze"> einen Führerschein der Klasse b1.</p>
+                <p>3. Er hat <input type="text" class="input-field" data-answer="behauptet">, ein Projekt im Bereich der künstlichen Intelligenz gestaltet zu haben.</p>
+                <p>4. Wenn eine Person im Innland keinen Wohnsitz hat, wird er steuerpflichtig <input type="text" class="input-field" data-answer="beschränkt">.</p>
+                <p>5. Ich hoffe, dass ich alle gestellten Fragen <input type="text" class="input-field" data-answer="beantworten"> konnte?</p>
+                <p>6. Da wir Ihr Konto auf Instagram überprüft und seine Echtheit <input type="text" class="input-field" data-answer="bestätigt"> haben, dürfen Sie das blaue Abzeichen bekommen.</p>
+                <p>7. Der Student hat sich in seiner Präsentation auf die Daten, die in offiziell auf Google veröffentlicht sind, <input type="text" class="input-field" data-answer="bezogen">.</p>
+                <p>8. Der Professor hat ihn danach gefragt, warum er sich bisher nicht um ein Stipendium <input type="text" class="input-field" data-answer="beworben"> hat.</p>
+                <p>9. Der Polyglott <input type="text" class="input-field" data-answer="beherrscht"> mehr als dreißig Sprachen.</p>
+                <p>10. Zwar hat er ein interessantes Thema präsentiert, aber die Prüfungskommison hat trotzdem einiges <input type="text" class="input-field" data-answer="bemängelt">.</p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

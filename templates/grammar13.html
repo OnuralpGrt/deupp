@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Adjektivformen A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adjektivformen - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Setzen Sie die Adjektive in der richtigen Form ein: Positiv (=Grundform), Komparativ oder Superlativ.</h3>
+            <p>Beispiel: groß → größer → am größten</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <h2>Istanbul – eine besondere Stadt</h2>
+                <p>Istanbul ist eine der <input type="text" data-answer="größten" id="answer1"> Städte der Welt. Sie liegt in zwei Kontinenten: Europa und Asien. Die Stadt ist viel <input type="text" data-answer="älter" id="answer2"> als viele europäische Hauptstädte und hat eine <input type="text" data-answer="reichere" id="answer3"> Geschichte als viele andere Orte.</p>
+                <p>Das Leben in Istanbul ist oft <input type="text" data-answer="hektischer" id="answer4"> als auf dem Land, aber auch <input type="text" data-answer="spannender" id="answer5">. Viele Menschen finden, dass der Bosporus die <input type="text" data-answer="schönste" id="answer6"> Sehenswürdigkeit der Stadt ist. Besonders am Abend wird die Aussicht noch <input type="text" data-answer="beeindruckender" id="answer7">.</p>
+                <p>Die Märkte in Istanbul sind <input type="text" data-answer="bunter" id="answer8"> als in vielen anderen Städten. Der Große Basar ist einer der <input type="text" data-answer="berühmtesten" id="answer9"> Märkte der Welt. Hier gibt es viele Geschäfte, und die Preise sind oft <input type="text" data-answer="günstiger" id="answer10"> als in den Einkaufszentren.</p>
+                <p>Das Essen in Istanbul ist <input type="text" data-answer="leckerer" id="answer11"> als in vielen anderen Ländern. Besonders die Süßigkeiten sind oft die <input type="text" data-answer="beliebtesten" id="answer12"> Spezialitäten bei Touristen. Wer einmal Baklava probiert hat, wird keinen <input type="text" data-answer="süßeren" id="answer13"> Nachtisch finden!</p>
+                <p>In der Stadt gibt es viele <input type="text" data-answer="alte" id="answer14"> Gebäude mit <input type="text" data-answer="großen" id="answer15"> Kuppeln. Die Straßen sind oft sehr <input type="text" data-answer="engen" id="answer16">, aber die Menschen sind <input type="text" data-answer="freundlich" id="answer17"> und helfen gern. Viele Cafés haben <input type="text" data-answer="gemütliche" id="answer18"> Sitzplätze mit Blick auf das Wasser.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

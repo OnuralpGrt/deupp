@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: var(--secondary-color);
+        }
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiple Choice - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Welche Kombination passt nicht? Wählen Sie die richtige Antwort.</h3>
+            <p>Kreuzen Sie die Antwort an, die nicht zu den anderen passt.</p>
+        </div>
+
+        <div class="questions">
+            <div class="question" data-answer="d">
+                <p>1. Welche Kombination passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Downloaden-Hochladen</div>
+                    <div class="option" onclick="selectOption(this)">b) Produktion-Herstellung</div>
+                    <div class="option" onclick="selectOption(this)">c) Experiment-Versuch</div>
+                    <div class="option" onclick="selectOption(this)">d) Produkt-Ware</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>2. Welche Kombination passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Reservierung-Buchung</div>
+                    <div class="option" onclick="selectOption(this)">b) Start - Ende</div>
+                    <div class="option" onclick="selectOption(this)">c) Event-Veranstaltung</div>
+                    <div class="option" onclick="selectOption(this)">d) Studie - Forschung</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="d">
+                <p>3. Welche Kombination passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Äußerlichkeit-Innerlichkeit</div>
+                    <div class="option" onclick="selectOption(this)">b) Tiefe-Höhe</div>
+                    <div class="option" onclick="selectOption(this)">c) Länge-Breite</div>
+                    <div class="option" onclick="selectOption(this)">d) Umgebung-Gegend</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>4. Welche Kombination passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Hinauf-Hinunter</div>
+                    <div class="option" onclick="selectOption(this)">b) Draußen-im Freien</div>
+                    <div class="option" onclick="selectOption(this)">c) Drinnen-Draußen</div>
+                    <div class="option" onclick="selectOption(this)">d) Hinein-Hinaus</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>5. Was passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) die Einwohnerzahl</div>
+                    <div class="option" onclick="selectOption(this)">b) die Fläche</div>
+                    <div class="option" onclick="selectOption(this)">c) die Wahl</div>
+                    <div class="option" onclick="selectOption(this)">d) die Nachbarländer</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>6. Was passt nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Stabilität-Schwankung</div>
+                    <div class="option" onclick="selectOption(this)">b) Anstieg-Wachstum</div>
+                    <div class="option" onclick="selectOption(this)">c) Reduzierung-Vermehrung</div>
+                    <div class="option" onclick="selectOption(this)">d) Senkung-Steigerung</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>7. Was passt nicht? Geld .............</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) sparen</div>
+                    <div class="option" onclick="selectOption(this)">b) ausgeben</div>
+                    <div class="option" onclick="selectOption(this)">c) verbrauchen</div>
+                    <div class="option" onclick="selectOption(this)">d) abheben</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>8. Was passt nicht? Geld .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) kaufen</div>
+                    <div class="option" onclick="selectOption(this)">b) anlegen</div>
+                    <div class="option" onclick="selectOption(this)">c) verdienen</div>
+                    <div class="option" onclick="selectOption(this)">d) überweisen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>9. Was passt nicht? Medikamente .........</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) nehmen</div>
+                    <div class="option" onclick="selectOption(this)">b) verschreiben</div>
+                    <div class="option" onclick="selectOption(this)">c) heilen</div>
+                    <div class="option" onclick="selectOption(this)">d) schicken</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>10. Was passt nicht? Patienten ..........</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) untersuchen</div>
+                    <div class="option" onclick="selectOption(this)">b) suchen</div>
+                    <div class="option" onclick="selectOption(this)">c) behandeln</div>
+                    <div class="option" onclick="selectOption(this)">d) überweisen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="d">
+                <p>11. Was passt? Maßnahmen .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) bekommen</div>
+                    <div class="option" onclick="selectOption(this)">b) nehmen</div>
+                    <div class="option" onclick="selectOption(this)">c) sein</div>
+                    <div class="option" onclick="selectOption(this)">d) treffen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>12. Was passt? Erfahrungen .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) sammeln</div>
+                    <div class="option" onclick="selectOption(this)">b) finden</div>
+                    <div class="option" onclick="selectOption(this)">c) geben</div>
+                    <div class="option" onclick="selectOption(this)">d) nehmen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>13. Was gehört nicht zu einer Bewerbungsmappe?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) die Rechnung</div>
+                    <div class="option" onclick="selectOption(this)">b) Zeugnisse und Bescheinigungen</div>
+                    <div class="option" onclick="selectOption(this)">c) ein Foto</div>
+                    <div class="option" onclick="selectOption(this)">d) ein Bewerbungsschreiben</div>
+                    <div class="option" onclick="selectOption(this)">e) der Lebenslauf</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="d">
+                <p>14. Welchen Teil umfasst der Lebenslauf nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Berufserfahrung</div>
+                    <div class="option" onclick="selectOption(this)">b) Schulabschluss</div>
+                    <div class="option" onclick="selectOption(this)">c) EDV-Kenntnisse</div>
+                    <div class="option" onclick="selectOption(this)">d) Ausbildung der Kinder</div>
+                    <div class="option" onclick="selectOption(this)">e) Sprachkenntnisse</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>15. Welche Information gehört nicht zum Reklamationsschreiben?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) die Rechnungsnummer</div>
+                    <div class="option" onclick="selectOption(this)">b) Mit wem ich das Produkt gekauft habe</div>
+                    <div class="option" onclick="selectOption(this)">c) das Rechnungs- und Lieferdatum</div>
+                    <div class="option" onclick="selectOption(this)">d) Modell des Artikels</div>
+                    <div class="option" onclick="selectOption(this)">e) ausführliche Beschreibung des Problems</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>16. Welche Rechte hat man bei einer Reklamation?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) das Produkt selbst reparieren</div>
+                    <div class="option" onclick="selectOption(this)">b) Reparatur</div>
+                    <div class="option" onclick="selectOption(this)">c) einen Gutschein bekommen</div>
+                    <div class="option" onclick="selectOption(this)">d) das Geld zurückbekommen</div>
+                    <div class="option" onclick="selectOption(this)">e) umtauschen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>17. Welche Schulabschlüsse braucht man für die Universitätsaufnahme?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) die Hochschulreife</div>
+                    <div class="option" onclick="selectOption(this)">b) Teilnahmebescheinigung für den Deutschkurs am Goethe Institut</div>
+                    <div class="option" onclick="selectOption(this)">c) den Führerschein</div>
+                    <div class="option" onclick="selectOption(this)">d) das Abitur</div>
+                    <div class="option" onclick="selectOption(this)">e) den Hauptschulabschluss</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>18. Welche Tätigkeit gehört nicht zum Berufsalltag?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) sich mit Kollegen zum Kaffeeklatsch treffen</div>
+                    <div class="option" onclick="selectOption(this)">b) Produkte entwickeln</div>
+                    <div class="option" onclick="selectOption(this)">c) eine Besprechung haben</div>
+                    <div class="option" onclick="selectOption(this)">d) Kunden besuchen</div>
+                    <div class="option" onclick="selectOption(this)">e) neue Produkte präsentieren</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="e">
+                <p>19. Sie müssen einen Termin verschieben oder absagen. Welche Ausrede klingt nicht sehr glaubwürdig?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Ich wollte dich so gern sehen, aber ich fühle mich nicht gut. Ich glaube, ich habe Fieber.</div>
+                    <div class="option" onclick="selectOption(this)">b) Mein Flug hat leider eine Stunde Verspätung.</div>
+                    <div class="option" onclick="selectOption(this)">c) Ich habe eine Reifenpanne. Leider muss ich mein Auto zur Werkstatt bringen.</div>
+                    <div class="option" onclick="selectOption(this)">d) Ich bin im Stau stecken geblieben. Ich suche einen Umweg.</div>
+                    <div class="option" onclick="selectOption(this)">e) Ich bin im Tunnel und mein Handy funktioniert nicht gut. Ich höre Sie leider nicht.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="d">
+                <p>20. Ihr plant einen Wanderausflug mit der Klasse zusammen. Welche Probleme muss man lösen?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) womit man hinfahren soll.</div>
+                    <div class="option" onclick="selectOption(this)">b) ob man etwas zum Essen und Trinken mitnehmen soll.</div>
+                    <div class="option" onclick="selectOption(this)">c) wann und wo man sich vor der Abfahrt treffen soll.</div>
+                    <div class="option" onclick="selectOption(this)">d) was für ein Souvenir man als Geschenk kaufen soll.</div>
+                    <div class="option" onclick="selectOption(this)">e) wie das Wetter am Reisetag wird und was für eine Ausrüstung man braucht.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>21. Welche Struktur oder welches Redemittel ist für eine höfliche Bitte unpassend?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Gib mir ..........!</div>
+                    <div class="option" onclick="selectOption(this)">b) Würdest du bitte ?</div>
+                    <div class="option" onclick="selectOption(this)">c) Wurdest du ........?</div>
+                    <div class="option" onclick="selectOption(this)">d) Könntest du bitte ?</div>
+                    <div class="option" onclick="selectOption(this)">e) Hättest du vielleicht ?</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>22. Welche Struktur oder welches Redemittel passt einer guten Ratschlag-Formulierung nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Wenn ich du wäre, ..........</div>
+                    <div class="option" onclick="selectOption(this)">b) Es ist schade, dass du nicht .......</div>
+                    <div class="option" onclick="selectOption(this)">c) An Ihrer Stelle würde ich .......</div>
+                    <div class="option" onclick="selectOption(this)">d) Ich würde Ihnen nur raten, .............</div>
+                    <div class="option" onclick="selectOption(this)">e) Du solltest lieber ..........</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>23. Du möchtest deinem Freund zustimmen. Was sagst du nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Du hast Recht.</div>
+                    <div class="option" onclick="selectOption(this)">b) Ich stimme völlig zu.</div>
+                    <div class="option" onclick="selectOption(this)">c) Ich bin eher einer anderen Meinung.</div>
+                    <div class="option" onclick="selectOption(this)">d) Ich sehe das auch so.</div>
+                    <div class="option" onclick="selectOption(this)">e) Ich bin der gleichen Meinung.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>24. Du möchtest über Vor- und Nachteile der öffentlichen Verkehrsmittel sprechen. Was sagst du nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Die Fahrkarten sind nicht so teuer wie die Benzinkosten der privaten Autos. Das sehe ich auch positiv.</div>
+                    <div class="option" onclick="selectOption(this)">b) Es gibt viele Vor- und Nachteile für öffentliche Verkehrsmitteln.</div>
+                    <div class="option" onclick="selectOption(this)">c) Es ist von Nachteil, dass man in Bussen kaum einen Sitzplatzt finden kann.</div>
+                    <div class="option" onclick="selectOption(this)">d) Mit der U-Bahn bleibt man nicht im Stau stehen. Das ist ein großer Vorteil.</div>
+                    <div class="option" onclick="selectOption(this)">e) Bei uns in der Türkei nehmen viele Studenten öffentliche Verkehrsmittel zur Uni.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="e">
+                <p>25. Du beschreibst eine Grafik. Was sagst du nicht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Die Forscher haben den Befragten 20 Fragen gestellt. Diese waren teilweise Ja/Nein -Fragen.</div>
+                    <div class="option" onclick="selectOption(this)">b) Mich hat es überrascht, dass die Befragten nicht genug Interesse für dieses Kriterium gezeigt haben.</div>
+                    <div class="option" onclick="selectOption(this)">c) An zweiter Stelle kommt der Stadturlaub mit 35 Prozent. Dann folgt der Kururlaub mit 22 Prozent.</div>
+                    <div class="option" onclick="selectOption(this)">d) Die Daten der Grafik stammen aus einer Studie der Verbraucherzentrale.</div>
+                    <div class="option" onclick="selectOption(this)">e) In dieser Grafik geht es um eine Studie, die sich mit dem Konsumverhalten der Jugendlichen in Deutschland beschäftigt</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Önce aynı sorudaki diğer seçeneklerin seçimini kaldır
+            const question = element.parentElement;
+            const options = question.getElementsByClassName('option');
+            for (let option of options) {
+                option.classList.remove('selected');
+            }
+            
+            // Seçilen seçeneği işaretle
+            element.classList.add('selected');
+        }
+
+        function checkAnswers() {
+            const questions = document.getElementsByClassName('question');
+            let allCorrect = true;
+            
+            for (let question of questions) {
+                const correctAnswer = question.dataset.answer;
+                const options = question.getElementsByClassName('option');
+                let selectedOption = null;
+                
+                // Seçilen seçeneği bul
+                for (let option of options) {
+                    if (option.classList.contains('selected')) {
+                        selectedOption = option;
+                        break;
+                    }
+                }
+                
+                // Tüm seçeneklerin sınıflarını temizle
+                for (let option of options) {
+                    option.classList.remove('correct', 'incorrect');
+                }
+                
+                // Seçim yapılmamışsa veya yanlışsa
+                if (!selectedOption || selectedOption.textContent.charAt(0) !== correctAnswer) {
+                    allCorrect = false;
+                    if (selectedOption) {
+                        selectedOption.classList.add('incorrect');
+                    }
+                    // Doğru cevabı göster
+                    for (let option of options) {
+                        if (option.textContent.charAt(0) === correctAnswer) {
+                            option.classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Doğru seçim
+                    selectedOption.classList.add('correct');
+                }
+            }
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

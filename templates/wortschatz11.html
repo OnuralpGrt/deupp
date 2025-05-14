@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .dialog {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Dialoge mit Konnektoren wie z. Bsp.: sowohl-als auch/ entweder-oder / deshalb / nicht nur-sondern auch …</p>
+
+            <div class="dialog">
+                <h3>Dialog 1:</h3>
+                <p>
+                    A: „Willst du ins Kino gehen oder ins Theater?"<br>
+                    B: „Ich würde <input type="text" class="input-field" data-answer="sowohl"> ins Kino <input type="text" class="input-field" data-answer="als auch"> ins Theater gehen, aber ich habe heute keine Zeit."<br>
+                    A: „Warum?"<br>
+                    B: „Weil ich viel zu tun habe, <input type="text" class="input-field" data-answer="deshalb"> bleibe ich zu Hause."
+                </p>
+            </div>
+
+            <div class="dialog">
+                <h3>Dialog 2:</h3>
+                <p>
+                    Anna: „Möchtest du heute Abend ins Kino gehen?"<br>
+                    Ben: „Ich würde gerne, aber ich habe heute viel zu tun. Ich muss noch einige E-Mails beantworten, <input type="text" class="input-field" data-answer="weil"> ich morgen einen wichtigen Termin habe. <input type="text" class="input-field" data-answer="deshalb"> werde ich zu Hause bleiben."<br>
+                    Anna: „Ach, schade. <input type="text" class="input-field" data-answer="nicht nur"> das Kino würde Spaß machen, <input type="text" class="input-field" data-answer="sondern auch"> das neue Restaurant in der Nähe. Aber du hast natürlich recht, du solltest dich vorbereiten."<br>
+                    Ben: „Ja, <input type="text" class="input-field" data-answer="entweder"> ich arbeite heute Abend, <input type="text" class="input-field" data-answer="oder"> ich verpasse den Termin morgen. Ich kann mich nicht beides leisten!"<br>
+                    Anna: „Stimmt. <input type="text" class="input-field" data-answer="sowohl"> das Kino <input type="text" class="input-field" data-answer="als auch"> das Restaurant wären toll. Vielleicht nächste Woche?"<br>
+                    Ben: „Ja, das klingt gut! <input type="text" class="input-field" data-answer="zuerst"> muss ich aber den Termin morgen überstehen. <input type="text" class="input-field" data-answer="dann"> können wir diese Woche gemeinsam etwas unternehmen."
+                </p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

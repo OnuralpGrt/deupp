@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfahrungsbericht - Alltägliche Mediennutzung</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .checkbox-exercise {
+            margin: 20px 0;
+        }
+        .checkbox-item {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .matching-exercise {
+            margin: 20px 0;
+        }
+        .matching-item {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .matching-item select {
+            margin: 0 10px;
+            padding: 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .sentence-matching {
+            margin: 20px 0;
+        }
+        .sentence-pair {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .sentence-pair select {
+            margin: 0 10px;
+            padding: 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Erfahrungsbericht - Alltägliche Mediennutzung</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Lies den Text und beantworte die Fragen.</h3>
+            <p>Lies den folgenden Text über Anna's alltägliche Mediennutzung und beantworte die Fragen.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <h2>Alltägliche Mediennutzung von Anna</h2>
+                <p>Ich heiße Anna und bin Studentin. Jeden Tag nutze ich viele verschiedene Medien, um mich zu informieren und zu unterhalten. Morgens checke ich zuerst mein Handy und lese die Nachrichten. Ich finde es wichtig, zu wissen, was in der Welt passiert. Danach schaue ich oft kurze Videos auf YouTube oder Instagram. Das macht Spaß und hilft mir, mich zu entspannen.</p>
+                <p>Für mein Studium benutze ich auch Medien. Ich arbeite viel mit meinem Laptop und recherchiere im Internet für meine Projekte. Manchmal höre ich Podcasts oder schaue mir Dokumentationen an. Das hilft mir, neue Dinge zu lernen.</p>
+                <p>Abends lese ich manchmal noch E-Books auf meinem Tablet oder höre Musik. Medien sind also ein großer Teil meines Alltags, und ich kann mir das Leben ohne sie kaum vorstellen.</p>
+            </div>
+
+            <div class="checkbox-exercise">
+                <h3>Welche Medien gehören zum Alltag von Anna? Kreuze an.</h3>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="zeitung" data-answer="false">
+                    <label for="zeitung">die Zeitung</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fernsehen" data-answer="false">
+                    <label for="fernsehen">das Fernsehen</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tablet" data-answer="true">
+                    <label for="tablet">das Tablet</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="handy" data-answer="true">
+                    <label for="handy">das Handy</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="radio" data-answer="false">
+                    <label for="radio">das Radio</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="zeitschrift" data-answer="false">
+                    <label for="zeitschrift">die Zeitschrift</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="laptop" data-answer="true">
+                    <label for="laptop">der Laptop</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="podcast" data-answer="true">
+                    <label for="podcast">der Podcast</label>
+                </div>
+            </div>
+
+            <div class="matching-exercise">
+                <h3>Ordne zu und ergänze die Phrasen.</h3>
+                <div class="matching-item">
+                    <span>verschiedene Medien</span>
+                    <select id="match1" data-answer="nutzen">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>die Nachrichten</span>
+                    <select id="match2" data-answer="lesen">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>das Handy</span>
+                    <select id="match3" data-answer="checken">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>Videos auf YouTube</span>
+                    <select id="match4" data-answer="schauen">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>im Internet</span>
+                    <select id="match5" data-answer="recherchieren">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>Podcasts</span>
+                    <select id="match6" data-answer="hören">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>mit Laptop</span>
+                    <select id="match7" data-answer="arbeiten">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+                <div class="matching-item">
+                    <span>E-Books auf dem Tablet</span>
+                    <select id="match8" data-answer="lesen">
+                        <option value="">Wähle ein Verb</option>
+                        <option value="lesen">lesen</option>
+                        <option value="schauen">schauen</option>
+                        <option value="arbeiten">arbeiten</option>
+                        <option value="checken">checken</option>
+                        <option value="hören">hören</option>
+                        <option value="nutzen">nutzen</option>
+                        <option value="recherchieren">recherchieren</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="sentence-matching">
+                <h3>Was ist richtig? Verbinde die Satzhälften.</h3>
+                <div class="sentence-pair">
+                    <span>1. Anna nutzt verschiedene Medien,</span>
+                    <select id="sentence1" data-answer="c">
+                        <option value="">Wähle eine Antwort</option>
+                        <option value="a">Videos auf Youtube zu schauen.</option>
+                        <option value="b">zu wissen, was in der Welt passiert.</option>
+                        <option value="c">um sich zu informieren.</option>
+                        <option value="d">kann sich Anna kaum vorstellen</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>2. Es macht Anna Spaß,</span>
+                    <select id="sentence2" data-answer="a">
+                        <option value="">Wähle eine Antwort</option>
+                        <option value="a">Videos auf Youtube zu schauen.</option>
+                        <option value="b">zu wissen, was in der Welt passiert.</option>
+                        <option value="c">um sich zu informieren.</option>
+                        <option value="d">kann sich Anna kaum vorstellen</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>3. Ein Leben ohne Medien</span>
+                    <select id="sentence3" data-answer="d">
+                        <option value="">Wähle eine Antwort</option>
+                        <option value="a">Videos auf Youtube zu schauen.</option>
+                        <option value="b">zu wissen, was in der Welt passiert.</option>
+                        <option value="c">um sich zu informieren.</option>
+                        <option value="d">kann sich Anna kaum vorstellen</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>4. Anna findet es wichtig,</span>
+                    <select id="sentence4" data-answer="b">
+                        <option value="">Wähle eine Antwort</option>
+                        <option value="a">Videos auf Youtube zu schauen.</option>
+                        <option value="b">zu wissen, was in der Welt passiert.</option>
+                        <option value="c">um sich zu informieren.</option>
+                        <option value="d">kann sich Anna kaum vorstellen</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            // Checkbox kontrolü
+            const checkboxes = document.querySelectorAll('.checkbox-item input[type="checkbox"]');
+            let allCheckboxesCorrect = true;
+            
+            checkboxes.forEach(checkbox => {
+                const isChecked = checkbox.checked;
+                const shouldBeChecked = checkbox.dataset.answer === "true";
+                
+                if (isChecked !== shouldBeChecked) {
+                    allCheckboxesCorrect = false;
+                    checkbox.parentElement.classList.add('incorrect');
+                } else {
+                    checkbox.parentElement.classList.remove('incorrect');
+                }
+            });
+            
+            // Eşleştirme kontrolü
+            const matchingSelects = document.querySelectorAll('.matching-item select');
+            let allMatchingCorrect = true;
+            
+            matchingSelects.forEach(select => {
+                const selectedValue = select.value;
+                const correctValue = select.dataset.answer;
+                
+                if (selectedValue !== correctValue) {
+                    allMatchingCorrect = false;
+                    select.classList.add('incorrect');
+                } else {
+                    select.classList.remove('incorrect');
+                }
+            });
+            
+            // Cümle eşleştirme kontrolü
+            const sentenceSelects = document.querySelectorAll('.sentence-pair select');
+            let allSentencesCorrect = true;
+            
+            sentenceSelects.forEach(select => {
+                const selectedValue = select.value;
+                const correctValue = select.dataset.answer;
+                
+                if (selectedValue !== correctValue) {
+                    allSentencesCorrect = false;
+                    select.classList.add('incorrect');
+                } else {
+                    select.classList.remove('incorrect');
+                }
+            });
+            
+            // Genel sonuç
+            if (allCheckboxesCorrect && allMatchingCorrect && allSentencesCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

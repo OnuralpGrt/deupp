@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Ein Spannendes Abenteuer am Strand</h2>
+            
+            <div class="text">
+                <p>Es war ein heißer Sommertag, und die Freunde Mia, Leon und Sara beschlossen, zum Strand zu gehen. Sie packten ihre Rucksäcke mit Snacks, Handtüchern und Sonnencreme. Am Strand angekommen, sprangen sie sofort ins Wasser. Die Wellen waren groß und machten viel Spaß!</p>
+                <p>Nach dem Schwimmen entdeckten sie eine geheimnisvolle Höhle in den Felsen. „Lass uns hineingehen!", rief Leon aufgeregt. Vorsichtig schlichen sie zur Höhle und schalteten ihre Taschenlampen ein. Drinnen war es dunkel und kühl. Plötzlich hörten sie ein Geräusch! Es war nur ein kleiner Vogel, der in der Ecke saß.</p>
+                <p>Die Freunde lachten erleichtert und erkundeten die Höhle weiter. Sie fanden viele interessante Steine und Muscheln. Nach einer Weile verließen sie die Höhle und setzten sich auf den Sand, um ihre Schätze zu zeigen. Der Tag endete mit einem wunderschönen Sonnenuntergang, während sie Geschichten erzählten und Pläne für das nächste Abenteuer schmiedeten.</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Wer sind die Hauptpersonen im Text?</p>
+                    <input type="text" class="answer-input" data-correct="Mia, Leon und Sara">
+                </div>
+
+                <div class="question">
+                    <p>2. Was haben die Freunde zuerst am Strand gemacht?</p>
+                    <input type="text" class="answer-input" data-correct="Sie sind sofort ins Wasser gesprungen">
+                </div>
+
+                <div class="question">
+                    <p>3. Was haben sie in den Felsen entdeckt?</p>
+                    <input type="text" class="answer-input" data-correct="Eine geheimnisvolle Höhle">
+                </div>
+
+                <div class="question">
+                    <p>4. Was hörten sie in der Höhle?</p>
+                    <input type="text" class="answer-input" data-correct="Ein Geräusch von einem kleinen Vogel">
+                </div>
+
+                <div class="question">
+                    <p>5. Warum setzten sie sich auf den Sand?</p>
+                    <input type="text" class="answer-input" data-correct="Weil sie ihre Schätze zeigen wollen">
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const input = question.querySelector('.answer-input');
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.getAttribute('data-correct').toLowerCase();
+                
+                if (!userAnswer) {
+                    feedback += `Frage ${index + 1}: Bitte geben Sie eine Antwort ein.<br>`;
+                    allCorrect = false;
+                } else if (userAnswer === correctAnswer) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${input.getAttribute('data-correct')}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

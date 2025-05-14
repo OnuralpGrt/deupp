@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .matching-pairs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .pair {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .pair select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - A1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe 4: Leseverstehen</h2>
+            <p>Ordnen Sie die Fragen den passenden Antworten zu. Schreiben Sie die richtigen Buchstaben (a, b, c …) neben die Fragen.</p>
+            
+            <div class="matching-pairs">
+                <div class="pair">
+                    <span>1. Von welchem Gleis ist die Abfahrt vom Zug?</span>
+                    <select name="q1" data-correct="g">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>2. Wie lange dauert der Flug nach Berlin?</span>
+                    <select name="q2" data-correct="c">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>3. Wohin fährt der Bus?</span>
+                    <select name="q3" data-correct="a">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>4. Wann ist die Ankunft vom ICE?</span>
+                    <select name="q4" data-correct="b">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>5. Auf welchem Gleis kommt der Zug an?</span>
+                    <select name="q5" data-correct="h">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>6. Kann ich zu Fuß zum Bahnhof gehen?</span>
+                    <select name="q6" data-correct="f">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>7. Wo ist der nächste Flughafen?</span>
+                    <select name="q7" data-correct="i">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>8. Wann fährt der Zug ab?</span>
+                    <select name="q8" data-correct="e">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>9. Wie lange dauert es zu Fuß ins Stadtzentrum?</span>
+                    <select name="q9" data-correct="j">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+
+                <div class="pair">
+                    <span>10. Wohin fliegt das nächste Flugzeug?</span>
+                    <select name="q10" data-correct="d">
+                        <option value="">Wählen Sie...</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const pairs = document.querySelectorAll('.pair select');
+            let allCorrect = true;
+            let feedback = '';
+
+            pairs.forEach((select, index) => {
+                const correctAnswer = select.getAttribute('data-correct');
+                if (select.value === correctAnswer) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

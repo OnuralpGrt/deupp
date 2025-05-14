@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Personalpronomen</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .context {
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personalpronomen im Akkusativ und Dativ</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die fehlenden Personalpronomen im Akkusativ oder Dativ.</h3>
+            <p>Hinweis: Achten Sie darauf, ob das Personalpronomen im Akkusativ oder Dativ verwendet werden muss.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-item">
+                <div class="context">In der Mail an die Touristeninformation:</div>
+                <p>Ich suche dringend eine günstige Unterkunft für meine Reise nach München. Können Sie <input type="text" data-answer="mich" id="answer1"> bitte kurz über die durchschnittlichen Zimmerpreise informieren?</p>
+            </div>
+
+            <div class="exercise-item">
+                <div class="context">Im Restaurant:</div>
+                <p>Entschuldigen Sie bitte! Meine Freundin und ich möchten gern etwas zum Essen bestellen. Können Sie <input type="text" data-answer="uns" id="answer2"> bitte eine Speisekarte bringen?</p>
+            </div>
+
+            <div class="exercise-item">
+                <div class="context">Im Café:</div>
+                <p>Wie schmeckt <input type="text" data-answer="dir" id="answer3"> der Cappuccino, Liebling? Hättest du noch etwas Sahne?</p>
+            </div>
+
+            <div class="exercise-item">
+                <div class="context">Im Krankenhaus:</div>
+                <p>Legen Sie sich bitte hin. Wo tut es <input type="text" data-answer="ihnen" id="answer4"> genau weh? Hier am Fuß oder am Knie?</p>
+            </div>
+
+            <div class="exercise-item">
+                <div class="context">Anruf bei der Firma:</div>
+                <p>Guten Tag, Herr Meier! Frau Schilling hat gerade eine Besprechung. Schreiben Sie <input type="text" data-answer="Ihnen" id="answer5"> lieber eine Mail und schicken Sie auch den digitalen Katalog mit. Die Mailadresse von Frau Schilling ist schilling@firma.de.</p>
+            </div>
+
+            <div class="exercise-item">
+                <div class="context">An der Hotelrezeption:</div>
+                <p>Entschuldigen Sie! Ich kann meinen Zimmerschlüssel nicht finden. Ich glaube, ich habe <input type="text" data-answer="ihn" id="answer6"> im Zimmer vergessen. Können <input type="text" data-answer="Sie" id="answer7"> mir bitte einen neuen Schlüssel geben?</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

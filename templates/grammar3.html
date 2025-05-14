@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Lückenergänzung</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .word-bank {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+            text-align: center;
+        }
+        .word {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lückenergänzung - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Sätze mit den folgenden Wörtern:</h3>
+        </div>
+
+        <div class="word-bank">
+            <div class="word">kleine</div>
+            <div class="word">Hund</div>
+            <div class="word">liegt</div>
+            <div class="word">schön</div>
+            <div class="word">tanzen</div>
+            <div class="word">schwimmen</div>
+            <div class="word">klein</div>
+            <div class="word">Familien</div>
+            <div class="word">essen</div>
+            <div class="word">Musik</div>
+            <div class="word">großen</div>
+            <div class="word">möchte</div>
+            <div class="word">aber</div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-item">
+                <p>Das Wetter ist <input type="text" data-answer="schön" id="answer1"> heute.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Ein <input type="text" data-answer="Hund" id="answer2"> läuft im Park.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Er <input type="text" data-answer="möchte" id="answer3"> mit einem Ball spielen.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Ich möchte im See <input type="text" data-answer="schwimmen" id="answer4">, <input type="text" data-answer="aber" id="answer5"> er ist kalt.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Mein Bruder hat einen <input type="text" data-answer="großen" id="answer6"> Ball.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Wir <input type="text" data-answer="essen" id="answer7"> Pizza zum Mittagessen im Park.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Eine Katze <input type="text" data-answer="liegt" id="answer8"> neben uns. Die Katze ist sehr <input type="text" data-answer="klein" id="answer9"> und süß.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Manche <input type="text" data-answer="Familien" id="answer10"> machen Picknick.</p>
+            </div>
+
+            <div class="exercise-item">
+                <p>Zwei <input type="text" data-answer="kleine" id="answer11"> Kinder <input type="text" data-answer="tanzen" id="answer12"> und hören <input type="text" data-answer="Musik" id="answer13">.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        // Kelime bankasından sürükle-bırak işlevselliği
+        const words = document.querySelectorAll('.word');
+        words.forEach(word => {
+            word.addEventListener('click', function() {
+                const focusedInput = document.querySelector('input:focus');
+                if (focusedInput) {
+                    focusedInput.value = this.textContent;
+                }
+            });
+        });
+
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

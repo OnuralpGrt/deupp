@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Adjektivendungen A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adjektivendungen - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Adjektivendungen für die Adjektivphrasen</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p>Ich suche ein ruhig<input type="text" data-answer="es" id="answer1"> Zimmer.</p>
+                <p>Er nimmt seinen schwer<input type="text" data-answer="en" id="answer2"> Koffer mit.</p>
+                <p>Das neu<input type="text" data-answer="e" id="answer3"> Auto steht auf dem Parkplatz.</p>
+                <p>Ich brauche ein frisch<input type="text" data-answer="es" id="answer4"> Brot und gut<input type="text" data-answer="en" id="answer5"> Käse.</p>
+                <p>In der Arbeit trägt mein Freund lieber einen dunkel<input type="text" data-answer="en" id="answer6"> Anzug und ein weiß<input type="text" data-answer="es" id="answer7"> Hemd.</p>
+                <p>Unsere höflich<input type="text" data-answer="e" id="answer8"> Nachbarin lädt uns zum Abendessen ein.</p>
+                <p>Der krank<input type="text" data-answer="e" id="answer9"> Junge möchte nichts essen. Er hat keinen Appetit.</p>
+                <p>Der faul<input type="text" data-answer="e" id="answer10"> Schüler hat wieder keine Hausaufgaben gemacht.</p>
+                <p>Die neu<input type="text" data-answer="en" id="answer11"> Nachbarn laden uns auf eine Party ein.</p>
+                <p>Die grün<input type="text" data-answer="en" id="answer12"> Schuhe sind sehr teuer.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

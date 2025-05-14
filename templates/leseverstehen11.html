@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Studie: Computerspiele halten Kinder nicht vom Lesen ab</h2>
+            
+            <div class="text">
+                <p>Berlin (AFP) - Computerspiele sind laut einer Studie entgegen bisheriger Annahmen kein Hindernis für das Leseverhalten von Kindern und Jugendlichen. Diejenigen, die viel vor dem Computer sitzen, würden auch viel lesen, sagte Bodo Franzmann von der Stiftung Lesen am Donnerstag im Deutschlandradio Berlin unter Berufung auf eine repräsentative Studie seines Hauses. Schnelles Lesen sei eine Grundvoraussetzung für den EDV-Gebrauch, sagte der Leseforscher. "Der Computer ist eigentlich ein Lesemedium." Es komme allerdings auf die sorgfältige Auswahl der Computerspiele durch die Eltern an.</p>
+                <p>Ein Problem seien solche Spiele dann, wenn Kinder sich ausschließlich damit beschäftigten und Eltern sich nicht darum kümmerten, betonte er. Es sei gravierend, dass in der PISA-Studie 42 Prozent der deutschen Jugendlichen gesagt hätten, dass sie nicht gerne läsen. "Und es ist auch gar nicht von der Hand zu weisen, dass das Medienangebot, das den Jugendlichen insgesamt zur Verfügung steht, etwas damit zu tun hat", sagte Franzmann.</p>
+                <p>Eine Sucht nach Computerspielen kann laut Franzmann dann entstehen, wenn Eltern ihren Kindern keine Geschichten vorlesen und keine interessanten Bücher geben. Dies sei aber nicht den Spielen anzulasten, sondern eine Frage des schlechten Umgangs mit dem Medium Computerspiel.</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Laut der Studie haben Computerspiele negative Auswirkungen auf das Leseverhalten von Kindern und Jugendlichen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Bodo Franzmann behauptet, dass viel Computernutzung mit viel Lesen einhergeht.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Schnelles Lesen wird als irrelevant für den Gebrauch von EDV angesehen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Die Auswahl der Computerspiele durch die Eltern hat keinen Einfluss auf das Leseverhalten der Kinder.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. 42 Prozent der deutschen Jugendlichen geben an, dass sie gerne lesen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>6. Eine Sucht nach Computerspielen kann entstehen, wenn Eltern ihren Kindern keine Bücher zur Verfügung stellen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>7. Franzmann sieht die Computerspiele als die Hauptursache für die Leseflaute bei Jugendlichen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>8. Der schlechte Umgang mit dem Medium Computerspiel kann das Leseverhalten der Kinder beeinflussen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption === correctOption) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

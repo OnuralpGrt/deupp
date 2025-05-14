@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .word {
+            padding: 5px 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .word.selected {
+            background-color: #e0e0e0;
+        }
+
+        .fill-blank {
+            margin: 10px 0;
+        }
+
+        .fill-blank input {
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Sprachreisen – Lernen mit Spaß</h2>
+            
+            <div class="text">
+                <p>Viele Jugendliche möchten ihre Sprachkenntnisse verbessern. Manche haben schlechte Noten in der Schule, andere wollen im Urlaub oder später im Beruf besser sprechen können. Eine Sprachreise ist eine gute Möglichkeit, eine Sprache zu lernen und dabei auch Spaß zu haben.</p>
+                <p>Bei einer Sprachreise reist man für ein paar Wochen in ein anderes Land. Man hat dort Unterricht in der Fremdsprache und lernt mit Jugendlichen aus verschiedenen Ländern. Nach dem Unterricht gibt es Sport, Ausflüge und Freizeitangebote. So kann man die Sprache auch im Alltag üben.</p>
+                <p>Bevor man bucht, sollte man genau überlegen, was man will: Wie lange möchte man bleiben? Wie viel Geld kann man ausgeben? Möchte man in einer Gastfamilie wohnen oder in einem Wohnheim? Will man auch Sport machen?</p>
+                <p>Der Unterricht findet an fünf Tagen pro Woche statt. Man kann Einzelunterricht nehmen oder in kleinen Gruppen lernen. Am Anfang macht man meistens einen Test, damit man in eine passende Gruppe kommt.</p>
+                <p>Sprachreisen sind nicht billig, aber oft im Preis enthalten: Flug, Unterkunft, Unterricht, Verpflegung und Ausflüge. Taschengeld braucht man zusätzlich. Wichtig ist: Der Anbieter sollte zuverlässig sein.</p>
+                <p>In einer Gastfamilie erlebt man das Leben der Menschen im Land. Im Wohnheim kann man viele neue Freunde finden. Beide Varianten haben Vorteile.</p>
+                <p>Sprachreisen machen Spaß und man lernt viel – über Sprache, Menschen und das Land.</p>
+            </div>
+
+            <div class="questions">
+                <h3>Aufgabe 1: Richtig oder falsch?</h3>
+                <div class="question">
+                    <p>1. Bei einer Sprachreise bleibt man in seinem Heimatland.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Man hat während der Sprachreise auch Freizeit.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Einzelunterricht ist nicht möglich.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Vor Beginn macht man oft einen Test.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Sprachreisen sind immer kostenlos.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <h3>Aufgabe 2: Wähle den richtigen Satz</h3>
+                <div class="question">
+                    <p>Frage 1:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="a"> a) Sprachreisen sind nur für Kinder geeignet.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="b" data-correct="true"> b) Sprachreisen verbinden Lernen und Freizeit.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="c"> c) Sprachreisen finden immer nur in Deutschland statt.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 2:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="a"> a) Bei einer Sprachreise lernt man die Sprache nur am Abend.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="b" data-correct="true"> b) Man kann bei einer Sprachreise auch Sport treiben und Städte besichtigen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="c"> c) Sprachreisen dauern mindestens ein Jahr.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 3:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="a"> a) In einer Gastfamilie spricht man meistens die eigene Sprache.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="b"> b) Im Wohnheim wohnt man nur mit Leuten aus dem eigenen Land.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="c" data-correct="true"> c) In einer Gastfamilie erlebt man den Alltag der Menschen im Gastland.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 4:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="a"> a) Einzelunterricht ist meistens sehr günstig.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="b" data-correct="true"> b) Sprachreisen helfen dabei, neue Freunde aus anderen Ländern kennenzulernen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="c"> c) Auf einer Sprachreise macht man keine Ausflüge.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 5:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="a"> a) Man braucht bei einer Sprachreise kein Taschengeld.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="b" data-correct="true"> b) Vor der Sprachreise sollte man überlegen, was man will.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="c"> c) Alle Sprachreisen sind kostenlos.
+                        </label>
+                    </div>
+                </div>
+
+                <h3>Aufgabe 3: Wähle die passenden Wörter</h3>
+                <div class="word-box">
+                    <span class="word" data-word="Sprache">Sprache</span>
+                    <span class="word" data-word="Aktivitäten">Aktivitäten</span>
+                    <span class="word" data-word="Gastfamilie">Gastfamilie</span>
+                    <span class="word" data-word="Test">Test</span>
+                    <span class="word" data-word="Wochen">Wochen</span>
+                </div>
+
+                <div class="question">
+                    <div class="fill-blank">
+                        <p>1. Eine Sprachreise hilft, eine <input type="text" name="q11" data-correct="Sprache"> zu lernen.</p>
+                    </div>
+                    <div class="fill-blank">
+                        <p>2. Man hat Unterricht und macht viele <input type="text" name="q12" data-correct="Aktivitäten"> zusammen mit anderen Jugendlichen.</p>
+                    </div>
+                    <div class="fill-blank">
+                        <p>3. In einer <input type="text" name="q13" data-correct="Gastfamilie"> lebt man mit einer Familie im Gastland.</p>
+                    </div>
+                    <div class="fill-blank">
+                        <p>4. Vor dem Kurs macht man oft einen <input type="text" name="q14" data-correct="Test">, damit man die richtige Gruppe findet.</p>
+                    </div>
+                    <div class="fill-blank">
+                        <p>5. Eine Sprachreise dauert meistens ein paar <input type="text" name="q15" data-correct="Wochen">.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            // Radio button sorularını kontrol et
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (selectedOption) {
+                    if (selectedOption === correctOption) {
+                        feedback += `Frage ${index + 1}: Richtig!<br>`;
+                    } else {
+                        feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                        allCorrect = false;
+                    }
+                }
+            });
+
+            // Boşluk doldurma sorularını kontrol et
+            const fillBlanks = document.querySelectorAll('.fill-blank input');
+            fillBlanks.forEach((input, index) => {
+                const correctAnswer = input.getAttribute('data-correct');
+                if (input.value.toLowerCase() === correctAnswer.toLowerCase()) {
+                    feedback += `Lückentext ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Lückentext ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+
+        // Kelime seçme işlevselliği
+        const words = document.querySelectorAll('.word');
+        words.forEach(word => {
+            word.addEventListener('click', () => {
+                const input = document.activeElement;
+                if (input && input.tagName === 'INPUT') {
+                    input.value = word.getAttribute('data-word');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

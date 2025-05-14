@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Meine erste schlechte Erfahrung beim Online-Shopping</h2>
+            
+            <div class="text">
+                <p>Hallo zusammen,</p>
+                <p>ich bestelle oft Dinge im Internet und hatte bisher nie Probleme. Vor einiger Zeit habe ich aber leider eine schlechte Erfahrung gemacht. Ich habe einen neuen Online-Shop entdeckt, der mit sehr günstiger Kleidung geworben hat. Es gab dort großartige Angebote für T-Shirts und Jacken. Um dort etwas zu bestellen, musste ich ein Kundenkonto anlegen und meine persönlichen Daten eingeben.</p>
+                <p>Ich entschied mich für eine Jacke, die nur 29,90 Euro gekostet hat und habe sie bestellt. Einen Tag später bekam ich eine E-Mail mit zwei Rechnungen: eine für die Jacke und eine weitere über 96 Euro für ein angebliches Abo. In der Nachricht stand, ich hätte einen Abonnementvertrag abgeschlossen und müsse den Betrag überweisen.</p>
+                <p>Ich war überrascht, weil ich nie ein Abo abgeschlossen habe. Also schrieb ich sofort zurück und erklärte, dass ich nur die Jacke kaufen wollte. Leider bekam ich keine Antwort. Ein paar Wochen später kam eine Mahnung. Ich versuchte es telefonisch, aber es ging nur ein Anrufbeantworter ran. Noch später erhielt ich eine zweite Mahnung – diesmal mit Mahngebühren.</p>
+                <p>Erst als ich schrieb, dass ich rechtliche Schritte prüfen würde, hörte ich nichts mehr von dem Shop. Ich war erleichtert, aber gleichzeitig auch sehr vorsichtig geworden. Seitdem bestelle ich nur noch bei bekannten Online-Shops, bei denen ich gute Erfahrungen gemacht habe.</p>
+                <p>Mein Tipp an euch: Lest euch vor einer Bestellung immer alles genau durch. Prüft, ob der Shop seriös ist und schaut euch Bewertungen von anderen Kunden an. So kann man sich viel Ärger sparen.</p>
+                <p>Viele Grüße<br>Tim</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Tim hat zum ersten Mal online eingekauft.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Tim hat versehentlich ein Abo abgeschlossen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Der Kundenservice des Shops hat Tim sehr gut geholfen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Tim hat auf seine erste E-Mail keine Antwort bekommen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Tim hat sich schließlich mit einem Anwalt beraten.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>6. Seit dieser Erfahrung prüft Tim Online-Shops genauer.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption === correctOption) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

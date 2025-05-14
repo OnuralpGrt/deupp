@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - Perfekt B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .question p {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #e9ecef;
+        }
+
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #357abd;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfekt B1</h1>
+        <p class="description">Kreuzen Sie die richtige Antwort an.</p>
+
+        <div class="question" data-answer="a">
+            <p>Ich __________, dass er es nicht böse __________.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="a">
+                    a) habe verstanden - gemeint hat
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="b">
+                    b) bin verstanden – gemein ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="c">
+                    c) habe verstehe – habt gemeint
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="c">
+            <p>Maria __________, dass sie doch nach London reist.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="a">
+                    a) ist sich entschieden
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="b">
+                    b) hat sich entscheiden
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="c">
+                    c) hat sich entschieden
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Wir __________, Herrn Müller anzurufen.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q3" value="a">
+                    a) sind vergessen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="b">
+                    b) haben vergessen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="c">
+                    c) haben vergisst
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Er __________ den Weg mehrmals __________.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="a">
+                    a) hat - beschrieben
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="b">
+                    b) ist - beschrieben
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="c">
+                    c) habe - beschreiben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Er __________ letzte Woche ein unvergessliches Konzert ____.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q5" value="a">
+                    a) hast - erleben
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="b">
+                    b) hat - erlebt
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="c">
+                    c) ist - erlebt
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Was _____ du ihm gestern __________?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q6" value="a">
+                    a) hast - empfohlen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="b">
+                    b) hast - empfehlen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="c">
+                    c) habst - empfohlenen
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="c">
+            <p>___ du das neue Buch von dem Autor __________?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q7" value="a">
+                    a) Bist - gelesen
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="b">
+                    b) Habst - geliest
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="c">
+                    c) Hast - gelesen
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Frau Sanchez __________ ihre Sprachkenntnisse ___.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q8" value="a">
+                    a) hat - verbessert
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="b">
+                    b) haben - verbessert
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="c">
+                    c) haben - verbessert
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="c">
+            <p>Wir __________ die Präsentation _________.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q9" value="a">
+                    a) haben - vorbereiten
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="b">
+                    b) sind - vorbereitet
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="c">
+                    c) haben - vorbereitet
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Er __________ jedes Mal eine interessante Geschichte _____.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q10" value="a">
+                    a) hat - erfunden
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="b">
+                    b) ist - erfunden
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="c">
+                    c) habt - erfunden
+                </label>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Kontrolle</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let correctCount = 0;
+            let totalCount = questions.length;
+
+            questions.forEach(question => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctAnswer = question.getAttribute('data-answer');
+                
+                if (selectedOption) {
+                    const options = question.querySelectorAll('.option');
+                    options.forEach(option => {
+                        option.style.backgroundColor = '';
+                        option.style.color = '';
+                    });
+
+                    if (selectedOption.value === correctAnswer) {
+                        selectedOption.parentElement.style.backgroundColor = '#4CAF50';
+                        selectedOption.parentElement.style.color = 'white';
+                        correctCount++;
+                    } else {
+                        selectedOption.parentElement.style.backgroundColor = '#f44336';
+                        selectedOption.parentElement.style.color = 'white';
+                    }
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            const percentage = (correctCount / totalCount) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Tebrikler! Tüm cevaplar doğru! (${correctCount}/${totalCount})`;
+                resultDiv.className = 'result correct';
+            } else {
+                resultDiv.innerHTML = `Bazı cevaplar yanlış. Doğru cevap sayısı: ${correctCount}/${totalCount}`;
+                resultDiv.className = 'result incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

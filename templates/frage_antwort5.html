@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .dialogue {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .speaker {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .options {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .option {
+            margin-bottom: 5px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background-color: #f5f5f5;
+        }
+
+        .selected {
+            background-color: var(--secondary-color);
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - A2</h1>
+        
+        <div class="exercise">
+            <h2>Telefongespräch: Ergänzen Sie die richtigen Sätze</h2>
+            <p>Ergänzen Sie die richtigen Sätze zu der entsprechenden Lücke. Beachten Sie dabei den Inhalt.</p>
+            
+            <div class="dialogue">
+                <div class="speaker">Zentrale:</div>
+                <div>Ja, Guten Tag.</div>
+                <select class="user-select" data-correct="Was kann ich für Sie tun?">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Was kann ich für Sie tun?">Was kann ich für Sie tun?</option>
+                    <option value="Worum geht es Herr Akyurt?">Worum geht es Herr Akyurt?</option>
+                    <option value="Bleiben Sie bitte dran, ich verbinde Sie.">Bleiben Sie bitte dran, ich verbinde Sie.</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Akyurt:</div>
+                <div>Guten Tag. Mein Name ist Kaya Akyurt.</div>
+                <select class="user-select" data-correct="Kann ich bitte Herrn Groß sprechen?">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Kann ich bitte Herrn Groß sprechen?">Kann ich bitte Herrn Groß sprechen?</option>
+                    <option value="Es geht um eine noch nicht versendete Rechnung.">Es geht um eine noch nicht versendete Rechnung.</option>
+                    <option value="Oh, Entschuldigung.">Oh, Entschuldigung.</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Zentrale:</div>
+                <select class="user-select" data-correct="Meinen Sie Herrn Grötz von der Finanzabteilung?">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Meinen Sie Herrn Grötz von der Finanzabteilung?">Meinen Sie Herrn Grötz von der Finanzabteilung?</option>
+                    <option value="Worum geht es Herr Akyurt?">Worum geht es Herr Akyurt?</option>
+                    <option value="Bleiben Sie bitte dran, ich verbinde Sie.">Bleiben Sie bitte dran, ich verbinde Sie.</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Akyurt:</div>
+                <div>Oh, Entschuldigung.</div>
+                <div>Ja, richtig.</div>
+                <select class="user-select" data-correct="Könnten Sie mich mit ihm verbinden?">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Könnten Sie mich mit ihm verbinden?">Könnten Sie mich mit ihm verbinden?</option>
+                    <option value="Es geht um eine noch nicht versendete Rechnung.">Es geht um eine noch nicht versendete Rechnung.</option>
+                    <option value="Kein Problem, Herr Grötz.">Kein Problem, Herr Grötz.</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Zentrale:</div>
+                <select class="user-select" data-correct="Worum geht es Herr Akyurt?">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Worum geht es Herr Akyurt?">Worum geht es Herr Akyurt?</option>
+                    <option value="Bleiben Sie bitte dran, ich verbinde Sie.">Bleiben Sie bitte dran, ich verbinde Sie.</option>
+                    <option value="Meinen Sie Herrn Grötz von der Finanzabteilung?">Meinen Sie Herrn Grötz von der Finanzabteilung?</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Akyurt:</div>
+                <select class="user-select" data-correct="Es geht um eine noch nicht versendete Rechnung.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Es geht um eine noch nicht versendete Rechnung.">Es geht um eine noch nicht versendete Rechnung.</option>
+                    <option value="Kein Problem, Herr Grötz.">Kein Problem, Herr Grötz.</option>
+                    <option value="Sie sind immer sehr pünktlich.">Sie sind immer sehr pünktlich.</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Zentrale:</div>
+                <select class="user-select" data-correct="Bleiben Sie bitte dran, ich verbinde Sie.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Bleiben Sie bitte dran, ich verbinde Sie.">Bleiben Sie bitte dran, ich verbinde Sie.</option>
+                    <option value="Worum geht es Herr Akyurt?">Worum geht es Herr Akyurt?</option>
+                    <option value="Meinen Sie Herrn Grötz von der Finanzabteilung?">Meinen Sie Herrn Grötz von der Finanzabteilung?</option>
+                </select>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Grötz:</div>
+                <div>Guten Tag, Herr Akyurt. Ich kontrolliere sofort die Lieferungen.</div>
+                <select class="user-select" data-correct="Die Rechnung wurde versendet, aber sie ist in der Post stecken geblieben.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Die Rechnung wurde versendet, aber sie ist in der Post stecken geblieben.">Die Rechnung wurde versendet, aber sie ist in der Post stecken geblieben.</option>
+                    <option value="Ich denke, die Rechnung bekommen Sie morgen.">Ich denke, die Rechnung bekommen Sie morgen.</option>
+                    <option value="Vielen Dank für Ihr Verständnis.">Vielen Dank für Ihr Verständnis.</option>
+                </select>
+                <div>Ich entschuldige mich für die Verzögerung.</div>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Akyurt:</div>
+                <select class="user-select" data-correct="Kein Problem, Herr Grötz.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Kein Problem, Herr Grötz.">Kein Problem, Herr Grötz.</option>
+                    <option value="Sie sind immer sehr pünktlich.">Sie sind immer sehr pünktlich.</option>
+                    <option value="Bitte, Auf Wiederhören Herr Grötz.">Bitte, Auf Wiederhören Herr Grötz.</option>
+                </select>
+                <div>Sie sind immer sehr pünktlich.</div>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Grötz:</div>
+                <select class="user-select" data-correct="Ich denke, die Rechnung bekommen Sie morgen.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Ich denke, die Rechnung bekommen Sie morgen.">Ich denke, die Rechnung bekommen Sie morgen.</option>
+                    <option value="Vielen Dank für Ihr Verständnis.">Vielen Dank für Ihr Verständnis.</option>
+                    <option value="Die Rechnung wurde versendet, aber sie ist in der Post stecken geblieben.">Die Rechnung wurde versendet, aber sie ist in der Post stecken geblieben.</option>
+                </select>
+                <div>Vielen Dank für Ihr Verständnis.</div>
+            </div>
+
+            <div class="dialogue">
+                <div class="speaker">Herr Akyurt:</div>
+                <select class="user-select" data-correct="Bitte, Auf Wiederhören Herr Grötz.">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="Bitte, Auf Wiederhören Herr Grötz.">Bitte, Auf Wiederhören Herr Grötz.</option>
+                    <option value="Kein Problem, Herr Grötz.">Kein Problem, Herr Grötz.</option>
+                    <option value="Sie sind immer sehr pünktlich.">Sie sind immer sehr pünktlich.</option>
+                </select>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const selects = document.querySelectorAll('.user-select');
+            let allCorrect = true;
+            let feedback = '';
+
+            selects.forEach((select, index) => {
+                const correctAnswer = select.getAttribute('data-correct');
+                const userAnswer = select.value;
+                
+                if (userAnswer === correctAnswer) {
+                    feedback += `Teil ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Teil ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Demonstrativartikel A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demonstrativartikel - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Endungen der Demonstrativartikel</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p>Dies<input type="text" data-answer="er" id="answer1"> Professor macht immer schwere Prüfungen.</p>
+                <p>Dies<input type="text" data-answer="e" id="answer2"> Bücher sind sehr teuer.</p>
+                <p>Dies<input type="text" data-answer="en" id="answer3"> Film habe ich schon gesehen.</p>
+                <p>Dies<input type="text" data-answer="en" id="answer4"> Mann kenne ich nicht.</p>
+                <p>Dies<input type="text" data-answer="es" id="answer5"> Gericht mag ich nicht.</p>
+                <p>Dies<input type="text" data-answer="e" id="answer6"> Kinder spielen kein Fußball.</p>
+                <p>Ich fahre jeden Tag mit dies<input type="text" data-answer="em" id="answer7"> Auto zur Uni.</p>
+                <p>Wir machen mit dies<input type="text" data-answer="em" id="answer8"> Lehrbuch Deutschunterricht.</p>
+                <p>Dies<input type="text" data-answer="e" id="answer9"> Prüfung war nicht einfach.</p>
+                <p>Mit dies<input type="text" data-answer="er" id="answer10"> Aufgabe habe ich verstanden, wie man Adjektive dekliniert.</p>
+                <p>Schau mal! Hier ist eine sehr teure Krawatte. Ein Mann mit dies<input type="text" data-answer="er" id="answer11"> Krawatte ist immer elegant auf Events.</p>
+                <p>Mit dies<input type="text" data-answer="em" id="answer12"> Schnellzug kommst du in einer halben Stunde zu Hause an.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

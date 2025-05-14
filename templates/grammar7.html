@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Doppelkonnektoren B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .word-bank {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+            text-align: center;
+        }
+        .word {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Doppelkonnektoren - B1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Lesen Sie den Text und füllen Sie die Lücken mit den passenden Doppelkonnektoren</h3>
+            <p>(sowohl ... als auch, entweder ... oder, weder ... noch, nicht nur ... sondern auch, zwar ... aber)</p>
+        </div>
+
+        <div class="word-bank">
+            <div class="word">sowohl</div>
+            <div class="word">als auch</div>
+            <div class="word">entweder</div>
+            <div class="word">oder</div>
+            <div class="word">weder</div>
+            <div class="word">noch</div>
+            <div class="word">nicht nur</div>
+            <div class="word">sondern auch</div>
+            <div class="word">zwar</div>
+            <div class="word">aber</div>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p>Max hat gerade sein Studium begonnen und erzählt von seinen Erfahrungen:</p>
+                <p>„An der Universität gibt es <input type="text" data-answer="sowohl" id="answer1"> viele Vorlesungen <input type="text" data-answer="als auch" id="answer2"> Seminare, die ich besuchen muss. Mein Stundenplan ist sehr voll, deshalb bleibt mir <input type="text" data-answer="weder" id="answer3"> Zeit für Sport <input type="text" data-answer="noch" id="answer4"> für Hobbys. Ich habe <input type="text" data-answer="nicht nur" id="answer5"> viele Bücher in der Bibliothek ausgeliehen, <input type="text" data-answer="sondern auch" id="answer6"> neue Bücher für die Hausarbeiten gekauft. Jetzt muss ich mich entscheiden: <input type="text" data-answer="entweder" id="answer7"> mache ich ein freiwilliges Praktikum in den Ferien, <input type="text" data-answer="oder" id="answer8"> ich arbeite an meinem Forschungsprojekt. Es ist <input type="text" data-answer="zwar" id="answer9"> anstrengend, <input type="text" data-answer="aber" id="answer10"> auch sehr spannend."</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        // Kelime bankasından tıklama ile doldurma
+        const words = document.querySelectorAll('.word');
+        words.forEach(word => {
+            word.addEventListener('click', function() {
+                const focusedInput = document.querySelector('input:focus');
+                if (focusedInput) {
+                    focusedInput.value = this.textContent;
+                }
+            });
+        });
+
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {  // Tam eşleşme kontrolü
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

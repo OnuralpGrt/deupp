@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .matching-pairs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .pair {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .pair select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Freundschaft im Wandel der Zeit</h2>
+            
+            <div class="text">
+                <p>Freunde sind ein wichtiger Teil unseres Lebens – das war früher so und ist auch heute noch so. Eine aktuelle Studie hat untersucht, wie sich Freundschaften im Laufe der Generationen verändert haben. Dafür wurden sowohl ältere Menschen als auch Jugendliche befragt.</p>
+                <p>Früher blieben Freundschaften oft ein Leben lang bestehen. Schon in der Kindheit geschlossene Freundschaften hielten oft bis ins hohe Alter. Die Menschen blieben meist in ihrer Heimatstadt, was es einfacher machte, Kontakt zu halten. Außerdem hatten Freundschaften einen sehr hohen Stellenwert: Freunde galten fast als Teil der Familie.</p>
+                <p>Heute sieht das etwas anders aus. Junge Menschen wechseln häufiger ihren Wohnort, zum Beispiel für das Studium oder die Arbeit. Dadurch ist es schwieriger, alte Freundschaften dauerhaft zu pflegen. Neue Kontakte entstehen oft schnell – etwa über soziale Medien. Trotzdem legen junge Leute großen Wert auf gute Freundschaften. Viele gaben an, dass sie sich ein Leben ohne Freunde nicht vorstellen können.</p>
+                <p>Die Studie zeigt auch: Freundschaften erfüllen wichtige Funktionen. Freunde geben emotionale Unterstützung, helfen bei Problemen und sorgen für schöne Erlebnisse im Alltag. Auch wenn sich die Art der Freundschaften verändert hat, bleibt ihre Bedeutung für das persönliche Wohlbefinden gleich hoch.</p>
+            </div>
+
+            <div class="questions">
+                <h3>Aufgabe 1: Satzhälften verbinden</h3>
+                <div class="matching-pairs">
+                    <div class="pair">
+                        <span>1. Früher hielten Freundschaften oft ein Leben lang,</span>
+                        <select name="q1" data-correct="D">
+                            <option value="">Wählen Sie...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                    <div class="pair">
+                        <span>2. Junge Menschen legen heute großen Wert auf Freundschaften,</span>
+                        <select name="q2" data-correct="C">
+                            <option value="">Wählen Sie...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                    <div class="pair">
+                        <span>3. Die Art, Freundschaften zu pflegen, hat sich verändert,</span>
+                        <select name="q3" data-correct="A">
+                            <option value="">Wählen Sie...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                    <div class="pair">
+                        <span>4. Freundschaften tragen auch heute stark zum Glück bei,</span>
+                        <select name="q4" data-correct="B">
+                            <option value="">Wählen Sie...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                </div>
+
+                <h3>Aufgabe 2: Fragen zu Antworten finden</h3>
+                <div class="question">
+                    <p>1. Antwort: In ihrer Heimatstadt.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="a" data-correct="true"> a) Wo lebten die Menschen früher meistens?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="b"> b) Wann verließen die Menschen ihre Heimatstadt?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="c"> c) Warum war das Leben früher schwieriger?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Antwort: Durch soziale Medien und neue Lebenssituationen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="a" data-correct="true"> a) Wie entstehen heute neue Freundschaften?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="b"> b) Wo treffen sich junge Menschen heute?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="c"> c) Wann entscheiden sich junge Menschen für neue Freunde?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Antwort: Emotionale Unterstützung und schöne Erlebnisse.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="a"> a) Warum kündigen manche Menschen ihre Freundschaften?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="b"> b) Wann braucht man Freunde am dringendsten?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="c" data-correct="true"> c) Was bieten Freundschaften den Menschen?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Antwort: Weil viele Menschen für Studium oder Arbeit umziehen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="a"> a) Wo finden die meisten Umzüge statt?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="b" data-correct="true"> b) Warum ist es heute schwieriger, alte Freundschaften zu behalten?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="c"> c) Wie lange dauert eine Freundschaft heutzutage?
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            const pairs = document.querySelectorAll('.pair select');
+            let allCorrect = true;
+            let feedback = '';
+
+            // Satzhälften verbinden kontrolü
+            pairs.forEach((select, index) => {
+                const correctAnswer = select.getAttribute('data-correct');
+                if (select.value === correctAnswer) {
+                    feedback += `Satz ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Satz ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            // Multiple Choice kontrolü
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (selectedOption) {
+                    if (selectedOption === correctOption) {
+                        feedback += `Frage ${index + 1}: Richtig!<br>`;
+                    } else {
+                        feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                        allCorrect = false;
+                    }
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B2</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Tabelle: Finden Sie den Artikel zu dem jeweiligen Wort und verbalisieren Sie den Nomen!</p>
+            
+            <table>
+                <tr>
+                    <th>Artikel</th>
+                    <th>Nomen</th>
+                    <th>Verb</th>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Erlaubnis</td>
+                    <td><input type="text" class="input-field" data-answer="erlauben"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Abschluss</td>
+                    <td><input type="text" class="input-field" data-answer="abschließen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Einführung</td>
+                    <td><input type="text" class="input-field" data-answer="einführen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Fortschritt</td>
+                    <td><input type="text" class="input-field" data-answer="fortschreiten"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Ersatz</td>
+                    <td><input type="text" class="input-field" data-answer="ersetzen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Verdienst</td>
+                    <td><input type="text" class="input-field" data-answer="verdienen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Migration</td>
+                    <td><input type="text" class="input-field" data-answer="migrieren"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Steigerung</td>
+                    <td><input type="text" class="input-field" data-answer="steigern"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Abfahrt</td>
+                    <td><input type="text" class="input-field" data-answer="abfahren"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer">die"></td>
+                    <td>Finanz</td>
+                    <td><input type="text" class="input-field" data-answer="finanzieren"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Betrieb</td>
+                    <td><input type="text" class="input-field" data-answer="betreiben"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Aufbau</td>
+                    <td><input type="text" class="input-field" data-answer="aufbauen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Beitrag</td>
+                    <td><input type="text" class="input-field" data-answer="beitragen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Beginn</td>
+                    <td><input type="text" class="input-field" data-answer="beginnen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="das"></td>
+                    <td>Verhalten</td>
+                    <td><input type="text" class="input-field" data-answer="sich verhalten"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="das"></td>
+                    <td>Gespräch</td>
+                    <td><input type="text" class="input-field" data-answer="sich unterhalten"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Einfluss</td>
+                    <td><input type="text" class="input-field" data-answer="beeinflussen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="das"></td>
+                    <td>Ergebnis</td>
+                    <td><input type="text" class="input-field" data-answer="ergeben"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Verbindung</td>
+                    <td><input type="text" class="input-field" data-answer="verbinden"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="das"></td>
+                    <td>Fernsehen</td>
+                    <td><input type="text" class="input-field" data-answer="fernsehen"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Kommunikation</td>
+                    <td><input type="text" class="input-field" data-answer="kommunizieren"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="die"></td>
+                    <td>Produktion</td>
+                    <td><input type="text" class="input-field" data-answer="produzieren"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="input-field" data-answer="der"></td>
+                    <td>Konsum</td>
+                    <td><input type="text" class="input-field" data-answer="konsumieren"></td>
+                </tr>
+            </table>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

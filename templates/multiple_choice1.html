@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: var(--secondary-color);
+        }
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiple Choice - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Was ist richtig? Kreuzen Sie an.</h3>
+            <p>Wählen Sie die richtige Antwort für jede Frage.</p>
+        </div>
+
+        <div class="questions">
+            <div class="question" data-answer="b">
+                <p>1. Guten Tag, ich bin Tim Schneider. Und wie _________ Sie?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) heißt</div>
+                    <div class="option" onclick="selectOption(this)">b) heißen</div>
+                    <div class="option" onclick="selectOption(this)">c) sind</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>2. Was _________ du?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) spricht</div>
+                    <div class="option" onclick="selectOption(this)">b) sprechst</div>
+                    <div class="option" onclick="selectOption(this)">c) sprichst</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>3. _________ kommen Sie, Herr Dupont?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Wo ... In</div>
+                    <div class="option" onclick="selectOption(this)">b) Woher ... Aus</div>
+                    <div class="option" onclick="selectOption(this)">c) Woher ... Im</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>4. _________ du Kinder?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Haben</div>
+                    <div class="option" onclick="selectOption(this)">b) Habt</div>
+                    <div class="option" onclick="selectOption(this)">c) Hast</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>5. Das _________ meine Schwester und das _________ meine Eltern.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) ist ... sind</div>
+                    <div class="option" onclick="selectOption(this)">b) ist ... ist</div>
+                    <div class="option" onclick="selectOption(this)">c) sind ... ist</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>6. Das sind Claire und Charles. _________ leben in der Schweiz.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Wir</div>
+                    <div class="option" onclick="selectOption(this)">b) Sie</div>
+                    <div class="option" onclick="selectOption(this)">c) Ihr</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>7. Wo _________ ihr?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) kommt</div>
+                    <div class="option" onclick="selectOption(this)">b) liebt</div>
+                    <div class="option" onclick="selectOption(this)">c) wohnt</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>8. Mama, ist das eine Tomate?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) nicht</div>
+                    <div class="option" onclick="selectOption(this)">b) keine</div>
+                    <div class="option" onclick="selectOption(this)">c) kein</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>9. Möchten Sie sonst noch etwas?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Äpfel</div>
+                    <div class="option" onclick="selectOption(this)">b) Apfeln</div>
+                    <div class="option" onclick="selectOption(this)">c) Äpfeln</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>10. _________ du auch gern Pizza?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Esst</div>
+                    <div class="option" onclick="selectOption(this)">b) Essen</div>
+                    <div class="option" onclick="selectOption(this)">c) Isst</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>11. Wie gefällt Ihnen der Tisch hier?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) sie</div>
+                    <div class="option" onclick="selectOption(this)">b) es</div>
+                    <div class="option" onclick="selectOption(this)">c) er</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>12. Das Wohnzimmer ist sehr klein.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) nicht</div>
+                    <div class="option" onclick="selectOption(this)">b) kein</div>
+                    <div class="option" onclick="selectOption(this)">c) keine</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>13. Ist die Wohnung teuer?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) breit</div>
+                    <div class="option" onclick="selectOption(this)">b) neu</div>
+                    <div class="option" onclick="selectOption(this)">c) billig</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>14. Wie spät ist es?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) fünf nach halb eins</div>
+                    <div class="option" onclick="selectOption(this)">b) fünfundzwanzig nach dreizehn</div>
+                    <div class="option" onclick="selectOption(this)">c) fünf vor halb zwei</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>15. Was machst du gern?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) fernsehe</div>
+                    <div class="option" onclick="selectOption(this)">b) sehe gern fern</div>
+                    <div class="option" onclick="selectOption(this)">c) sehen fern gern</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>16. Wann ist die Praxis geöffnet?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Von ... bis</div>
+                    <div class="option" onclick="selectOption(this)">b) Um ... um</div>
+                    <div class="option" onclick="selectOption(this)">c) Bis ... von</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>17. Was machst du _______ Freitag?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) bis ... am</div>
+                    <div class="option" onclick="selectOption(this)">b) am ... um</div>
+                    <div class="option" onclick="selectOption(this)">c) in ... um</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>18. Hast du _________ Lieblingsfilm?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) ein</div>
+                    <div class="option" onclick="selectOption(this)">b) der</div>
+                    <div class="option" onclick="selectOption(this)">c) einen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>19. Wie findest du die Lampe?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) keine</div>
+                    <div class="option" onclick="selectOption(this)">b) nicht</div>
+                    <div class="option" onclick="selectOption(this)">c) keinen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>20. Was ist dein Hobby?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Liest du</div>
+                    <div class="option" onclick="selectOption(this)">b) Lest du</div>
+                    <div class="option" onclick="selectOption(this)">c) Lesest du</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>21. Hast du den Wein nicht dabei?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Ja</div>
+                    <div class="option" onclick="selectOption(this)">b) Nein</div>
+                    <div class="option" onclick="selectOption(this)">c) Doch</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>22. Die Suppe schmeckt nicht. Ich _________ einfach nicht kochen.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) können</div>
+                    <div class="option" onclick="selectOption(this)">b) könne</div>
+                    <div class="option" onclick="selectOption(this)">c) kann</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>23. Die Wochenendkurse hier sind sehr interessant.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) wolle ... machen</div>
+                    <div class="option" onclick="selectOption(this)">b) will … machen</div>
+                    <div class="option" onclick="selectOption(this)">c) möchten … machen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>24. Was _________ du am Sonntag gemacht?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) bist</div>
+                    <div class="option" onclick="selectOption(this)">b) kannst</div>
+                    <div class="option" onclick="selectOption(this)">c) hast</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>25. Ich bin am Wochenende zu Marco _________.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) gegehen</div>
+                    <div class="option" onclick="selectOption(this)">b) gekommt</div>
+                    <div class="option" onclick="selectOption(this)">c) gefahren</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>26. Was sind Sie von Beruf?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) als</div>
+                    <div class="option" onclick="selectOption(this)">b) bei</div>
+                    <div class="option" onclick="selectOption(this)">c) in</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>27. Wir gehen Fußball spielen.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Rufst … an</div>
+                    <div class="option" onclick="selectOption(this)">b) Kommst … mit</div>
+                    <div class="option" onclick="selectOption(this)">c) Räumst … auf</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>28. Tim hat Lara im Deutschkurs _________.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) gekennenlernt</div>
+                    <div class="option" onclick="selectOption(this)">b) kennengelernen</div>
+                    <div class="option" onclick="selectOption(this)">c) kennengelernt</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>29. Wie heißt das Partizip II von "sprechen"?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) gesprechen</div>
+                    <div class="option" onclick="selectOption(this)">b) gesprecht</div>
+                    <div class="option" onclick="selectOption(this)">c) gesprochen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>30. Die Sonne _________.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) schneit</div>
+                    <div class="option" onclick="selectOption(this)">b) scheint</div>
+                    <div class="option" onclick="selectOption(this)">c) regnet</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>31. Es sind nur 3 Grad. Es ist _________.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) kalt</div>
+                    <div class="option" onclick="selectOption(this)">b) warm</div>
+                    <div class="option" onclick="selectOption(this)">c) heiß</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>32. Wie viel Uhr ist es?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) sechs Uhr fünfzehn</div>
+                    <div class="option" onclick="selectOption(this)">b) Viertel nach achtzehn</div>
+                    <div class="option" onclick="selectOption(this)">c) achtzehn Uhr fünfzehn</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>33. Wie viel Uhr ist es?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Es ist zwei vor zwanzig</div>
+                    <div class="option" onclick="selectOption(this)">b) Es ist kurz vor acht</div>
+                    <div class="option" onclick="selectOption(this)">c) Es ist kurz nach acht</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>34. Wie heißt das Gegenteil von "dunkel"?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) groß</div>
+                    <div class="option" onclick="selectOption(this)">b) hell</div>
+                    <div class="option" onclick="selectOption(this)">c) alt</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>35. Das ist Sofia und das ist _________ Vater Walter.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) ihr</div>
+                    <div class="option" onclick="selectOption(this)">b) sein</div>
+                    <div class="option" onclick="selectOption(this)">c) mein</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>36. Das ist Tim und das ist _________ Freundin Lara.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) deine</div>
+                    <div class="option" onclick="selectOption(this)">b) seine</div>
+                    <div class="option" onclick="selectOption(this)">c) ihre</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>37. Frau Baumann, ist das _________ Schwester?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) ihre</div>
+                    <div class="option" onclick="selectOption(this)">b) deine</div>
+                    <div class="option" onclick="selectOption(this)">c) Ihre</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>38. Du studierst nicht, oder?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Ja</div>
+                    <div class="option" onclick="selectOption(this)">b) Doch</div>
+                    <div class="option" onclick="selectOption(this)">c) Nein</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>39. Ich habe __________ Laptop, aber __________ Handy.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) einen / keinen</div>
+                    <div class="option" onclick="selectOption(this)">b) kein / ein</div>
+                    <div class="option" onclick="selectOption(this)">c) keinen / ein</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>40. Was hätten Sie gern?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Kuchen</div>
+                    <div class="option" onclick="selectOption(this)">b) Suppe</div>
+                    <div class="option" onclick="selectOption(this)">c) Tee</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Önce aynı sorudaki diğer seçeneklerin seçimini kaldır
+            const question = element.parentElement;
+            const options = question.getElementsByClassName('option');
+            for (let option of options) {
+                option.classList.remove('selected');
+            }
+            
+            // Seçilen seçeneği işaretle
+            element.classList.add('selected');
+        }
+
+        function checkAnswers() {
+            const questions = document.getElementsByClassName('question');
+            let allCorrect = true;
+            
+            for (let question of questions) {
+                const correctAnswer = question.dataset.answer;
+                const options = question.getElementsByClassName('option');
+                let selectedOption = null;
+                
+                // Seçilen seçeneği bul
+                for (let option of options) {
+                    if (option.classList.contains('selected')) {
+                        selectedOption = option;
+                        break;
+                    }
+                }
+                
+                // Tüm seçeneklerin sınıflarını temizle
+                for (let option of options) {
+                    option.classList.remove('correct', 'incorrect');
+                }
+                
+                // Seçim yapılmamışsa veya yanlışsa
+                if (!selectedOption || selectedOption.textContent.charAt(0) !== correctAnswer) {
+                    allCorrect = false;
+                    if (selectedOption) {
+                        selectedOption.classList.add('incorrect');
+                    }
+                    // Doğru cevabı göster
+                    for (let option of options) {
+                        if (option.textContent.charAt(0) === correctAnswer) {
+                            option.classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Doğru seçim
+                    selectedOption.classList.add('correct');
+                }
+            }
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

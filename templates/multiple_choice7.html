@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - Sein/Haben A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .question p {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #e9ecef;
+        }
+
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #357abd;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sein/Haben A1</h1>
+        <p class="description">Wählen Sie die richtige Form von sein oder haben.</p>
+
+        <div class="question" data-answer="a">
+            <p>Ich _____ 20 Jahre alt.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q1" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q1" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ keine Geschwister.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q2" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q2" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ heute keine Zeit.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q3" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q3" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ heute keinen Unterricht.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q4" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q4" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Ich _____ eine Studentin.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q5" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q5" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wir _____ zu Hause.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q6" value="a">
+                    a) sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q6" value="b">
+                    b) haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Was _____ du von Beruf?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q7" value="a">
+                    a) bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q7" value="b">
+                    b) hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ du einen Stift?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q8" value="a">
+                    a) Bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q8" value="b">
+                    b) Hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ du krank?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q9" value="a">
+                    a) Bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q9" value="b">
+                    b) Hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ du ein Wörterbuch?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q10" value="a">
+                    a) Bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q10" value="b">
+                    b) Hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ du Hausaufgaben?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q11" value="a">
+                    a) Bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q11" value="b">
+                    b) Hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Du _____ sehr nett.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q12" value="a">
+                    a) bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q12" value="b">
+                    b) hast
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ eine Wohnung.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q13" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q13" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ ihr ein Auto?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q14" value="a">
+                    a) Seid
+                </label>
+                <label class="option">
+                    <input type="radio" name="q14" value="b">
+                    b) Habt
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ ihr an der Uni?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q15" value="a">
+                    a) Seid
+                </label>
+                <label class="option">
+                    <input type="radio" name="q15" value="b">
+                    b) Habt
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Ihr _____ zu spät.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q16" value="a">
+                    a) seid
+                </label>
+                <label class="option">
+                    <input type="radio" name="q16" value="b">
+                    b) habt
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ einen Termin.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q17" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q17" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Sie _____ eine Lehrerin von Beruf.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q18" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q18" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Ich _____ keinen Beruf.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q19" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q19" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wir _____ verheiratet und _____ zwei Kinder.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q20" value="a">
+                    a) sind / haben
+                </label>
+                <label class="option">
+                    <input type="radio" name="q20" value="b">
+                    b) haben / sind
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ Sie verheiratet?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q21" value="a">
+                    a) Sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q21" value="b">
+                    b) Haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ Sie Ihren Ausweis dabei?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q22" value="a">
+                    a) Sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q22" value="b">
+                    b) Haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wie _____ Ihre Handynummer?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q23" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q23" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Meine Wohnung _____ zwei Zimmer.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q24" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q24" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wie _____ Ihr Familienname bitte?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q25" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q25" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Meine Kollegin _____ leider nicht da.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q26" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q26" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ Sie eine Türkin?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q27" value="a">
+                    a) Sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q27" value="b">
+                    b) Haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wo _____ der Deutschkurs?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q28" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q28" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wie _____ deine Adresse?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q29" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q29" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ ihr noch Fragen?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q30" value="a">
+                    a) Seid
+                </label>
+                <label class="option">
+                    <input type="radio" name="q30" value="b">
+                    b) Habt
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Das _____ kein Problem.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q31" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q31" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Entschuldigen Sie, wir _____ ein Problem.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q32" value="a">
+                    a) sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q32" value="b">
+                    b) haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Entschuldigen Sie, wo _____ die Post?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q33" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q33" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Guten Tag, _____ hier noch frei?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q34" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q34" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Es tut mir leid, wir _____ heute keinen Platz.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q35" value="a">
+                    a) sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q35" value="b">
+                    b) haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Hallo, mein Name _____ Deniz.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q36" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q36" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ Sie Kleingeld?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q37" value="a">
+                    a) Sind
+                </label>
+                <label class="option">
+                    <input type="radio" name="q37" value="b">
+                    b) Haben
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Tut mir leid, ich _____ kein Geld dabei.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q38" value="a">
+                    a) bin
+                </label>
+                <label class="option">
+                    <input type="radio" name="q38" value="b">
+                    b) habe
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Wer _____ ein Wörterbuch?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q39" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q39" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wer _____ neu hier?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q40" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q40" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Wer _____ Wasser dabei?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q41" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q41" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ Istanbul die Hauptstadt von der Türkei?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q42" value="a">
+                    a) Ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q42" value="b">
+                    b) Hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ Deutsch Ihre Muttersprache?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q43" value="a">
+                    a) Ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q43" value="b">
+                    b) Hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ Sie Hobbys?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q44" value="a">
+                    a) Haben
+                </label>
+                <label class="option">
+                    <input type="radio" name="q44" value="b">
+                    b) Sind
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Es _____ zu laut hier.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q45" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q45" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>_____ du einen Computer?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q46" value="a">
+                    a) Hast
+                </label>
+                <label class="option">
+                    <input type="radio" name="q46" value="b">
+                    b) Bist
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Wo _____ meine Brille?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q47" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q47" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>Er _____ Fieber.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q48" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q48" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Das _____ nicht meine Tasche.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q49" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q49" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="a">
+            <p>Der Tisch _____ teuer.</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q50" value="a">
+                    a) ist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q50" value="b">
+                    b) hat
+                </label>
+            </div>
+        </div>
+
+        <div class="question" data-answer="b">
+            <p>_____ du Lust auf ein Spiel?</p>
+            <div class="options">
+                <label class="option">
+                    <input type="radio" name="q51" value="a">
+                    a) Bist
+                </label>
+                <label class="option">
+                    <input type="radio" name="q51" value="b">
+                    b) Hast
+                </label>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Kontrolle</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let correctCount = 0;
+            let totalCount = questions.length;
+
+            questions.forEach(question => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctAnswer = question.getAttribute('data-answer');
+                
+                if (selectedOption) {
+                    const options = question.querySelectorAll('.option');
+                    options.forEach(option => {
+                        option.style.backgroundColor = '';
+                        option.style.color = '';
+                    });
+
+                    if (selectedOption.value === correctAnswer) {
+                        selectedOption.parentElement.style.backgroundColor = '#4CAF50';
+                        selectedOption.parentElement.style.color = 'white';
+                        correctCount++;
+                    } else {
+                        selectedOption.parentElement.style.backgroundColor = '#f44336';
+                        selectedOption.parentElement.style.color = 'white';
+                    }
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            const percentage = (correctCount / totalCount) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Tebrikler! Tüm cevaplar doğru! (${correctCount}/${totalCount})`;
+                resultDiv.className = 'result correct';
+            } else {
+                resultDiv.innerHTML = `Bazı cevaplar yanlış. Doğru cevap sayısı: ${correctCount}/${totalCount}`;
+                resultDiv.className = 'result incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

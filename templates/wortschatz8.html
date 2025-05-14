@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - C1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - C1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Schreiben Sie die Verben im Präteritum!</p>
+
+            <div class="text">
+                <h3>Das Märchen von der mutigen Prinzessin</h3>
+                <p>
+                    Es <input type="text" class="input-field" data-answer="war"> einmal eine mutige Prinzessin namens Eliana, die in einem weit entfernten Königreich <input type="text" class="input-field" data-answer="lebte">. Eines Tages <input type="text" class="input-field" data-answer="entdeckte"> sie einen alten Baum im Wald, der einen glitzernden Schlüssel <input type="text" class="input-field" data-answer="verbarg">. Als sie den Schlüssel <input type="text" class="input-field" data-answer="nahm">, <input type="text" class="input-field" data-answer="erschien"> ein weiser alter Mann und <input type="text" class="input-field" data-answer="warnte"> sie: „Dieser Schlüssel öffnet ein magisches Schloss, das von einem Drachen bewacht wird."
+                </p>
+                <p>
+                    Eliana <input type="text" class="input-field" data-answer="ließ"> sich nicht abschrecken. Sie <input type="text" class="input-field" data-answer="reiste"> zum Schloss, wo der Drache sie <input type="text" class="input-field" data-answer="herausforderte">. „Nur wer drei Prüfungen besteht, darf eintreten", <input type="text" class="input-field" data-answer="erklärte"> er.
+                </p>
+                <p>
+                    Die erste Prüfung <input type="text" class="input-field" data-answer="war"> ein Rätsel, das Eliana mit ihrem Verstand <input type="text" class="input-field" data-answer="löste">. In der zweiten Prüfung <input type="text" class="input-field" data-answer="überquerte"> sie einen gefährlichen Pfad mit Geschick. Die dritte und letzte Prüfung <input type="text" class="input-field" data-answer="verlangte"> von ihr, ein wertvolles Artefakt aus dem Schloss zu stehlen. Mit List und Mut <input type="text" class="input-field" data-answer="gelang"> es ihr, das Artefakt unbemerkt zu entnehmen.
+                </p>
+                <p>
+                    Im Schloss <input type="text" class="input-field" data-answer="entdeckte"> Eliana einen wunderschönen Garten und einen Schatz. Der Drache, beeindruckt von ihrem Mut, <input type="text" class="input-field" data-answer="wurde"> ihr Freund. Gemeinsam <input type="text" class="input-field" data-answer="kehrten"> sie ins Königreich zurück und <input type="text" class="input-field" data-answer="förderte"> den Frieden zwischen Menschen und Drachen.
+                </p>
+                <p>
+                    So <input type="text" class="input-field" data-answer="lebten"> Eliana und der Drache glücklich und zufrieden bis ans Ende ihrer Tage.
+                </p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

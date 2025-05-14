@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeutschApp - Ana Sayfa</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--hover-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .welcome-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .welcome-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--primary-color);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-color: var(--primary-color);
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0;
+        }
+
+        .menu-item p {
+            margin: 0.5rem 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/home" class="logo">
+                <img src="/static/dert.jpg" alt="DeutschApp Logo">
+                DeutschApp
+            </a>
+            <div class="nav-links">
+                <a href="/home" class="nav-link">Startseite</a>
+                <a href="/logout" class="nav-link">Abmelden</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-card">
+            <h1 class="welcome-title">Hoş Geldiniz, {{ user.name }}!</h1>
+            <p>Almanca öğrenme yolculuğunuza devam etmek için aşağıdaki alıştırmalardan birini seçin.</p>
+        </div>
+
+        <div class="menu-grid">
+            <a href="/frage-antwort" class="menu-item">
+                <h3>Frage-Antwort</h3>
+                <img src="/static/Frage-Antwort.png" alt="Frage-Antwort">
+                <p>Frage-und-Antwort-Übungen</p>
+            </a>
+            <a href="/grammar" class="menu-item">
+                <h3>Grammer</h3>
+                <img src="/static/GRAMMER.png" alt="Grammer">
+                <p>Grammatikübungen</p>
+            </a>
+            <a href="/leseverstehen" class="menu-item">
+                <h3>Leseverstehen</h3>
+                <img src="/static/LESEVERSTEHEN.png" alt="Leseverstehen">
+                <p>Leseübungen zum Textverständnis</p>
+            </a>
+            <a href="/multiple_choice" class="menu-item">
+                <h3>Multiple Choice</h3>
+                <img src="/static/MultıpleChoıce.png" alt="Multiple Choice">
+                <p>Multiple-Choice-Aufgaben</p>
+            </a>
+            <a href="{{ url_for('satze_bilden') }}" class="menu-item">
+                <h3>Sätze Bilden</h3>
+                <img src="/static/SatzeBilden.png" alt="Sätze Bilden">
+                <p>Satzbildungsübungen</p>
+            </a>
+            <a href="/wortschatz" class="menu-item">
+                <h3>Wortschatz</h3>
+                <img src="/static/WORTSCHATZ.png" alt="Wortschatz">
+                <p>Wortschatzübungen</p>
+            </a>
+            <a href="/zuordnung" class="menu-item">
+                <h3>Zuordnung</h3>
+                <img src="/static/ZUORDNUNG-2.png" alt="Zuordnung">
+                <p>Zuordnungsübungen</p>
+            </a>
+        </div>
+
+       
+    </div>
+</body>
+</html> 

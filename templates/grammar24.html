@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Sätze bilden A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 500px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sätze bilden - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Bilden Sie Sätze oder Fragesätze.</h3>
+            <p>Achten Sie auf die Verbstellung und die richtige Konjugation. Beginnen Sie den Satz mit dem markierten Wort.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <div class="exercise-item">
+                    <p><strong>sein / Sie / was / von Beruf / ?</strong></p>
+                    <p><input type="text" data-answer="was sind sie von beruf" id="answer1"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>machen / du / beruflich / was / ?</strong></p>
+                    <p><input type="text" data-answer="was machen sie beruflich" id="answer2"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>sein / deine Mutter / von Beruf / was / ?</strong></p>
+                    <p><input type="text" data-answer="was ist deine mutter von beruf" id="answer3"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>deine Eltern / machen / beruflich / was /?</strong></p>
+                    <p><input type="text" data-answer="was machen deine eltern beruflich" id="answer4"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>mein Vater / als Ingenieur / arbeiten / bei Siemens /.</strong></p>
+                    <p><input type="text" data-answer="mein vater arbeitet als ingenieur bei siemens" id="answer5"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>arbeiten / als Verkäufer / bei Migros / Sie / ?</strong></p>
+                    <p><input type="text" data-answer="arbeiten sie als verkäufer bei migros" id="answer6"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>arbeiten / wer / im Restaurant / als Kellner / ?</strong></p>
+                    <p><input type="text" data-answer="wer arbeitet als kellner im restaurant" id="answer7"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>arbeiten / der Informatiker / von wann bis wann / in der Firma / ?</strong></p>
+                    <p><input type="text" data-answer="von wann bis wann arbeitet der informatiker in der firma" id="answer8"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>frei / wann / du / haben / ?</strong></p>
+                    <p><input type="text" data-answer="wann hast du frei" id="answer9"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>der Lehrer / unterrichten / wo / ?</strong></p>
+                    <p><input type="text" data-answer="wo unterrichtet der lehrer" id="answer10"></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

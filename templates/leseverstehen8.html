@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Weltmeister im Datenschutz</h2>
+            
+            <div class="text">
+                <p>Seit einigen Jahren gibt es in Europa einen besonderen Schutz für persönliche Daten. Die Datenschutz-Grundverordnung (DSGVO) sorgt dafür, dass Firmen und Organisationen vorsichtig mit unseren Informationen umgehen. Dazu gehören zum Beispiel Name, Adresse, Telefonnummer oder E-Mail.</p>
+                <p>Eine Firma darf diese Daten nur benutzen, wenn die Person vorher zugestimmt hat. Außerdem muss die Firma erklären, warum sie die Daten sammelt und wie lange sie sie speichert. Das Ziel ist, die Privatsphäre jedes Menschen zu schützen.</p>
+                <p>Die Regeln gelten in allen Ländern der Europäischen Union. Besonders im Internet ist der Datenschutz wichtig. Viele Webseiten fragen heute, ob man mit der Nutzung von Cookies einverstanden ist. Cookies speichern Informationen über das Verhalten im Internet.</p>
+                <p>Nicht alle Menschen wissen, wie sie ihre Daten schützen können. Starke Passwörter, sichere Internetseiten und Vorsicht beim Teilen von Informationen sind wichtige Schritte. So kann jeder selbst zur Datensicherheit beitragen.</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Was ist die Datenschutz-Grundverordnung (DSGVO)?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="a"> a) Eine App zum Schutz von Handys.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="b" data-correct="true"> b) Ein Gesetz in Europa zum Schutz persönlicher Daten.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="c"> c) Ein Programm für Firmen zur Datenspeicherung.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Was darf eine Firma mit persönlichen Daten machen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="a"> a) Sie darf alles ohne Zustimmung speichern.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="b" data-correct="true"> b) Sie darf sie nur mit Zustimmung nutzen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="c"> c) Sie darf Daten verkaufen, wenn sie will.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Was ist ein Cookie?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="a"> a) Ein kleines Geschenk von der Firma.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="b"> b) Ein Programm, das Passwörter erstellt.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="c" data-correct="true"> c) Eine Datei, die Informationen über das Surfverhalten speichert.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Was kann jeder Mensch tun, um Daten zu schützen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="a"> a) Keine E-Mails mehr schreiben.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="b"> b) Informationen nur auf Papier speichern.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="c" data-correct="true"> c) Starke Passwörter benutzen und vorsichtig im Internet sein.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Warum gibt es die DSGVO in der EU?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="a"> a) Um Werbung besser zu machen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="b" data-correct="true"> b) Um Daten von Menschen zu schützen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="c"> c) Um Firmen beim Datensammeln zu helfen.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption === correctOption) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}) ${correctOption.parentElement.textContent.trim()}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - Konjunktionen B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .text-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .text-container p {
+            margin-bottom: 15px;
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .option-group {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .option-group h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .option {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #e9ecef;
+        }
+
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #357abd;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Konjunktionen B1</h1>
+        <p class="description">Lütfen metindeki boşlukları uygun bağlaçlarla doldurun.</p>
+
+        <div class="text-container">
+            <p>In Großstädten gibt es viele Herausforderungen, besonders im Bereich Verkehr.</p>
+            <p>
+                <select class="conjunction-select" data-answer="Während">
+                    <option value="">-1-</option>
+                    <option value="Obwohl">Obwohl</option>
+                    <option value="Während">Während</option>
+                    <option value="Wenn">Wenn</option>
+                </select>
+                die Bevölkerungsdichte in Großstädten Tag für Tag steigt, nehmen auch die Verkehrsprobleme zu.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Weil">
+                    <option value="">-2-</option>
+                    <option value="als">als</option>
+                    <option value="deshalb">deshalb</option>
+                    <option value="Weil">Weil</option>
+                </select>
+                viele Menschen in die Stadt ziehen, gibt es oft zu wenig Platz auf den Straßen.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Da">
+                    <option value="">-3-</option>
+                    <option value="Da">Da</option>
+                    <option value="Damit">Damit</option>
+                    <option value="Wenn">Wenn</option>
+                </select>
+                viele Autos unterwegs sind, dauert es oft lange, bis man an sein Ziel gelangt.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Obwohl">
+                    <option value="">-4-</option>
+                    <option value="Trotzdem">Trotzdem</option>
+                    <option value="Obwohl">Obwohl</option>
+                    <option value="Weil">Weil</option>
+                </select>
+                die öffentlichen Verkehrsmittel modernisiert werden, gibt es häufig Verspätungen und Überfüllungen.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Denn">
+                    <option value="">-5-</option>
+                    <option value="Weil">Weil</option>
+                    <option value="Deshalb">Deshalb</option>
+                    <option value="Denn">Denn</option>
+                </select>
+                der ständige Stau ist nervig.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Wenn">
+                    <option value="">-6-</option>
+                    <option value="Wenn">Wenn</option>
+                    <option value="Denn">Denn</option>
+                    <option value="Obwohl">Obwohl</option>
+                </select>
+                man oft im Stau steht, sollte man sich über eine andere Verkehrsmöglichkeit Gedanken machen.
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Obwohl">
+                    <option value="">-7-</option>
+                    <option value="Denn">Denn</option>
+                    <option value="Obwohl">Obwohl</option>
+                    <option value="Wenn">Wenn</option>
+                </select>
+                die Technologie voranschreitet, braucht man immer noch intelligentere Verkehrssysteme,
+            </p>
+            <p>
+                <select class="conjunction-select" data-answer="Um">
+                    <option value="">-8-</option>
+                    <option value="Um">Um</option>
+                    <option value="Damit">Damit</option>
+                    <option value="Weil">Weil</option>
+                </select>
+                den Verkehr zu regeln.
+            </p>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Kontrolle</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const selects = document.querySelectorAll('.conjunction-select');
+            let correctCount = 0;
+            let totalCount = selects.length;
+
+            selects.forEach(select => {
+                const selectedValue = select.value;
+                const correctAnswer = select.getAttribute('data-answer');
+                
+                if (selectedValue === correctAnswer) {
+                    select.style.backgroundColor = '#4CAF50';
+                    select.style.color = 'white';
+                    correctCount++;
+                } else {
+                    select.style.backgroundColor = '#f44336';
+                    select.style.color = 'white';
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            const percentage = (correctCount / totalCount) * 100;
+            
+            if (percentage === 100) {
+                resultDiv.innerHTML = `Tebrikler! Tüm cevaplar doğru! (${correctCount}/${totalCount})`;
+                resultDiv.className = 'result correct';
+            } else {
+                resultDiv.innerHTML = `Bazı cevaplar yanlış. Doğru cevap sayısı: ${correctCount}/${totalCount}`;
+                resultDiv.className = 'result incorrect';
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - A1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Verben "möchten, essen, trinken, mögen" in richtiger Konjugation.</p>
+            
+            <div class="text">
+                <p>1. <input type="text" class="input-field" data-answer="möchtest"> du einen Hamburger oder nur Pommfrites bestellen?</p>
+                <p>2. Ich <input type="text" class="input-field" data-answer="esse"> gerne Hamburger.</p>
+                <p>3. Was <input type="text" class="input-field" data-answer="möchten"> Sie <input type="text" class="input-field" data-answer="trinken">? Cola oder Apfelsaft?</p>
+                <p>4. Harald <input type="text" class="input-field" data-answer="trinkt"> abends immer Tee.</p>
+                <p>5. Ich <input type="text" class="input-field" data-answer="esse"> nicht gerne zu Abend.</p>
+                <p>6. Die Kinder <input type="text" class="input-field" data-answer="mögen"> Schokolade, aber die Erwachsenen nicht so sehr.</p>
+                <p>7. <input type="text" class="input-field" data-answer="trinkst"> du süße Getränke?</p>
+                <p>8. Meine Mutter <input type="text" class="input-field" data-answer="trinkt"> Kaffee immer ohne Zucker.</p>
+                <p>9. Die Lehrer <input type="text" class="input-field" data-answer="trinken"> in der Pause oft Tee oder Kaffee.</p>
+                <p>10. Das Kind <input type="text" class="input-field" data-answer="isst"> gerne beim Fernsehen.</p>
+                <p>11. <input type="text" class="input-field" data-answer="möchtet"> ihr ins Café gehen?</p>
+                <p>12. Der Sportler <input type="text" class="input-field" data-answer="isst"> und <input type="text" class="input-field" data-answer="trinkt"> immer gesund.</p>
+                <p>13. Meine Oma <input type="text" class="input-field" data-answer="mag"> alkoholische Getränke nicht, aber sie <input type="text" class="input-field" data-answer="trinkt"> manchmal ein Glas Wein.</p>
+                <p>14. "Heute abend <input type="text" class="input-field" data-answer="möchten"> wir nicht zu Hause <input type="text" class="input-field" data-answer="essen">. Wir gehen lieber ins Restaurant."</p>
+                <p>15. Nachmittags <input type="text" class="input-field" data-answer="essen"> die Deutschen meistens Kuchen.</p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

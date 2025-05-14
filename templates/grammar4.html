@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Pronomen</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 80px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .exercise-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pronomen - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie bitte die Lücken mit den passenden Pronomen.</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-item">
+                <span class="exercise-number">1.</span>
+                <p>Da ist mein Füller. Ich suche <input type="text" data-answer="ihn" id="answer1"> seit gestern.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">2.</span>
+                <p>Die Bücher gehören meiner Tochter. Sie soll <input type="text" data-answer="sie" id="answer2"> in die Schule mitnehmen.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">3.</span>
+                <p>Hast du meine E-Mail noch nicht gelesen? Ich habe <input type="text" data-answer="sie" id="answer3"> dir vor zwei Tagen zugeschickt.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">4.</span>
+                <p>Die Konferenz beginnt in einer Stunde. Du solltest <input type="text" data-answer="sie" id="answer4"> nicht verpassen.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">5.</span>
+                <p>Wann war dein Termin beim Zahnarzt? Willst du <input type="text" data-answer="ihn" id="answer5"> nicht aufs Wochenende verschieben?</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">6.</span>
+                <p>Ich muss zum Supermarkt fahren. Könntest du mir dein Fahrrad leihen? Ich bringe <input type="text" data-answer="es" id="answer6"> dir in anderthalb Stunden wieder zurück. Versprochen!</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">7.</span>
+                <p>Interessiert du dich auch für Muscheln? Du kannst <input type="text" data-answer="sie" id="answer7"> einfach am Ufer finden und sammeln.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">8.</span>
+                <p>Du solltest dein Zimmer aufräumen. Nimm zuerst die Kleider vom Bett weg. Dann kannst du <input type="text" data-answer="sie" id="answer8"> wieder an die Kleiderbügel aufhängen.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">9.</span>
+                <p><input type="text" data-answer="Es" id="answer9"> steht dir echt gut.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">10.</span>
+                <p>Der Zitronenkuchen schmeckt lecker. Hast du <input type="text" data-answer="ihn" id="answer10"> selbst gebacken?</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">11.</span>
+                <p>Das ist ein tolles Geschenk. Vielen Dank dafür. Ich habe <input type="text" data-answer="es" id="answer11"> mir so lange gewünscht.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">12.</span>
+                <p>Jeder hat Träume für die Zukunft. Man braucht meistens nur Mut und Geduld, um <input type="text" data-answer="sie" id="answer12"> zu verwirklichen.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">13-14.</span>
+                <p>Wo ist die Scheere? <input type="text" data-answer="sie" id="answer13"> musste in der Schublade liegen. Da ist <input type="text" data-answer="sie" id="answer14"> aber jetzt nicht.</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">15.</span>
+                <p>Papa, ich muss diesen Textabschnitt zusammenfassen. Kannst du <input type="text" data-answer="ihn" id="answer15"> mir bitte vorlesen?</p>
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">16.</span>
+                <p>Die Blumen sind alle so trocken. Wir müssen <input type="text" data-answer="sie" id="answer16"> begießen.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {  // Tam eşleşme kontrolü
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

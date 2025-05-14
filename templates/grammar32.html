@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sätze bilden - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .sentence {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .sentence input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sätze bilden - A1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Bilden Sie Sätze oder Fragen.</h3>
+            <p>Achten Sie auf die Stellung des Verbs und die richtige Konjugation.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="sentence">
+                <p>1. Wo / du / wohnen?</p>
+                <input type="text" id="sentence1" data-answer="Wo wohnst du?">
+            </div>
+            <div class="sentence">
+                <p>2. Ich / in Berlin / leben</p>
+                <input type="text" id="sentence2" data-answer="Ich lebe in Berlin.">
+            </div>
+            <div class="sentence">
+                <p>3. Was / du / studieren?</p>
+                <input type="text" id="sentence3" data-answer="Was studierst du?">
+            </div>
+            <div class="sentence">
+                <p>4. Sie / Deutsch / sprechen</p>
+                <input type="text" id="sentence4" data-answer="Sie spricht Deutsch.">
+            </div>
+            <div class="sentence">
+                <p>5. Wann / du / aufstehen?</p>
+                <input type="text" id="sentence5" data-answer="Wann stehst du auf?">
+            </div>
+            <div class="sentence">
+                <p>6. Wir / jeden Tag / arbeiten</p>
+                <input type="text" id="sentence6" data-answer="Wir arbeiten jeden Tag.">
+            </div>
+            <div class="sentence">
+                <p>7. Woher / du / kommen?</p>
+                <input type="text" id="sentence7" data-answer="Woher kommst du?">
+            </div>
+            <div class="sentence">
+                <p>8. Er / gern / lesen</p>
+                <input type="text" id="sentence8" data-answer="Er liest gern.">
+            </div>
+            <div class="sentence">
+                <p>9. Was / du / machen?</p>
+                <input type="text" id="sentence9" data-answer="Was machst du?">
+            </div>
+            <div class="sentence">
+                <p>10. Sie / im Restaurant / essen</p>
+                <input type="text" id="sentence10" data-answer="Sie isst im Restaurant.">
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.sentence input');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer !== correctAnswer) {
+                    allCorrect = false;
+                    input.classList.add('incorrect');
+                } else {
+                    input.classList.remove('incorrect');
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

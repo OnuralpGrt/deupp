@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .question-answer {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .question {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .answer-select {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+
+        .answers-box {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .answer-option {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - B1</h1>
+        
+        <div class="exercise">
+            <h2>Ordnen Sie die Antworten den Fragen zu</h2>
+            
+            <div class="answers-box">
+                <h3>Antworten:</h3>
+                <div class="answer-option">A: In dieser Grafik fällt mir auf, dass die Zahl der Studierenden, die im Ausland studieren wollen, gesunken ist.</div>
+                <div class="answer-option">B: Studierende müssen während des Studiums auch ein Praktikum machen.</div>
+                <div class="answer-option">C: Fremdsprachen bringen die Karriere und Entwicklung der kognitiven Fähigkeiten mit sich.</div>
+                <div class="answer-option">D: Studierende wollen nach dem Studium ins Ausland gehen, weil sie denken, dass Auslandserfahrung ihnen ermöglicht, leichter einen Arbeitsplatz zu finden und weil sie ihre Fremdsprache erweitern können.</div>
+                <div class="answer-option">E: Unter Studienkolleg versteht man eine Institution, die 1 Jahr lang auf das Studium sprachlich und fachlich vorbereitet.</div>
+                <div class="answer-option">F: Ein Semester dauert ca. vier Monate.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">1. Welche Vorteile bringen Fremdsprachen mit sich?</div>
+                <select class="answer-select" data-correct="C">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">2. Aus welchen Gründen wollen Studierende nach dem Studium ins Ausland gehen?</div>
+                <select class="answer-select" data-correct="D">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">3. Was müssen Studierende während des Studiums machen?</div>
+                <select class="answer-select" data-correct="B">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">4. Wie lange dauert ein Semester?</div>
+                <select class="answer-select" data-correct="F">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">5. Was fällt Ihnen in dieser Grafik auf?</div>
+                <select class="answer-select" data-correct="A">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="question-answer">
+                <div class="question">6. Was versteht man unter Studienkolleg?</div>
+                <select class="answer-select" data-correct="E">
+                    <option value="">Wählen Sie eine Antwort</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const selects = document.querySelectorAll('.answer-select');
+            let allCorrect = true;
+            let feedback = '';
+
+            selects.forEach((select, index) => {
+                const correctAnswer = select.getAttribute('data-correct');
+                const userAnswer = select.value;
+                
+                if (userAnswer === correctAnswer) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

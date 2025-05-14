@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-list {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - A1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Wörter im Text.</p>
+            
+            <div class="word-list">
+                <p>Wörter zur Auswahl:</p>
+                <p>Laptop, Stühle, Tafel, Fenster, Lehrbuch, Tafelstift, Computer, Bildschirm, Schreibtisch, Tastatur, Tische</p>
+            </div>
+
+            <div class="text">
+                <p>In der Klasse gibt es viele <input type="text" class="input-field" data-answer="Stühle">. Die Studenten haben aber keine <input type="text" class="input-field" data-answer="Tische">. Jeder Student bringt sein <input type="text" class="input-field" data-answer="Lehrbuch"> mit, aber man kann es auch am <input type="text" class="input-field" data-answer="Bildschirm"> sehen. Manche Studenten bringen auch ihren <input type="text" class="input-field" data-answer="Laptop"> zum Unterricht. Leider geht der <input type="text" class="input-field" data-answer="Computer"> in der Klasse langsam. Denn er ist alt. Der Lehrer benutzt einen <input type="text" class="input-field" data-answer="Tafelstift">. Er schreibt unbekannte Wörter oder Sätze an die <input type="text" class="input-field" data-answer="Tafel">.</p>
+                <p>Manchmal arbeitet er an dem <input type="text" class="input-field" data-answer="Schreibtisch">. Dort liegt auch eine <input type="text" class="input-field" data-answer="Tastatur">. Die Klasse ist hell. Denn sie hat zwei <input type="text" class="input-field" data-answer="Fenster">.</p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

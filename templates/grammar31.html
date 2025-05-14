@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partizip 2 - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .sentence {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .sentence input {
+            width: 200px;
+            padding: 5px;
+            margin: 0 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Partizip 2 - B2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ergänzen Sie die Sätze mit dem Partizip 2 der angegebenen Verben.</h3>
+            <p>Verben: wenden, bestehen, deponieren, schweigen, entsorgen, schmelzen, verfassen, diskutieren, abholen, verarbeiten, untersuchen</p>
+        </div>
+
+        <div class="exercise">
+            <div class="sentence">
+                <span>1. Die Daten im Computer wurden von der Polizei</span>
+                <input type="text" id="sentence1" data-answer="untersucht">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>2. Als man den Verdächtigen nach dem Grund des Attentats gefragt hat, hat er eine ganze Weile</span>
+                <input type="text" id="sentence2" data-answer="geschwiegen">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>3. Der Zeuge hat auf die Richtigkeit seiner Aussage</span>
+                <input type="text" id="sentence3" data-answer="bestanden">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>4. Der Richter hat sich an den Gerichtshof</span>
+                <input type="text" id="sentence4" data-answer="gewandt">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>5. In der Sendung wurde über die Konsequenzen der neuen Schulregeln</span>
+                <input type="text" id="sentence5" data-answer="diskutiert">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>6. Die wissenschaftliche Arbeit hat der Professor</span>
+                <input type="text" id="sentence6" data-answer="verfasst">
+                <span>.</span>
+            </div>
+            <div class="sentence">
+                <span>7.</span>
+                <input type="text" id="sentence7" data-answer="verarbeitete">
+                <span>Lebensmittel können für die Gesundheit der Verbraucher schädlich sein.</span>
+            </div>
+            <div class="sentence">
+                <span>8. Welcher Müll soll als Sondermüll</span>
+                <input type="text" id="sentence8" data-answer="entsorgt">
+                <span>werden?</span>
+            </div>
+            <div class="sentence">
+                <span>9. Nachdem der Müll</span>
+                <input type="text" id="sentence9a" data-answer="abgeholt">
+                <span>worden ist, brachte man ihn auf die Abfalldeponie, damit der Müll dort</span>
+                <input type="text" id="sentence9b" data-answer="deponiert">
+                <span>wird.</span>
+            </div>
+            <div class="sentence">
+                <span>10. Kann man das</span>
+                <input type="text" id="sentence10" data-answer="geschmolzene">
+                <span>Eis wieder einfrieren?</span>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.sentence input');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer !== correctAnswer) {
+                    allCorrect = false;
+                    input.classList.add('incorrect');
+                } else {
+                    input.classList.remove('incorrect');
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprachenlernen - Erfahrungsbericht</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .sentence-matching {
+            margin: 20px 0;
+        }
+        .sentence-pair {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .sentence-pair select {
+            margin: 0 10px;
+            padding: 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sprachenlernen - Erfahrungsbericht</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Lesen Sie den Text und bringen Sie die Satzhälften zusammen.</h3>
+            <p>Lesen Sie den folgenden Erfahrungsbericht und verbinden Sie die Satzhälften, sodass eine Zusammenfassung des Berichts entsteht.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <h2>Meine Erfahrungen beim Sprachenlernen als Praktikant</h2>
+                <p>Ich arbeite als Praktikant in einer Werbeagentur und spreche drei Sprachen: Deutsch, Englisch und Spanisch. Sprachenlernen war für mich immer wichtig, weil ich in einer internationalen Agentur arbeiten wollte. Englisch habe ich bereits in der Schule gelernt, aber richtig fließend wurde ich erst durch Reisen und das Anschauen von englischen Filmen und Serien.</p>
+                <p>Spanisch habe ich später an der Uni gelernt, weil ich viele Kunden aus spanischsprachigen Ländern betreuen wollte. Ich besuchte einen Sprachkurs und habe viel durch Gespräche mit spanischen Muttersprachlern in Lerngruppen geübt. Das hat mir sehr geholfen, weil ich die Sprache so direkt anwenden konnte.</p>
+                <p>Mein Tipp für das Sprachenlernen ist, möglichst viel mit Muttersprachlern zu sprechen und die Sprache regelmäßig zu hören, z. B. durch Filme oder Musik. Es hilft auch, kleine Notizen im Alltag zu machen, um sich neue Wörter einzuprägen. Sprachenlernen ist nicht immer leicht, aber mit Geduld und Übung macht es Spaß und eröffnet viele berufliche Möglichkeiten.</p>
+            </div>
+
+            <div class="sentence-matching">
+                <h3>Verbinden Sie die Satzhälften.</h3>
+                <div class="sentence-pair">
+                    <span>1. Tobias war Sprachenlernen immer wichtig,</span>
+                    <select id="sentence1" data-answer="c">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">weil er dort die Sprache direkt mit Muttersprachlern anwenden konnte.</option>
+                        <option value="b">eine neue Sprache zu lernen.</option>
+                        <option value="c">weil er in einer internationalen Firma arbeiten wollte.</option>
+                        <option value="d">ist ratsam zum Wörterlernen.</option>
+                        <option value="e">weil er auch Kunden aus Spanien betreuen wollte.</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>2. Spanisch hat er gelernt,</span>
+                    <select id="sentence2" data-answer="e">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">weil er dort die Sprache direkt mit Muttersprachlern anwenden konnte.</option>
+                        <option value="b">eine neue Sprache zu lernen.</option>
+                        <option value="c">weil er in einer internationalen Firma arbeiten wollte.</option>
+                        <option value="d">ist ratsam zum Wörterlernen.</option>
+                        <option value="e">weil er auch Kunden aus Spanien betreuen wollte.</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>3. Der Spanischkurs war gut,</span>
+                    <select id="sentence3" data-answer="a">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">weil er dort die Sprache direkt mit Muttersprachlern anwenden konnte.</option>
+                        <option value="b">eine neue Sprache zu lernen.</option>
+                        <option value="c">weil er in einer internationalen Firma arbeiten wollte.</option>
+                        <option value="d">ist ratsam zum Wörterlernen.</option>
+                        <option value="e">weil er auch Kunden aus Spanien betreuen wollte.</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>4. Kleine Notizen im Alltag zu machen,</span>
+                    <select id="sentence4" data-answer="d">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">weil er dort die Sprache direkt mit Muttersprachlern anwenden konnte.</option>
+                        <option value="b">eine neue Sprache zu lernen.</option>
+                        <option value="c">weil er in einer internationalen Firma arbeiten wollte.</option>
+                        <option value="d">ist ratsam zum Wörterlernen.</option>
+                        <option value="e">weil er auch Kunden aus Spanien betreuen wollte.</option>
+                    </select>
+                </div>
+                <div class="sentence-pair">
+                    <span>5. Ohne Geduld und Übung ist es schwer,</span>
+                    <select id="sentence5" data-answer="b">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">weil er dort die Sprache direkt mit Muttersprachlern anwenden konnte.</option>
+                        <option value="b">eine neue Sprache zu lernen.</option>
+                        <option value="c">weil er in einer internationalen Firma arbeiten wollte.</option>
+                        <option value="d">ist ratsam zum Wörterlernen.</option>
+                        <option value="e">weil er auch Kunden aus Spanien betreuen wollte.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const sentenceSelects = document.querySelectorAll('.sentence-pair select');
+            let allCorrect = true;
+            
+            sentenceSelects.forEach(select => {
+                const selectedValue = select.value;
+                const correctValue = select.dataset.answer;
+                
+                if (selectedValue !== correctValue) {
+                    allCorrect = false;
+                    select.classList.add('incorrect');
+                } else {
+                    select.classList.remove('incorrect');
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

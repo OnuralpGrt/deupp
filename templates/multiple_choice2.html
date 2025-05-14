@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background-color: var(--secondary-color);
+        }
+        .option.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiple Choice - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Was passt in die Lücken? Kreuzen Sie die richtige Antwort an.</h3>
+            <p>Wählen Sie die richtige Antwort für jede Frage.</p>
+        </div>
+
+        <div class="questions">
+            <div class="question" data-answer="b">
+                <p>1. ..... Kleid findest du schöner? - ..... rote hier.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Welchen – Diesen</div>
+                    <div class="option" onclick="selectOption(this)">b) Welches – Dieses</div>
+                    <div class="option" onclick="selectOption(this)">c) Welche – Diese</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>2. Wir sind auf einer Insel und hier ..... keine Autos fahren.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) müssen</div>
+                    <div class="option" onclick="selectOption(this)">b) können</div>
+                    <div class="option" onclick="selectOption(this)">c) dürfen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>3. Warum geht Tim nicht zur Schule? - Weil .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) krank er ist.</div>
+                    <div class="option" onclick="selectOption(this)">b) er krank ist.</div>
+                    <div class="option" onclick="selectOption(this)">c) er ist krank.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>4. Heute regnet es. ___ können wir nicht draußen spielen.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Deshalb</div>
+                    <div class="option" onclick="selectOption(this)">b) Denn</div>
+                    <div class="option" onclick="selectOption(this)">c) Aber</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>5. Claudia, hast du .... Notizbuch gesehen? - Ja, es liegt ... Regal.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) mein – im</div>
+                    <div class="option" onclick="selectOption(this)">b) meine – ins</div>
+                    <div class="option" onclick="selectOption(this)">c) mein – ins</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>6. Kommst du mit ins Kino? – Nein, ich kann diesmal .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) nicht</div>
+                    <div class="option" onclick="selectOption(this)">b) kein</div>
+                    <div class="option" onclick="selectOption(this)">c) nie</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>7. Was ..... man hier alles machen?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) kannt</div>
+                    <div class="option" onclick="selectOption(this)">b) kann</div>
+                    <div class="option" onclick="selectOption(this)">c) könne</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>8. Kommt ihr heute? - Nein, leider haben wir heute .... Zeit. .... morgen kommen wir gerne.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) keine - Aber</div>
+                    <div class="option" onclick="selectOption(this)">b) kein - Denn</div>
+                    <div class="option" onclick="selectOption(this)">c) keine – Weil</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>9. Kann mir jemand ein ... und ... Buch empfehlen?</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) spannendes – fesselndes</div>
+                    <div class="option" onclick="selectOption(this)">b) langweiliges – uninteressantes</div>
+                    <div class="option" onclick="selectOption(this)">c) dünnes - zerrissenes</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>10. Welcher Pullover gefällt dir am besten? - Dieser ... sieht gut aus.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) schwarzen</div>
+                    <div class="option" onclick="selectOption(this)">b) schwarze</div>
+                    <div class="option" onclick="selectOption(this)">c) schwarzes</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>11. Was wünscht du dir zu Weihnachten? - Ich wünsche ... einen neuen Schal.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) mir</div>
+                    <div class="option" onclick="selectOption(this)">b) mich</div>
+                    <div class="option" onclick="selectOption(this)">c) meinen</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>12. Guten Tag! Mein Name ist Schneider. Ich möchte bitte mit ..... sprechen.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Herr Fischer</div>
+                    <div class="option" onclick="selectOption(this)">b) Herrn Fischer</div>
+                    <div class="option" onclick="selectOption(this)">c) Herren Fischer</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>13. Seit wann leben Sie in Berlin? Seit ... Jahr.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) ein</div>
+                    <div class="option" onclick="selectOption(this)">b) einen</div>
+                    <div class="option" onclick="selectOption(this)">c) einem</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>14. Was macht er gern? - ...</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Er sieht fern gern.</div>
+                    <div class="option" onclick="selectOption(this)">b) Er sieht gern fern.</div>
+                    <div class="option" onclick="selectOption(this)">c) Er fernsehen gern.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>15. Sylvester ist am .... Dezember.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) einunddreizigsten</div>
+                    <div class="option" onclick="selectOption(this)">b) einunddreißigsten</div>
+                    <div class="option" onclick="selectOption(this)">c) einsunddreizigsten</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>16. Mein Urlaub in den Alpen war super! – Schön, dass es ... dort gefallen hat.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) dir</div>
+                    <div class="option" onclick="selectOption(this)">b) mir</div>
+                    <div class="option" onclick="selectOption(this)">c) ihm</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>17. Ich bin der Meinung, ... du mitfahren solltest.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) dass</div>
+                    <div class="option" onclick="selectOption(this)">b) ob</div>
+                    <div class="option" onclick="selectOption(this)">c) wenn</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="c">
+                <p>18. Möchten Sie bestellen? – Ja, ich__________ ein Schnitzel und eine Cola.</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) zahle</div>
+                    <div class="option" onclick="selectOption(this)">b) würde gern</div>
+                    <div class="option" onclick="selectOption(this)">c) hätte gern</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="a">
+                <p>19. Wann ist Vanessa geboren? - ....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Am sechsten April.</div>
+                    <div class="option" onclick="selectOption(this)">b) Im sechsten April.</div>
+                    <div class="option" onclick="selectOption(this)">c) Um sechsten April.</div>
+                </div>
+            </div>
+
+            <div class="question" data-answer="b">
+                <p>20. Schmeckt dir die Pizza nicht? - .....</p>
+                <div class="options">
+                    <div class="option" onclick="selectOption(this)">a) Ja, sie schmeckt mir.</div>
+                    <div class="option" onclick="selectOption(this)">b) Doch, sie schmeckt mir.</div>
+                    <div class="option" onclick="selectOption(this)">c) Ich esse gerne Pizza.</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Önce aynı sorudaki diğer seçeneklerin seçimini kaldır
+            const question = element.parentElement;
+            const options = question.getElementsByClassName('option');
+            for (let option of options) {
+                option.classList.remove('selected');
+            }
+            
+            // Seçilen seçeneği işaretle
+            element.classList.add('selected');
+        }
+
+        function checkAnswers() {
+            const questions = document.getElementsByClassName('question');
+            let allCorrect = true;
+            
+            for (let question of questions) {
+                const correctAnswer = question.dataset.answer;
+                const options = question.getElementsByClassName('option');
+                let selectedOption = null;
+                
+                // Seçilen seçeneği bul
+                for (let option of options) {
+                    if (option.classList.contains('selected')) {
+                        selectedOption = option;
+                        break;
+                    }
+                }
+                
+                // Tüm seçeneklerin sınıflarını temizle
+                for (let option of options) {
+                    option.classList.remove('correct', 'incorrect');
+                }
+                
+                // Seçim yapılmamışsa veya yanlışsa
+                if (!selectedOption || selectedOption.textContent.charAt(0) !== correctAnswer) {
+                    allCorrect = false;
+                    if (selectedOption) {
+                        selectedOption.classList.add('incorrect');
+                    }
+                    // Doğru cevabı göster
+                    for (let option of options) {
+                        if (option.textContent.charAt(0) === correctAnswer) {
+                            option.classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Doğru seçim
+                    selectedOption.classList.add('correct');
+                }
+            }
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

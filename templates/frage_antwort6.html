@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .question-answer {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+        }
+
+        .user-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - B1</h1>
+        
+        <div class="exercise">
+            <h2>Alleine oder im Kurs lernen?</h2>
+            <p>Stellen Sie die Frage nach dem gedruckten Teil in der Antwort.</p>
+            
+            <div class="question-answer">
+                <div class="answer">Herr Müller, <input type="text" class="user-input" data-correct="was/wer ist ein Hobbyfotograf?"></div>
+                <div>Ein Hobbyfotograf ist eine Person, die Fotografie als Freizeitbeschäftigung und Leidenschaft betreibt, ohne dabei hauptberuflich als Fotograf zu arbeiten</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Seit wann interessieren Sie sich für das Fotografieren?"></div>
+                <div>Ich interessiere mich schon seit dem Anfang des Studiums für das Fotografieren.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Warum fotografieren Sie gern?/Warum machen Sie Fotos?"></div>
+                <div>Da ich gerne spazieren gehe und die Natur mag, will ich die Momente erfassen, damit sie nicht vergessen werden.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Warum beginnen Sie jetzt mit einem Fotografiekurs?"></div>
+                <div>Ich beginne jetzt mit einem Fotografiekurs, weil ich den technischen Hintergrund des Fotografierens lernen will.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Was wollen Sie nach dem Kurs machen?/Was haben Sie vor, nach dem Kurs zu machen?"></div>
+                <div>Ich habe danach vor, für eine Zeitschrift Fotos zu machen.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer">Heißt das, dass Sie <input type="text" class="user-input" data-correct="aus Ihrem Hobby einen Beruf machen?/Möchten Sie aus Ihrem Hobby einen Beruf machen?"></div>
+                <div>Ja, ich möchte aus meinem Hobby einen Beruf machen.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Würden Sie Ihr/das Hobby empfehlen und wem würden Sie es empfehlen?"></div>
+                <div>Ja, ich würde dieses Hobby allen Altersgruppen empfehlen.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Gibt es einen Nachteil?/Hat das Fotografieren/das Hobby einen Nachteil?"></div>
+                <div>Ja, leider. Ein Nachteil ist, dass die Kosten zu hoch sind.</div>
+            </div>
+
+            <div class="question-answer">
+                <div class="answer"><input type="text" class="user-input" data-correct="Welchen Vorteil hat das Fotografieren?/Was sind die Vorteile vom Fotografieren?"></div>
+                <div>Es hilft den Menschen, sich kreativ auszudrücken und man kann viele Menschen kennenlernen.</div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.user-input');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach((input, index) => {
+                const correctAnswer = input.getAttribute('data-correct');
+                const userAnswer = input.value.trim();
+                
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Relativsätze A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+        .parts {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .exercise-number {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relativsätze - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Schreiben Sie vollständige Sätze, indem Sie die Satzteile mit den richtigen Relativpronomen verbinden.</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-item">
+                <span class="exercise-number">1.</span>
+                <div class="parts">Der Film / ich gestern gesehen habe / war spannend.</div>
+                <input type="text" data-answer="Der Film, den ich gestern gesehen habe, war spannend." id="answer1">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">2.</span>
+                <div class="parts">Die Tasche / sie auf dem Tisch liegt / gehört mir.</div>
+                <input type="text" data-answer="Die Tasche, die auf dem Tisch liegt, gehört mir." id="answer2">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">3.</span>
+                <div class="parts">Das Buch / du mir empfohlen hast / ist sehr gut.</div>
+                <input type="text" data-answer="Das Buch, das du mir empfohlen hast, ist sehr gut." id="answer3">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">4.</span>
+                <div class="parts">Die Leute / im Park spazieren gehen / sind freundlich.</div>
+                <input type="text" data-answer="Die Leute, die im Park spazieren gehen, sind freundlich." id="answer4">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">5.</span>
+                <div class="parts">Der Hund / du gesehen hast / ist mein Hund.</div>
+                <input type="text" data-answer="Der Hund, den du gesehen hast, ist mein Hund." id="answer5">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">6.</span>
+                <div class="parts">Die Schuhe / ich gekauft habe / sind sehr bequem.</div>
+                <input type="text" data-answer="Die Schuhe, die ich gekauft habe, sind sehr bequem." id="answer6">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">7.</span>
+                <div class="parts">Das Hotel / wir übernachtet haben / war teuer.</div>
+                <input type="text" data-answer="Das Hotel, in dem wir übernachtet haben, war teuer." id="answer7">
+            </div>
+
+            <div class="exercise-item">
+                <span class="exercise-number">8.</span>
+                <div class="parts">Das Auto / vor der Tür steht / gehört meinem Bruder.</div>
+                <input type="text" data-answer="Das Auto, das vor der Tür steht, gehört meinem Bruder." id="answer8">
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {  // Tam eşleşme kontrolü
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

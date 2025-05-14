@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B1</h1>
+        
+        <div class="exercise">
+            <h2>Strom aus der Sonne</h2>
+            
+            <div class="text">
+                <p>Immer mehr Menschen interessieren sich für umweltfreundliche Energie. Eine besonders beliebte Möglichkeit ist die Nutzung von Sonnenenergie. Dafür braucht man Solarmodule, die auf dem Dach oder auf freien Flächen installiert werden. Sie sammeln das Licht der Sonne und machen daraus Strom.</p>
+                <p>Ein Team aus jungen Forscherinnen und Forschern hat in Deutschland ein neues Projekt gestartet. Ihr Ziel ist es, kleine Häuser komplett mit Solarstrom zu versorgen – also ohne Strom aus dem Kraftwerk. Das ist gut für die Umwelt, denn so werden keine schädlichen Gase produziert.</p>
+                <p>Natürlich gibt es auch Nachteile: Wenn das Wetter schlecht ist, gibt es weniger Strom. Deshalb speichern die Häuser den Strom in Batterien für Regentage. Das Projekt ist noch neu, aber viele finden die Idee spannend. Vielleicht wird so in Zukunft ein großer Teil unserer Energie erzeugt.</p>
+            </div>
+
+            <div class="questions">
+                <h3>Aufgabe 1: Richtig oder falsch?</h3>
+                <div class="question">
+                    <p>1. Man kann mit Sonnenlicht Strom erzeugen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Nur große Kraftwerke können Sonnenenergie nutzen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Solarmodule funktionieren nur bei Regen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Junge Forscher arbeiten an einem neuen Projekt.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="richtig" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="falsch"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Das Projekt will Strom ohne Stromspeicher erzeugen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="richtig"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="falsch" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+
+                <h3>Aufgabe 2: Wähle den richtigen Satz</h3>
+                <div class="question">
+                    <p>Frage 1:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="a"> a) Solaranlagen funktionieren nur im Winter.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="b" data-correct="true"> b) Sonnenenergie ist eine umweltfreundliche Stromquelle.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="c"> c) Ohne Strom kann man keine Kleidung tragen.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 2:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="a" data-correct="true"> a) Batterien speichern Strom für Zeiten ohne Sonne.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="b"> b) Sonnenenergie funktioniert nur mit Windrädern.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="c"> c) Solarmodule werden immer im Keller installiert.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 3:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="a"> a) Solaranlagen verursachen sehr viele Abgase.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="b" data-correct="true"> b) Sonnenlicht kann Strom erzeugen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="c"> c) Ohne Regen gibt es keinen Strom aus Solaranlagen.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 4:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="a" data-correct="true"> a) Solaranlagen machen Strom aus Sonnenlicht.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="b"> b) Sonnenlicht macht Häuser kaputt.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="c"> c) Batterien kann man nur im Sommer benutzen.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>Frage 5:</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="a"> a) Das Projekt nutzt Windkraft, um Häuser zu versorgen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="b"> b) Solaranlagen produzieren Strom auch bei Nacht.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="c" data-correct="true"> c) Mit Sonnenenergie können Häuser umweltfreundlich Strom bekommen.
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption === correctOption) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

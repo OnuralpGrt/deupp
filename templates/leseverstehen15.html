@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - B2</h1>
+        
+        <div class="exercise">
+            <h2>Studienwahl: Geschlechtsunterschiede bleiben</h2>
+            
+            <div class="text">
+                <p>Trotz jahrzehntelanger Bemühungen, Frauen für MINT-Fächer (Mathematik, Informatik, Naturwissenschaften und Technik) zu gewinnen, bestehen weiterhin markante Unterschiede in der Studienwahl. Männer bevorzugen technische und naturwissenschaftliche Fächer, während Frauen sich stärker zu Sozialwissenschaften, Medizin und Pädagogik hingezogen fühlen. Diese Unterschiede spiegeln sich sowohl in den Immatrikulationszahlen als auch in den Studienabbrüchen wider. Beispielsweise sind in Informatik nur 23 % der Erstsemester Frauen, während in Ernährungswissenschaften, Psychologie und Medizin Frauen dominieren.</p>
+                <p>Das sogenannte "Gender-Paradox" zeigt, dass in Ländern mit hoher Geschlechtergerechtigkeit, wie in Skandinavien, Frauen häufiger stereotype Studiengänge wählen. In ärmeren Ländern hingegen entscheiden sich Frauen oft für MINT-Fächer, da dort wirtschaftliche Überlegungen stärker wiegen. In Deutschland ergaben PISA-Studien, dass leistungsstarke Schüler:innen meist geschlechtstypische Berufsziele verfolgen, wie Ingenieurberufe bei Jungen und Gesundheitsberufe bei Mädchen.</p>
+                <p>Diese Entwicklung wirft Fragen zur Gleichstellungspolitik auf. Sollten Frauen und Männer stärker in untypische Studienrichtungen gelenkt werden, oder sollte man ihnen die Freiheit lassen, gemäß ihren Interessen zu wählen? Die Autor:innen betonen, dass individuelle Wahlfreiheit wichtiger sei als staatlich auferlegte Quoten oder Umsteuerungen.</p>
+                <p>Das Konzept einer emanzipativen Gleichberechtigung wird als Alternative vorgeschlagen. Es zielt darauf ab, allen Menschen unabhängig von Geschlecht, sozialem Hintergrund oder Herkunft gleiche Möglichkeiten zu geben, ihr Leben selbstbestimmt zu gestalten. In diesem Rahmen könnten auch soziale Berufe, die oft von Frauen dominiert und schlecht bezahlt sind, aufgewertet werden.</p>
+                <p>Letztlich wird kritisiert, dass die heutige Gleichstellungspolitik vor allem Frauenförderung in wirtschaftsnahen Bereichen priorisiert und gesellschaftliche Spaltungen vernachlässigt. Um soziale Ungleichheiten zu überwinden, bedarf es eines breiteren, inklusiven Ansatzes, der allen Bürger:innen gleiche Partizipationsmöglichkeiten eröffnet und die zunehmende gesellschaftliche Spaltung abbaut.</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Welche Studienfächer bevorzugen Frauen laut dem Text?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="a"> a) Mathematik und Technik
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="b" data-correct="true"> b) Sozialwissenschaften, Medizin und Pädagogik
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="c"> c) Ingenieurwesen und Informatik
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="d"> d) Naturwissenschaften und Technik
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Wie hoch ist der Frauenanteil unter den Erstsemestern in Informatik?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="a"> a) weniger als 20 Prozent
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="b" data-correct="true"> b) fast 25 Prozent
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="c"> c) zirka 35 Prozent
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="d"> d) fast die Hälfte
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. Was zeigt das sogenannte Gender-Paradox?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="a"> a) Frauen wählen in allen Ländern ähnliche Studiengänge.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="b" data-correct="true"> b) In Ländern mit Geschlechtergerechtigkeit wählen Frauen häufiger stereotype Studiengänge.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="c"> c) Frauen entscheiden sich in reichen Ländern häufiger für MINT-Fächer.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="d"> d) Männer und Frauen zeigen ähnliche Interessen in Skandinavien.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. Warum wählen Frauen in ärmeren Ländern häufiger MINT-Fächer?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="a" data-correct="true"> a) Aufgrund wirtschaftlicher Überlegungen
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="b"> b) Wegen besserer Förderung von Frauen
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="c"> c) Weil sie dort keine Alternativen haben
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="d"> d) Um der Diskriminierung zu entgehen
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. Was wurde durch die PISA-Studien in Deutschland herausgefunden?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="a" data-correct="true"> a) Leistungsstarke Schüler:innen wählen oft geschlechtstypische Berufsziele.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="b"> b) Mädchen bevorzugen Ingenieurberufe.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="c"> c) Jungen und Mädchen zeigen die gleichen beruflichen Interessen.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="d"> d) Leistungsstarke Schüler:innen entscheiden sich für untypische Studienfächer.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>6. Welche zentrale Frage wird in Bezug auf die Gleichstellungspolitik im Text aufgeworfen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="a"> a) Sollten Frauen stärker zu Sozialwissenschaften gelenkt werden?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="b" data-correct="true"> b) Sollten Frauen und Männer stärker in untypische Studienrichtungen gelenkt werden?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="c"> c) Ist staatliche Förderung von Frauen in sozialen Berufen sinnvoll?
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="d"> d) Sollte das Studium in MINT-Fächern vereinfacht werden?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>7. Was versteht man unter „emanzipativer Gleichberechtigung" laut dem Text?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="a"> a) Die Förderung von Frauen in wirtschaftsnahen Bereichen
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="b" data-correct="true"> b) Gleiche Möglichkeiten zur selbstbestimmten Lebensgestaltung für alle
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="c"> c) Quoten für Frauen in technischen Studiengängen
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="d"> d) Mehr Freiheit bei der Studienwahl für Männer
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>8. Welche Berufe sollten laut dem Text aufgewertet werden?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="a"> a) Ingenieurberufe
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="b"> b) Technische Berufe
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="c" data-correct="true"> c) Soziale Berufe
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="d"> d) Naturwissenschaftliche Berufe
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>9. Worin wird die heutige Gleichstellungspolitik kritisiert?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="a" data-correct="true"> a) Sie gibt der Frauenförderung in marktorientierten Bereichen den Vorrang.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="b"> b) Sie fördert zu stark soziale Berufe.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="c"> c) Sie legt zu viel Wert auf individuelle Wahlfreiheit.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="d"> d) Sie hebt die gesellschaftliche Spaltung auf.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>10. Welche Lösung wird im Text vorgeschlagen, um soziale Ungleichheiten zu überwinden?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="a"> a) Mehr Frauenförderung in MINT-Fächern
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="b"> b) Quotenregelungen für Männer in sozialen Berufen
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="c" data-correct="true"> c) Eine umfassende und integrative Herangehensweise, die alle Menschen einbezieht
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="d"> d) Strengere Vorgaben bei der Studienwahl
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (selectedOption) {
+                    if (selectedOption === correctOption) {
+                        feedback += `Frage ${index + 1}: Richtig!<br>`;
+                    } else {
+                        feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                        allCorrect = false;
+                    }
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

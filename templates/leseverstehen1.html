@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .answer-field {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 30px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - A1</h1>
+        
+        <div class="exercise">
+            <h2>Martinas Familie</h2>
+            
+            <div class="text">
+                <p>Ich heiße Martina Schwarz und bin jetzt 19 Jahre alt. Ich bin Deutsche. Jetzt lerne ich in Madrid Spanisch. Madrid liegt in Spanien. Ich bin in Waiblingen geboren. Waiblingen liegt in der Nähe von Stuttgart. Stuttgart ist eine Stadt in Süddeutschland. Sie ist sehr schön.</p>
+                <p>Meine Eltern heißen Herbert und Maria. Mein Vater ist Bankkaufmann von Beruf und ist jetzt 47 Jahre alt. Meine Mutter ist Lehrerin und ist 44. Ich habe drei Geschwister, eine Schwester und zwei Brüder. Meine Schwester heißt Sigrid und ist erst 12. Sie geht noch zur Schule. Mein kleiner Bruder ist 17. Er macht jetzt sein Abitur. Mein großer Bruder ist schon 21. Er studiert in München.</p>
+                <p>Ich habe eine Tante. Sie heißt Helga und wohnt in Bonn. Sie hat eine kleine Tochter. Das ist meine Cousine. Mein Onkel heißt Fritz. Er ist Mechaniker. Er ist auch verheiratet, aber er hat keine Kinder. Mein Großvater und meine Großmutter wohnen in Freiburg. Sie sind 66 und 62 Jahre alt.</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Wie alt ist Martina?</p>
+                    <input type="text" class="answer-field" data-answer="Martina ist 19 Jahre alt.">
+                </div>
+                <div class="question">
+                    <p>2. Wo ist sie geboren?</p>
+                    <input type="text" class="answer-field" data-answer="Martina ist in Waiblingen geboren.">
+                </div>
+                <div class="question">
+                    <p>3. Wo liegt Waiblingen?</p>
+                    <input type="text" class="answer-field" data-answer="Waiblingen liegt in der Nähe von Stuttgart.">
+                </div>
+                <div class="question">
+                    <p>4. Was ist ihr Vater von Beruf?</p>
+                    <input type="text" class="answer-field" data-answer="Ihr Vater ist Bankkaufmann.">
+                </div>
+                <div class="question">
+                    <p>5. Wie viele Geschwister hat sie?</p>
+                    <input type="text" class="answer-field" data-answer="Sie hat drei Geschwister.">
+                </div>
+                <div class="question">
+                    <p>6. Wo wohnt ihre Tante?</p>
+                    <input type="text" class="answer-field" data-answer="Ihre Tante wohnt in Bonn.">
+                </div>
+                <div class="question">
+                    <p>7. Ist ihr Onkel verheiratet?</p>
+                    <input type="text" class="answer-field" data-answer="Ja, ihr Onkel ist verheiratet.">
+                </div>
+                <div class="question">
+                    <p>8. Wie alt sind ihre Großeltern?</p>
+                    <input type="text" class="answer-field" data-answer="Sie sind 66 und 62 Jahre alt.">
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.answer-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

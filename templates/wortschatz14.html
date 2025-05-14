@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-list {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B2</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Wörter in die entsprechende Lücke.</p>
+            
+            <div class="word-list">
+                <p>Wörter zur Auswahl:</p>
+                <p>größte, die, gehört, starker, Lieferung, gezeigt, bezahlte, kümmern, längste, Überschwemmungen, dafür, während, Leben, Zusammenhang, den, hat, teurer, des, aus, nach, leisten</p>
+            </div>
+
+            <div class="text">
+                <p>Die Dubai Schokolade ist <input type="text" class="input-field" data-answer="teurer"> als ein Flug <input type="text" class="input-field" data-answer="nach"> Deutschland.</p>
+                <p>Ein Skorpion <input type="text" class="input-field" data-answer="aus"> China sticht eine junge Mutter in Deutschland <input type="text" class="input-field" data-answer="während"> des Auspackens einer <input type="text" class="input-field" data-answer="Lieferung">.</p>
+                <p>Das <input type="text" class="input-field" data-answer="längste"> deutsche Wort im Duden <input type="text" class="input-field" data-answer="hat"> 67 Buchstaben.</p>
+                <p>Wegen <input type="text" class="input-field" data-answer="starker"> Regenfälle und <input type="text" class="input-field" data-answer="Überschwemmungen"> sind viele Menschen in Spanien ums <input type="text" class="input-field" data-answer="Leben"> gekommen.</p>
+                <p>In <input type="text" class="input-field" data-answer="den"> USA arbeiten ca. 27 Millionen Menschen als <input type="text" class="input-field" data-answer="bezahlte"> Content Creator.</p>
+                <p>Am 17. Oktober strahlte der <input type="text" class="input-field" data-answer="größte"> Supermond <input type="text" class="input-field" data-answer="des"> Jahres.</p>
+                <p>Es reicht nicht aus, sich nur am Wochenende um gesundes Essen und Bewegung zu <input type="text" class="input-field" data-answer="kümmern">.</p>
+                <p>Eine Studie hat <input type="text" class="input-field" data-answer="gezeigt">, dass hoher Milchkonsum bei Frauen einen <input type="text" class="input-field" data-answer="Zusammenhang"> mit Herzleiden hat.</p>
+                <p>Karneval <input type="text" class="input-field" data-answer="gehört"> für viele Menschen zu der besten Zeit des Jahres.</p>
+                <p>Vor allem sind die Lebenshaltungskosten, <input type="text" class="input-field" data-answer="die"> gestiegen sind, ein Grund <input type="text" class="input-field" data-answer="dafür">, dass sich immer mehr Menschen einen Auslandsurlaub weniger <input type="text" class="input-field" data-answer="leisten"> können.</p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

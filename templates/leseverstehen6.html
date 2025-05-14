@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - A2</h1>
+        
+        <div class="exercise">
+            <h2>Endlich bin ich fit</h2>
+            
+            <div class="text">
+                <p>Früher habe ich mich zu dick gefühlt. Ich konnte keine engen Klamotten tragen. Bei einem Einkaufsbummel hat mal eine Freundin zu mir gesagt: "Das kannst du nicht anziehen, dazu bist du zu dick." Das hat mich total getroffen. Ich habe angefangen abzunehmen. Ich habe keine Schokolade, sondern Obst gegessen. Süße Limonade habe ich auch nicht mehr getrunken. Nach 18 Uhr habe ich gar nichts mehr gegessen. Dazu habe ich regelmäßig Sport getrieben. In eineinhalb Jahren habe ich so ungefähr 15 Kilo abgenommen. Weil es mit der Diät so gut geklappt hat, habe ich immer weiter gemacht. Bis meine Mutter sagte, "jetzt reicht es."</p>
+                <p>Sie hatte Angst, weil sie geglaubt hat, ich bin magersüchtig und hat mich zu einem Arzt geschickt. Der Arzt hat mir gesagt, ich soll mehr Kohlenhydrate essen. Doch vier Brötchen zum Frühstück schaffe ich einfach nicht. Ich esse seitdem normal. Jetzt wiege ich 53 Kilo bei 1,77 Meter Größe. Einmal in der Woche kontrolliere ich mein Gewicht. Wenn ich drei bis vier Kilo zunehme, fange ich wieder mit einer Diät an. Einige meiner Freunde sagen jetzt, "du bist zu dünn und magersüchtig!" Ich finde das nicht. Ich beneide sie, weil sie essen können, was sie wollen. Ich sitze immer nur daneben und kann nichts essen. Ich fühle mich außerdem jetzt auch besser. Ich bin selbstbewußter geworden, auch im Umgang mit Jungen. Wenn man dünner ist, hat man mehr Freunde. Wenn man einen starken Charakter hat, kann man so aussehen, wie man will. Aber das ist doch wohl selten. Ich kenne jedenfalls nicht viele Dicke, die sagen, "Ich bin zufrieden mit meinem Gewicht!"</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Fühlte sich die Person früher zu dick?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. Konnte die Person enge Klamotten tragen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. Sagte eine Freundin zu ihr, dass sie auch enge Kleidungen anziehen kann?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. Hat die Bemerkung der Freundin sie getroffen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. Hat die Person mit dem Abnehmen begonnen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q5" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. Hat sie Schokolade gegessen, während sie abgenommen hat?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q6" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. Hat sie nach 18 Uhr nichts mehr gegessen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q7" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. Hat sie auch Sport getrieben?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q8" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>9. Hat sie in eineinhalb Jahren über 15 Kilo abgenommen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q9" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>10. Hat der Arzt ihr geraten, mehr Kohlenhydrate zu essen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q10" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>11. Kann sie vier Brötchen zum Frühstück essen?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q11" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q11" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>12. Wiegt sie jetzt 53 Kilo?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q12" value="ja" data-correct="true"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q12" value="nein"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>13. Finden einige Freunde, dass sie immer noch dick ist?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q13" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q13" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>14. Denkt sie, dass ihre Freunde einen stärkeren Charakter haben als sie?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q14" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q14" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>15. Hat sie viele dicke Freunde, die mit ihrem Übergewicht zufrieden sind?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q15" value="ja"> Ja
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q15" value="nein" data-correct="true"> Nein
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption.value === correctOption.value) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value === 'ja' ? 'Ja' : 'Nein'}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

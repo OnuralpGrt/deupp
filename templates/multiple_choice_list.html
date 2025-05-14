@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice - DeutschApp</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--hover-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .level-section {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .level-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .exercise-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--primary-color);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+        }
+
+        .exercise-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border-color: var(--primary-color);
+        }
+
+        .exercise-item h3 {
+            margin: 0;
+            color: var(--primary-color);
+        }
+
+        .exercise-item p {
+            margin: 0.5rem 0 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="/home" class="logo">
+                <img src="/static/dert.jpg" alt="DeutschApp Logo">
+                DeutschApp
+            </a>
+            <div class="nav-links">
+                <a href="/home" class="nav-link">Startseite</a>
+                <a href="/logout" class="nav-link">Abmelden</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="level-section">
+            <h2 class="level-title">A1 Seviyesi</h2>
+            <div class="exercise-grid">
+                {% for exercise in a1_exercises %}
+                <a href="/multiple_choice/{{ exercise.file }}" class="exercise-item">
+                    <h3>{{ exercise.title }}</h3>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">A2 Seviyesi</h2>
+            <div class="exercise-grid">
+                {% for exercise in a2_exercises %}
+                <a href="/multiple_choice/{{ exercise.file }}" class="exercise-item">
+                    <h3>{{ exercise.title }}</h3>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">B1 Seviyesi</h2>
+            <div class="exercise-grid">
+                {% for exercise in b1_exercises %}
+                <a href="/multiple_choice/{{ exercise.file }}" class="exercise-item">
+                    <h3>{{ exercise.title }}</h3>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">B2 Seviyesi</h2>
+            <div class="exercise-grid">
+                {% for exercise in b2_exercises %}
+                <a href="/multiple_choice/{{ exercise.file }}" class="exercise-item">
+                    <h3>{{ exercise.title }}</h3>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

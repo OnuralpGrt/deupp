@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ähnliche Adjektive</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .word-matching {
+            margin: 20px 0;
+        }
+        .word-pair {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .word-pair select {
+            margin: 0 10px;
+            padding: 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ähnliche Adjektive</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Finden Sie die ähnlichen Begriffe für die Adjektive.</h3>
+            <p>Verbinden Sie die Adjektive mit ihren ähnlichen Bedeutungen.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="word-matching">
+                <div class="word-pair">
+                    <span>1. groß</span>
+                    <select id="word1" data-answer="riesig">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>2. klein</span>
+                    <select id="word2" data-answer="winzig">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>3. schön</span>
+                    <select id="word3" data-answer="hübsch">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>4. schnell</span>
+                    <select id="word4" data-answer="flink">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>5. langsam</span>
+                    <select id="word5" data-answer="gemächlich">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>6. traurig</span>
+                    <select id="word6" data-answer="unglücklich">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>7. glücklich</span>
+                    <select id="word7" data-answer="froh">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>8. einfach</span>
+                    <select id="word8" data-answer="leicht">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+                <div class="word-pair">
+                    <span>9. schwer</span>
+                    <select id="word9" data-answer="kompliziert">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="riesig">riesig</option>
+                        <option value="winzig">winzig</option>
+                        <option value="hübsch">hübsch</option>
+                        <option value="flink">flink</option>
+                        <option value="gemächlich">gemächlich</option>
+                        <option value="unglücklich">unglücklich</option>
+                        <option value="froh">froh</option>
+                        <option value="leicht">leicht</option>
+                        <option value="kompliziert">kompliziert</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const wordSelects = document.querySelectorAll('.word-pair select');
+            let allCorrect = true;
+            
+            wordSelects.forEach(select => {
+                const selectedValue = select.value;
+                const correctValue = select.dataset.answer;
+                
+                if (selectedValue !== correctValue) {
+                    allCorrect = false;
+                    select.classList.add('incorrect');
+                } else {
+                    select.classList.remove('incorrect');
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

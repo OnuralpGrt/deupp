@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuordnung - A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .matching {
+            margin: 20px 0;
+        }
+        .matching-pair {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .matching-pair select {
+            margin: 0 10px;
+            padding: 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zuordnung - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Ordnen Sie zu. Was passt?</h3>
+            <p>Verbinden Sie die Fragen mit den passenden Antworten.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="matching">
+                <div class="matching-pair">
+                    <span>1. Hätten Sie gerne noch ein Stück?</span>
+                    <select id="pair1" data-answer="f">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+                <div class="matching-pair">
+                    <span>2. Wie würden Sie lieber zahlen?</span>
+                    <select id="pair2" data-answer="d">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+                <div class="matching-pair">
+                    <span>3. Wann gibt es wieder Sonderangebote bei Amazon?</span>
+                    <select id="pair3" data-answer="b">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+                <div class="matching-pair">
+                    <span>4. Wo kaufen Sie am liebsten ein?</span>
+                    <select id="pair4" data-answer="a">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+                <div class="matching-pair">
+                    <span>5. Wer zu Hause geht am meisten einkaufen?</span>
+                    <select id="pair5" data-answer="c">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+                <div class="matching-pair">
+                    <span>6. Wo kann ich die Milchprodukte finden?</span>
+                    <select id="pair6" data-answer="e">
+                        <option value="">Wählen Sie eine Antwort</option>
+                        <option value="a">Auf dem Markt.</option>
+                        <option value="b">Leider habe ich darüber keine Information.</option>
+                        <option value="c">Ich denke, meine Mutter.</option>
+                        <option value="d">Lieber Bar.</option>
+                        <option value="e">In der Tiefkühltruhe.</option>
+                        <option value="f">Ja, gerne.</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const selects = document.querySelectorAll('.matching-pair select');
+            let allCorrect = true;
+            
+            selects.forEach(select => {
+                const selectedValue = select.value;
+                const correctValue = select.dataset.answer;
+                
+                if (selectedValue !== correctValue) {
+                    allCorrect = false;
+                    select.classList.add('incorrect');
+                } else {
+                    select.classList.remove('incorrect');
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

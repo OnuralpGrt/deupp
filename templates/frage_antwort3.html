@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frage-Antwort - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .dialog {
+            margin-bottom: 20px;
+        }
+
+        .dialog-part {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .speaker {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .option {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: #f5f5f5;
+        }
+
+        .selected {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frage-Antwort - A1</h1>
+        
+        <div class="exercise">
+            <h2>Telefongespräche: Ergänzen Sie den Dialog</h2>
+            <p>Beachten Sie die Reihenfolge.</p>
+            
+            <div class="dialog">
+                <div class="dialog-part">
+                    <div class="speaker">Patientin:</div>
+                    <div class="text">Guten Tag,</div>
+                    <select class="user-input" data-correct="Hier spricht Ursula Schiller.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Hier spricht Ursula Schiller.">Hier spricht Ursula Schiller.</option>
+                        <option value="Ich möchte einen Termin vereinbaren.">Ich möchte einen Termin vereinbaren.</option>
+                        <option value="Geht es nicht etwas früher?">Geht es nicht etwas früher?</option>
+                        <option value="Mein Zahn tut etwas weh.">Mein Zahn tut etwas weh.</option>
+                        <option value="Ja, meine Telefonnummer ist 0975614.">Ja, meine Telefonnummer ist 0975614.</option>
+                        <option value="Vielen Dank. Aufwiederhör'n.">Vielen Dank. Aufwiederhör'n.</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="text"></div>
+                    <select class="user-input" data-correct="Ich möchte einen Termin vereinbaren.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Hier spricht Ursula Schiller.">Hier spricht Ursula Schiller.</option>
+                        <option value="Ich möchte einen Termin vereinbaren.">Ich möchte einen Termin vereinbaren.</option>
+                        <option value="Geht es nicht etwas früher?">Geht es nicht etwas früher?</option>
+                        <option value="Mein Zahn tut etwas weh.">Mein Zahn tut etwas weh.</option>
+                        <option value="Ja, meine Telefonnummer ist 0975614.">Ja, meine Telefonnummer ist 0975614.</option>
+                        <option value="Vielen Dank. Aufwiederhör'n.">Vielen Dank. Aufwiederhör'n.</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="speaker">Arzthelferin:</div>
+                    <div class="text">Brauchen Sie den Termin dringend, Frau Schiller? Herr Müller ist gerade nicht in der Praxis.</div>
+                    <select class="user-input" data-correct="Er kommt zwei Tage später.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Er kommt zwei Tage später.">Er kommt zwei Tage später.</option>
+                        <option value="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.</option>
+                        <option value="Ein Moment, bitte.">Ein Moment, bitte.</option>
+                        <option value="Wie ist Ihre Telefonnummer?">Wie ist Ihre Telefonnummer?</option>
+                        <option value="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.</option>
+                        <option value="Ist das so in Ordnung für Sie?">Ist das so in Ordnung für Sie?</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="text"></div>
+                    <select class="user-input" data-correct="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Er kommt zwei Tage später.">Er kommt zwei Tage später.</option>
+                        <option value="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.</option>
+                        <option value="Ein Moment, bitte.">Ein Moment, bitte.</option>
+                        <option value="Wie ist Ihre Telefonnummer?">Wie ist Ihre Telefonnummer?</option>
+                        <option value="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.</option>
+                        <option value="Ist das so in Ordnung für Sie?">Ist das so in Ordnung für Sie?</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="speaker">Patientin:</div>
+                    <div class="text">Geht es nicht etwas früher?</div>
+                    <select class="user-input" data-correct="Mein Zahn tut etwas weh.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Hier spricht Ursula Schiller.">Hier spricht Ursula Schiller.</option>
+                        <option value="Ich möchte einen Termin vereinbaren.">Ich möchte einen Termin vereinbaren.</option>
+                        <option value="Geht es nicht etwas früher?">Geht es nicht etwas früher?</option>
+                        <option value="Mein Zahn tut etwas weh.">Mein Zahn tut etwas weh.</option>
+                        <option value="Ja, meine Telefonnummer ist 0975614.">Ja, meine Telefonnummer ist 0975614.</option>
+                        <option value="Vielen Dank. Aufwiederhör'n.">Vielen Dank. Aufwiederhör'n.</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="speaker">Arzthelferin:</div>
+                    <div class="text">Ein Moment, bitte.</div>
+                    <select class="user-input" data-correct="Wie ist Ihre Telefonnummer?">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Er kommt zwei Tage später.">Er kommt zwei Tage später.</option>
+                        <option value="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.</option>
+                        <option value="Ein Moment, bitte.">Ein Moment, bitte.</option>
+                        <option value="Wie ist Ihre Telefonnummer?">Wie ist Ihre Telefonnummer?</option>
+                        <option value="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.</option>
+                        <option value="Ist das so in Ordnung für Sie?">Ist das so in Ordnung für Sie?</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="text"></div>
+                    <select class="user-input" data-correct="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Er kommt zwei Tage später.">Er kommt zwei Tage später.</option>
+                        <option value="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.</option>
+                        <option value="Ein Moment, bitte.">Ein Moment, bitte.</option>
+                        <option value="Wie ist Ihre Telefonnummer?">Wie ist Ihre Telefonnummer?</option>
+                        <option value="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.</option>
+                        <option value="Ist das so in Ordnung für Sie?">Ist das so in Ordnung für Sie?</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="text"></div>
+                    <select class="user-input" data-correct="Ist das so in Ordnung für Sie?">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Er kommt zwei Tage später.">Er kommt zwei Tage später.</option>
+                        <option value="Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.">Am Freitag Nachmittag um 18 Uhr kann Herr Müller Sie sehen.</option>
+                        <option value="Ein Moment, bitte.">Ein Moment, bitte.</option>
+                        <option value="Wie ist Ihre Telefonnummer?">Wie ist Ihre Telefonnummer?</option>
+                        <option value="Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.">Ich muss Herrn Müller fragen. Dann rufe ich Sie zurück.</option>
+                        <option value="Ist das so in Ordnung für Sie?">Ist das so in Ordnung für Sie?</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="speaker">Patientin:</div>
+                    <div class="text">Ja,</div>
+                    <select class="user-input" data-correct="meine Telefonnummer ist 0975614.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Hier spricht Ursula Schiller.">Hier spricht Ursula Schiller.</option>
+                        <option value="Ich möchte einen Termin vereinbaren.">Ich möchte einen Termin vereinbaren.</option>
+                        <option value="Geht es nicht etwas früher?">Geht es nicht etwas früher?</option>
+                        <option value="Mein Zahn tut etwas weh.">Mein Zahn tut etwas weh.</option>
+                        <option value="meine Telefonnummer ist 0975614.">meine Telefonnummer ist 0975614.</option>
+                        <option value="Vielen Dank. Aufwiederhör'n.">Vielen Dank. Aufwiederhör'n.</option>
+                    </select>
+                </div>
+
+                <div class="dialog-part">
+                    <div class="text"></div>
+                    <select class="user-input" data-correct="Vielen Dank. Aufwiederhör'n.">
+                        <option value="">Wählen Sie...</option>
+                        <option value="Hier spricht Ursula Schiller.">Hier spricht Ursula Schiller.</option>
+                        <option value="Ich möchte einen Termin vereinbaren.">Ich möchte einen Termin vereinbaren.</option>
+                        <option value="Geht es nicht etwas früher?">Geht es nicht etwas früher?</option>
+                        <option value="Mein Zahn tut etwas weh.">Mein Zahn tut etwas weh.</option>
+                        <option value="meine Telefonnummer ist 0975614.">meine Telefonnummer ist 0975614.</option>
+                        <option value="Vielen Dank. Aufwiederhör'n.">Vielen Dank. Aufwiederhör'n.</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.user-input');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach((input, index) => {
+                const correctAnswer = input.getAttribute('data-correct');
+                const userAnswer = input.value;
+                
+                if (userAnswer === correctAnswer) {
+                    feedback += `Teil ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Teil ${index + 1}: Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

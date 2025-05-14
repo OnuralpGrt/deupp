@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Nebensätze mit dass A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 500px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nebensätze mit "dass" - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Bilden Sie Nebensätze mit "dass".</h3>
+            <p>Lesen Sie folgende Situationen und bilden Sie Nebensätze mit "dass". Achten Sie auf die Konjugation.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <div class="section-title">1. Bericht über die Wohnsituation</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Es gefällt mir nicht, (dass - wohnen müssen - bei meinen Großeltern - ich)</strong></p>
+                    <p><input type="text" data-answer="es gefällt mir nicht dass ich bei meinen großeltern wohnen muss" id="answer1"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist schön, (dass - allein sein - im Studentenwohnheim - nicht - ich)</strong></p>
+                    <p><input type="text" data-answer="es ist schön dass ich im studentenwohnheim nicht allein bin" id="answer2"></p>
+                </div>
+
+                <div class="section-title">2. Traumwohnung</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich hoffe, (mit Balkon - dass - ich - eine große Wohnung - finden - in der Zukunft).</strong></p>
+                    <p><input type="text" data-answer="ich hoffe dass ich in der zukunft eine große wohnung mit balkon finde" id="answer3"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist wichtig, ( liegen - in einer ruhigen Gegend - dass - die Wohnung)</strong></p>
+                    <p><input type="text" data-answer="es ist wichtig dass die wohnung in einer ruhigen gegend liegt" id="answer4"></p>
+                </div>
+
+                <div class="section-title">3. Gruppenarbeit im Unterricht</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich denke, (hilfreich - sein - im Unterricht - dass - Gruppenarbeit)</strong></p>
+                    <p><input type="text" data-answer="ich denke dass gruppenarbeit im unterricht hilfreich ist" id="answer5"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist gut, (dass - können - wir - zusammenarbeiten)</strong></p>
+                    <p><input type="text" data-answer="es ist gut dass wir zusammenarbeiten können" id="answer6"></p>
+                </div>
+
+                <div class="section-title">4. Arbeitsplatz</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich hoffe, (sein - dass - sehr modern - mein Arbeitsplatz)</strong></p>
+                    <p><input type="text" data-answer="ich hoffe dass mein arbeitsplatz sehr modern ist" id="answer7"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es gefällt mir, (haben - dass - nette Kollegen - ich)</strong></p>
+                    <p><input type="text" data-answer="es gefällt mir dass ich nette kollegen habe" id="answer8"></p>
+                </div>
+
+                <div class="section-title">5. Traumjob</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich wünsche mir, (später - ich - dass - flexibel - arbeiten können)</strong></p>
+                    <p><input type="text" data-answer="ich wünsche mir dass ich später flexibel arbeiten kann" id="answer9"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist mein Ziel, (als Lehrerin - ich - in einer Schule - arbeiten - dass)</strong></p>
+                    <p><input type="text" data-answer="es ist mein ziel dass ich als lehrerin in einer schule arbeite" id="answer10"></p>
+                </div>
+
+                <div class="section-title">6. Einladung zur Hochzeit</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich freue mich, (zu unserer Hochzeit - dass - können -du - kommen)</strong></p>
+                    <p><input type="text" data-answer="ich freue mich dass du zu meiner hochzeit kommen kannst" id="answer11"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist schön, (diesen besonderen Tag - wir - dass - feiern - zusammen)</strong></p>
+                    <p><input type="text" data-answer="es ist schön dass wir diesen besonderen tag zusammen feiern" id="answer12"></p>
+                </div>
+
+                <div class="section-title">7. Absage eines Termins beim Professor</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Herr Professor Lang, es tut mir sehr leid, (den Termin - dass - absagen - ich - müssen)</strong></p>
+                    <p><input type="text" data-answer="es tut mir sehr leid dass ich den termin absagen muss" id="answer13"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Ich hoffe, (dass - finden - einen neuen - können - Termin - wir)</strong></p>
+                    <p><input type="text" data-answer="ich hoffe dass wir einen neuen termin finden können" id="answer14"></p>
+                </div>
+
+                <div class="section-title">8. Bitte um einen Termin und Terminvorschlag für eine Besprechung mit dem Seminarleiter</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich möchte Sie bitten, (einen Termin - machen - wir - dass - eine Besprechung - für)</strong></p>
+                    <p><input type="text" data-answer="ich möchte sie bitten dass wir einen termin für eine besprechung machen" id="answer15"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es wäre gut, ( uns - wir - treffen - Woche - dass - nächste)</strong></p>
+                    <p><input type="text" data-answer="es wäre gut dass wir uns nächste woche treffen" id="answer16"></p>
+                </div>
+
+                <div class="section-title">9. Meinungsäußerung zum Thema Vegetarische Ernährung</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich finde, ( gesund - Ernährung - vegetarische - sein - dass )</strong></p>
+                    <p><input type="text" data-answer="ich finde dass vegetarische ernährung gesund ist" id="answer17"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Viele Menschen denken, ( haben - ohne Fleisch - dass - nicht genug - man - Energie )</strong></p>
+                    <p><input type="text" data-answer="viele menschen denken dass man ohne fleisch nicht genug energie hat" id="answer18"></p>
+                </div>
+
+                <div class="section-title">10. Sprachenlernen</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Ich finde, ( Deutsch - sein - eine interessante - dass - Sprache)</strong></p>
+                    <p><input type="text" data-answer="ich finde dass deutsch eine interessante sprache ist" id="answer19"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es ist wichtig, ( jeden Tag - lernen - dass - neue Wörter - man)</strong></p>
+                    <p><input type="text" data-answer="es ist wichtig dass man jeden tag neue wörter lernt" id="answer20"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Meine Lehrerin sagt, ( der Schlüssel - dass - sein - zum Erfolg - regelmäßige Übung )</strong></p>
+                    <p><input type="text" data-answer="meine lehrerin sagt dass regelmäßige übung der schlüssel zum erfolg ist" id="answer21"></p>
+                </div>
+
+                <div class="section-title">11. Urlaub und Reisen</div>
+                
+                <div class="exercise-item">
+                    <p><strong>Meine Mutter schlägt vor, ( reisen - im Sommer - wir - dass - nach Italien)</strong></p>
+                    <p><input type="text" data-answer="meine mutter schlägt vor dass wir im sommer nach italien reisen" id="answer22"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Es gefällt mir sehr, ( das Hotel - liegen - am Meer - dass - direkt)</strong></p>
+                    <p><input type="text" data-answer="es gefällt mir dass das hotel direkt am meer liegt" id="answer23"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>Viele sagen, ( dass - in andere Länder - sein - das Reisen - spannend)</strong></p>
+                    <p><input type="text" data-answer="viele sagen dass das reisen in andere länder spannend ist" id="answer24"></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

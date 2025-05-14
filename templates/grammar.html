@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Welch_ und dies_</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .dialog {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .dialog-line {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welch_ und dies_</h1>
+        
+        <div class="description">
+            <p>Diese Wörter haben immer Endungen. Man muss sie deklinieren.</p>
+            <p>Hier folgt eine kleine Übung. Sie zeigt, wie man den Demonstrativartikel "dies_" und das Fragewort "welch_" im Nominativ, Akkusativ und Dativ deklinieren muss.</p>
+            <p>Viel Spaß bei der Arbeit!</p>
+        </div>
+
+        <div class="dialog">
+            <h3>IN DER BIBLIOTHEK</h3>
+            
+            <div class="dialog-line">• Du weißt doch, ich besuche gerade einen Deutschkurs. Ich muss heute für die Prüfung lernen. Kannst du mir bitte helfen?</div>
+            <div class="dialog-line">o Ja klar. Wo hast du denn Probleme? Was findest du schwer?</div>
+            <div class="dialog-line">• Ich kann mir die Vokabeln nicht merken. Ohne Vokabeln kann ich den Text nicht verstehen.</div>
+            <div class="dialog-line">o Es gibt hier aber viele Bücher. <input type="text" data-answer="Welches" id="answer1"> (1) Buch gehört dir?</div>
+            <div class="dialog-line">• <input type="text" data-answer="Dieses" id="answer2"> (2) Buch ist unser Lehrwerk. Es gehört mir.</div>
+            <div class="dialog-line">o <input type="text" data-answer="Welche" id="answer3"> (3) Themen habt ihr im Unterricht bearbeitet?</div>
+            <div class="dialog-line">• Wir haben schon <input type="text" data-answer="dieses" id="answer4"> (4) Kapitel hinter uns. Das Kapitel 10 haben wir gestern beendet.</div>
+            <div class="dialog-line">o Das ist aber eine Menge.</div>
+            <div class="dialog-line">• <input type="text" data-answer="Diese" id="answer5"> (5) Übung ist meine Hausaufgabe. Ich muss <input type="text" data-answer="diesen" id="answer6"> (6) Text lesen und <input type="text" data-answer="diese" id="answer7"> (7) Fragen beantworten.</div>
+            <div class="dialog-line">o Bringst du mir bitte den Markierstift da vom Tisch?</div>
+            <div class="dialog-line">• <input type="text" data-answer="Welchen" id="answer8"> (8) denn? <input type="text" data-answer="Diesen" id="answer9"> (9) hier?</div>
+            <div class="dialog-line">o Ja, genau. Du musst zuerst <input type="text" data-answer="diese" id="answer10"> (10) Aufgabe gut durchlesen und verstehen. Sie ist eine Zuordnungsaufgabe. <input type="text" data-answer="Diese" id="answer11"> (11) Kurztexte sind Kleinanzeigen. Wir müssen sie mit <input type="text" data-answer="diesen" id="answer12"> (12) Situationen oder Personen verbinden. Das heißt, wir müssen für <input type="text" data-answer="diese" id="answer13"> (13) Personen passende Anzeigen suchen. Lies doch! In der Aufgabe steht: <input type="text" data-answer="Welche" id="answer14"> (14) Anzeige passt zu <input type="text" data-answer="welcher" id="answer15"> (15) Person am besten?</div>
+            <div class="dialog-line">• In <input type="text" data-answer="dieser" id="answer16"> (16) Aufgabe gibt es viele neue Wörter für mich. Ich verstehe gar nichts.</div>
+            <div class="dialog-line">o Nur mit Geduld! <input type="text" data-answer="Welche" id="answer17"> (17) Wörter sind dir schon bekannt? <input type="text" data-answer="Welche" id="answer18"> (18) Textstellen verstehst du? Du kannst <input type="text" data-answer="diese" id="answer19"> (19) Sätze markieren oder unterstreichen. Konzentriere dich zuerst nur auf <input type="text" data-answer="diese" id="answer20"> (20) Wörter. <input type="text" data-answer="Welche" id="answer21"> (21) Information findest du besonders wichtig?</div>
+            <div class="dialog-line">• <input type="text" data-answer="Diese" id="answer22"> (22) hier.</div>
+            <div class="dialog-line">o Du hast Recht. <input type="text" data-answer="Diese" id="answer23"> (23) Information gibt uns Schlüsselwörter. Nun kannst du <input type="text" data-answer="diese" id="answer24"> (24) Aufgabe lösen. <input type="text" data-answer="Welche" id="answer25"> (25) Antwort ist richtig?</div>
+            <div class="dialog-line">• Ich glaube, <input type="text" data-answer="diese" id="answer26"> (26) hier.</div>
+            <div class="dialog-line">o Ok, dann trage deine Lösungen in <input type="text" data-answer="diesen" id="answer27"> (27) Antwortbogen ein.</div>
+            <div class="dialog-line">• Meinst du <input type="text" data-answer="diese" id="answer28"> (28) Tabelle hier?</div>
+            <div class="dialog-line">o Genau, das ist der Antwortbogen.</div>
+            <div class="dialog-line">• Prima! Gut gemacht!</div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

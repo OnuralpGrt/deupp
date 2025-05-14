@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Perfekt A2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 500px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfekt - A2</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Schreiben Sie bitte die Sätze im Perfekt.</h3>
+            <p>Verwandeln Sie die folgenden Sätze in das Perfekt.</p>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <div class="exercise-item">
+                    <p><strong>1. Ich besuche meine Großeltern in der Schweiz.</strong></p>
+                    <p><input type="text" data-answer="ich habe meine großeltern in der schweiz besucht" id="answer1"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>2. Wir essen ein köstliches Abendessen im Restaurant.</strong></p>
+                    <p><input type="text" data-answer="wir haben ein köstliches abendessen im restaurant gegessen" id="answer2"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>3. Ich fahre mit dem Zug nach München.</strong></p>
+                    <p><input type="text" data-answer="ich bin mit dem zug nach münchen gefahren" id="answer3"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>4. Mein Freund kocht ein leckeres Mittagessen für uns.</strong></p>
+                    <p><input type="text" data-answer="mein freund hat ein leckeres mittagessen für uns gekocht" id="answer4"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>5. Wir machen einen Spaziergang im Park.</strong></p>
+                    <p><input type="text" data-answer="wir haben einen spaziergang im park gemacht" id="answer5"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>6. Er liest ein interessantes Buch.</strong></p>
+                    <p><input type="text" data-answer="er hat ein interessantes buch gelesen" id="answer6"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>7. Ich lerne für die Prüfung und ich bestehe sie!</strong></p>
+                    <p><input type="text" data-answer="ich habe für die prüfung gelernt und ich habe sie bestanden" id="answer7"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>8. Herr Schmidt geht durch den Wald spazieren und er sieht viele Tiere.</strong></p>
+                    <p><input type="text" data-answer="herr schmidt ist durch den wald spazieren gegangen und er hat viele tiere gesehen" id="answer8"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>9. Ich tanze die ganze Nacht auf der Party und ich habe viel Spaß.</strong></p>
+                    <p><input type="text" data-answer="ich habe die ganze nacht auf der party getanzt und ich habe viel spaß gehabt" id="answer9"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>10. Die Kinder sehen einen neuen Film im Kino und sie finden ihn sehr gut.</strong></p>
+                    <p><input type="text" data-answer="die kinder haben einen neuen film im kino gesehen und sie haben ihn sehr gut gefunden" id="answer10"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>11. Ihr spielt Fußball im Park und ihr gewinnt das Spiel.</strong></p>
+                    <p><input type="text" data-answer="ihr habt fußball im park gespielt und ihr habt das spiel gewonnen" id="answer11"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>12. Mit wem telefonierst du denn?</strong></p>
+                    <p><input type="text" data-answer="mit wem hast du denn telefoniert" id="answer12"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>13. Was machst du am Samstag?</strong></p>
+                    <p><input type="text" data-answer="was hast du am samstag gemacht" id="answer13"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>14. Peter nimmt die Briefe aus dem Briefkasten.</strong></p>
+                    <p><input type="text" data-answer="peter hat die briefe aus dem briefkasten genommen" id="answer14"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>15. Wer hilft dir bei den Hausaufgaben?</strong></p>
+                    <p><input type="text" data-answer="wer hat dir bei den hausaufgaben geholfen" id="answer15"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>16. Ich schreibe eine E-Mail an meine Freundin und sie antwortet schon.</strong></p>
+                    <p><input type="text" data-answer="ich habe eine e-mail an meine freundin geschrieben und sie hat schon geantwortet" id="answer16"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>17. Wie lange schläft das Kind?</strong></p>
+                    <p><input type="text" data-answer="wie lange hat das kind geschlafen" id="answer17"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>18. Sabine geht immer um 20.00 Uhr ins Bett.</strong></p>
+                    <p><input type="text" data-answer="sabine ist immer um 20.00 uhr ins bett gegangen" id="answer18"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>19. Die Kinder essen Pizza und trinken Cola.</strong></p>
+                    <p><input type="text" data-answer="die kinder haben pizza gegessen und cola getrunken" id="answer19"></p>
+                </div>
+
+                <div class="exercise-item">
+                    <p><strong>20. Wie lange bleibst du bei deinem Freund?</strong></p>
+                    <p><input type="text" data-answer="wie lange bist du bei deinem freund geblieben" id="answer20"></p>
+                </div>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

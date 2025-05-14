@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 100px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .options {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Füllen Sie die Lücken im Text mit den richtigen Wörtern aus der Liste!</p>
+            
+            <div class="options">
+                <p>Wörter zur Auswahl:</p>
+                <p>von, 2 X, einer, mich, gute, bei, schönste, erholsames, nach, selbst, auf, großen, zusammen, Ruf, dich, weißt, denn, konnte, geworden, habe, gekauft, Gästezimmer, vermieten, preiswerte, schönen, hoch, Mietvertrag, umgezogen</p>
+            </div>
+
+            <div class="text">
+                Hamburg, den 05.05.2025<br><br>
+                <input type="text" class="input-field" data-answer="Liebe"> Ursula,<br><br>
+                ich habe <input type="text" class="input-field" data-answer="gute"> Nachrichten für <input type="text" class="input-field" data-answer="dich">. Du <input type="text" class="input-field" data-answer="weißt">, ich bin vor vier Monaten <input type="text" class="input-field" data-answer="nach"> Hamburg <input type="text" class="input-field" data-answer="umgezogen">. Und ich <input type="text" class="input-field" data-answer="habe"> bisher <input type="text" class="input-field" data-answer="bei"> meiner Kollegin gewohnt, <input type="text" class="input-field" data-answer="denn"> ich <input type="text" class="input-field" data-answer="konnte"> keine <input type="text" class="input-field" data-answer="preiswerte"> Wohnung finden. Die Mieten sind hier sehr <input type="text" class="input-field" data-answer="hoch">. Deshalb <input type="text" class="input-field" data-answer="habe"> ich so lange nach <input type="text" class="input-field" data-answer="einer"> Wohnung gesucht. Die Nachbarin <input type="text" class="input-field" data-answer="von"> meiner Kollegin wollte ihre Wohnung <input type="text" class="input-field" data-answer="vermieten">. Natürlich habe ich mit ihr sofort einen <input type="text" class="input-field" data-answer="Mietvertrag"> abgeschlossen. Ist das nicht toll? Jetzt bin ich die Nachbarin <input type="text" class="input-field" data-answer="von"> meiner Kollegin <input type="text" class="input-field" data-answer="geworden">. Ich kenne den Wohnort schon gut. Und ich kann mit meiner Kollegin <input type="text" class="input-field" data-answer="zusammen"> zur Arbeit fahren. Die Wohnung hat einen <input type="text" class="input-field" data-answer="großen"> und <input type="text" class="input-field" data-answer="schönen"> Balkon mit Ausblick <input type="text" class="input-field" data-answer="auf"> das Meer. Ich denke, meine Wohnung ist die <input type="text" class="input-field" data-answer="schönste"> in dem Haus. Ich habe schon meine Möbel <input type="text" class="input-field" data-answer="gekauft"> und die Wohnung eingerichtet. Ein paar Sachen habe ich <input type="text" class="input-field" data-answer="selbst"> gemacht.<br><br>
+                Du kannst <input type="text" class="input-field" data-answer="mich"> jederzeit besuchen. Es gibt auch ein <input type="text" class="input-field" data-answer="Gästezimmer">. <input type="text" class="input-field" data-answer="Ruf"> mich bitte an! Wir können zusammen ein <input type="text" class="input-field" data-answer="erholsames"> Wochenende verbringen.<br><br>
+                Liebe Grüße<br>
+                Deine Petra
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

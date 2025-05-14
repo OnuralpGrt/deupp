@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Übung - A2</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --error-color: #f44336;
+            --success-color: #4CAF50;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .dialog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .dialog-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .dialog-option {
+            background: white;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .dialog-option:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .dialog-option.selected {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .dialog-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1rem;
+            align-items: start;
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #333;
+            background: #ffd700;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .dialog-box {
+            min-height: 40px;
+            border: 2px dashed #ccc;
+            border-radius: 4px;
+            padding: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .dialog-box.correct {
+            border-color: var(--success-color);
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+
+        .dialog-box.incorrect {
+            border-color: var(--error-color);
+            background-color: rgba(244, 67, 54, 0.1);
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+        }
+
+        .submit-button:hover {
+            opacity: 0.9;
+        }
+
+        .dialog-text {
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dialog Übung - A2</h1>
+        
+        <div class="dialog-container">
+            <div class="dialog-options">
+                <div class="dialog-option" data-option="Was kann ich für Sie tun?">Was kann ich für Sie tun?</div>
+                <div class="dialog-option" data-option="Kann ich bitte Herrn Groß sprechen?">Kann ich bitte Herrn Groß sprechen?</div>
+                <div class="dialog-option" data-option="Meinen Sie Herrn Grötz von der Finanzabteilung?">Meinen Sie Herrn Grötz von der Finanzabteilung?</div>
+                <div class="dialog-option" data-option="Oh, Entschuldigung.">Oh, Entschuldigung.</div>
+                <div class="dialog-option" data-option="Könnten Sie mich mit ihm verbinden?">Könnten Sie mich mit ihm verbinden?</div>
+                <div class="dialog-option" data-option="Worum geht es Herr Akyurt?">Worum geht es Herr Akyurt?</div>
+                <div class="dialog-option" data-option="Es geht um eine noch nicht versendete Rechnung.">Es geht um eine noch nicht versendete Rechnung.</div>
+                <div class="dialog-option" data-option="Bleiben Sie bitte dran, ich verbinde Sie.">Bleiben Sie bitte dran, ich verbinde Sie.</div>
+            </div>
+
+            <div class="dialog-sequence">
+                <div class="dialog-item">
+                    <div class="speaker">Zentrale:</div>
+                    <div class="dialog-box" data-correct="Was kann ich für Sie tun?"></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-box" data-correct="Kann ich bitte Herrn Groß sprechen?"></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Zentrale:</div>
+                    <div class="dialog-box" data-correct="Meinen Sie Herrn Grötz von der Finanzabteilung?"></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-box" data-correct="Oh, Entschuldigung."></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-box" data-correct="Könnten Sie mich mit ihm verbinden?"></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Zentrale:</div>
+                    <div class="dialog-box" data-correct="Worum geht es Herr Akyurt?"></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-box" data-correct="Es geht um eine noch nicht versendete Rechnung."></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Zentrale:</div>
+                    <div class="dialog-box" data-correct="Bleiben Sie bitte dran, ich verbinde Sie."></div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Grötz:</div>
+                    <div class="dialog-text">Guten Tag, Herr Akyurt. Ich kontrolliere sofort die Lieferungen.</div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-text">Sie sind immer sehr pünktlich.</div>
+                </div>
+
+                <div class="dialog-item">
+                    <div class="speaker">Herr Akyurt:</div>
+                    <div class="dialog-text">Bitte, Auf Wiederhören Herr Grötz.</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="submit-button" onclick="checkDialog()">Kontrol Et</button>
+    </div>
+
+    <script>
+        let selectedOption = null;
+
+        document.querySelectorAll('.dialog-option').forEach(option => {
+            option.addEventListener('click', () => {
+                if (selectedOption === option) {
+                    option.classList.remove('selected');
+                    selectedOption = null;
+                } else {
+                    document.querySelectorAll('.dialog-option').forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedOption = option;
+                }
+            });
+        });
+
+        document.querySelectorAll('.dialog-box').forEach(box => {
+            box.addEventListener('click', () => {
+                if (selectedOption) {
+                    box.textContent = selectedOption.textContent;
+                    box.dataset.selected = selectedOption.dataset.option;
+                    selectedOption.classList.remove('selected');
+                    selectedOption = null;
+                }
+            });
+        });
+
+        function checkDialog() {
+            const boxes = document.querySelectorAll('.dialog-box');
+            let allCorrect = true;
+
+            boxes.forEach(box => {
+                const isCorrect = box.dataset.selected === box.dataset.correct;
+                box.classList.remove('correct', 'incorrect');
+                box.classList.add(isCorrect ? 'correct' : 'incorrect');
+                if (!isCorrect) allCorrect = false;
+            });
+
+            const submitButton = document.querySelector('.submit-button');
+            submitButton.style.backgroundColor = allCorrect ? 'var(--success-color)' : 'var(--error-color)';
+            submitButton.textContent = allCorrect ? 'Tebrikler! Hepsi Doğru' : 'Tekrar Deneyin';
+        }
+    </script>
+</body>
+</html> 

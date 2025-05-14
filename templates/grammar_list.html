@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übungen</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .level-section {
+            margin-bottom: 30px;
+        }
+
+        .level-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .exercise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .exercise-item:hover {
+            transform: translateX(5px);
+        }
+
+        .exercise-link {
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+
+        .exercise-link:hover {
+            color: var(--primary-color);
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            width: 200px;
+        }
+
+        .back-button:hover {
+            background-color: #ff8c00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grammatik Übungen</h1>
+        
+        <div class="level-section">
+            <h2 class="level-title">A1 Seviyesi</h2>
+            <ul class="exercise-list">
+                {% for exercise in a1_exercises %}
+                <li class="exercise-item">
+                    <a href="{{ url_for('grammar_exercise', exercise=exercise.file) }}" class="exercise-link">
+                        {{ exercise.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">A2 Seviyesi</h2>
+            <ul class="exercise-list">
+                {% for exercise in a2_exercises %}
+                <li class="exercise-item">
+                    <a href="{{ url_for('grammar_exercise', exercise=exercise.file) }}" class="exercise-link">
+                        {{ exercise.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">B1 Seviyesi</h2>
+            <ul class="exercise-list">
+                {% for exercise in b1_exercises %}
+                <li class="exercise-item">
+                    <a href="{{ url_for('grammar_exercise', exercise=exercise.file) }}" class="exercise-link">
+                        {{ exercise.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="level-section">
+            <h2 class="level-title">B2 Seviyesi</h2>
+            <ul class="exercise-list">
+                {% for exercise in b2_exercises %}
+                <li class="exercise-item">
+                    <a href="{{ url_for('grammar_exercise', exercise=exercise.file) }}" class="exercise-link">
+                        {{ exercise.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="back-button">Ana Sayfaya Dön</a>
+    </div>
+</body>
+</html> 

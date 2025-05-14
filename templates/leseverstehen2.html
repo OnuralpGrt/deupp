@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .radio-group {
+            margin: 10px 0;
+        }
+
+        .radio-option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - A1</h1>
+        
+        <div class="exercise">
+            <h2>Krankmeldung</h2>
+            
+            <div class="text">
+                <p><strong>Betreff: Krankmeldung</strong></p>
+                <p>Liebe Frau Schmidt,</p>
+                <p>leider bin ich krank. Ich habe eine Erkältung und Fieber.</p>
+                <p>Der Arzt hat mir ein Rezept geschrieben.</p>
+                <p>Ich muss zwei Tage im Bett bleiben und Medikamente nehmen.</p>
+                <p>Dann werde ich wieder gesund.</p>
+                <p>Könnte Herr Meier meine Arbeit im Büro übernehmen?</p>
+                <p>Ich habe der Chefin Bescheid gegeben.</p>
+                <p>Bei Fragen bin ich telefonisch erreichbar.</p>
+                <p>Viele Grüße</p>
+                <p>Anna Müller</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Anna ist erkältet und hat Fieber.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="r" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q1" value="f"> Falsch
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. Anna darf am nächsten Tag zur Arbeit gehen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="r"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q2" value="f" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. Herr Meier soll der Chefin Bescheid geben.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="r"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q3" value="f" data-correct="true"> Falsch
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. Anna kann man bei Fragen anrufen.</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="r" data-correct="true"> Richtig
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="q4" value="f"> Falsch
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption.value === correctOption.value) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value === 'r' ? 'Richtig' : 'Falsch'}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

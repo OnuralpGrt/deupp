@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 120px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-list {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - A1</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Finden Sie die Verben. Ergänzen Sie die Verben.</p>
+
+            <div class="text">
+                <p>1. einen Kurs <input type="text" class="input-field" data-answer="besuchen"></p>
+                <p>2. das Computerspiel <input type="text" class="input-field" data-answer="spielen"></p>
+                <p>3. Englisch <input type="text" class="input-field" data-answer="sprechen"></p>
+                <p>4. die Rechnung <input type="text" class="input-field" data-answer="bezahlen"></p>
+                <p>5. den Kellner <input type="text" class="input-field" data-answer="rufen"></p>
+                <p>6. mit ihrer Mutter <input type="text" class="input-field" data-answer="telefonieren"></p>
+                <p>7. im Studentenwohnheim <input type="text" class="input-field" data-answer="wohnen"></p>
+                <p>8. in der Türkei <input type="text" class="input-field" data-answer="leben"></p>
+                <p>9. bei der Commerzbank <input type="text" class="input-field" data-answer="arbeiten"></p>
+                <p>10. Germanistik <input type="text" class="input-field" data-answer="studieren"></p>
+                <p>11. eine Wohnung in Berlin <input type="text" class="input-field" data-answer="suchen"></p>
+                <p>12. mit dem Bus <input type="text" class="input-field" data-answer="fahren"></p>
+                <p>13. zu Abend <input type="text" class="input-field" data-answer="essen"></p>
+                <p>14. einen Urlaub <input type="text" class="input-field" data-answer="machen"></p>
+                <p>15. im Supermarkt <input type="text" class="input-field" data-answer="einkaufen"></p>
+                <p>16. das Formular <input type="text" class="input-field" data-answer="ausfüllen"></p>
+                <p>17. die Mail <input type="text" class="input-field" data-answer="schreiben"></p>
+                <p>18. die kaputte Uhr <input type="text" class="input-field" data-answer="reparieren"></p>
+                <p>19. zur Schule <input type="text" class="input-field" data-answer="gehen"></p>
+                <p>20. den Weg <input type="text" class="input-field" data-answer="beschreiben"></p>
+                <p>21. die Wohnung <input type="text" class="input-field" data-answer="mieten"></p>
+                <p>22. die Tür <input type="text" class="input-field" data-answer="aufmachen"></p>
+                <p>23. die Hose <input type="text" class="input-field" data-answer="anziehen"></p>
+                <p>24. den Termin <input type="text" class="input-field" data-answer="vereinbaren"></p>
+                <p>25. mit dem Zug in Berlin <input type="text" class="input-field" data-answer="ankommen"></p>
+                <p>26. ein Hotelzimmer <input type="text" class="input-field" data-answer="buchen"></p>
+                <p>27. das Geschirr <input type="text" class="input-field" data-answer="spülen"></p>
+                <p>28. die Fenster <input type="text" class="input-field" data-answer="putzen"></p>
+                <p>29. mit Kreditkarte <input type="text" class="input-field" data-answer="zahlen"></p>
+                <p>30. die Einkaufstüte <input type="text" class="input-field" data-answer="tragen"></p>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammatik Übung - Verben mit Präpositionen B1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #ffd700;
+            --hover-color: #ff8c00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+        }
+        .description {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+        }
+        .exercise {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .text-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px solid var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--hover-color);
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.3);
+        }
+        .check-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .check-button:hover {
+            background-color: var(--hover-color);
+        }
+        .correct {
+            background-color: #d4edda;
+            border-color: #28a745 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545 !important;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verben mit Präpositionen - B1</h1>
+        
+        <div class="description">
+            <h3>Aufgabe: Setzen Sie die richtigen Präpositionen in die Lücken ein.</h3>
+        </div>
+
+        <div class="exercise">
+            <div class="text-content">
+                <p>Ich interessiere mich <input type="text" data-answer="für" id="answer1"> Geschichte.</p>
+                <p>Er träumt <input type="text" data-answer="von" id="answer2"> einer Reise nach Japan.</p>
+                <p>Wir warten <input type="text" data-answer="auf" id="answer3"> die Antwort.</p>
+                <p>Sie erzählt ihren Freunden <input type="text" data-answer="von" id="answer4"> ihrem neuen Job.</p>
+                <p>Ich denke <input type="text" data-answer="über" id="answer5"> das Problem nach.</p>
+                <p>Er ist zufrieden <input type="text" data-answer="mit" id="answer6"> seinem neuen Auto.</p>
+                <p>Sie beschwert sich <input type="text" data-answer="über" id="answer7"> den Lärm in der Stadt.</p>
+                <p>Wir freuen uns <input type="text" data-answer="auf" id="answer8"> das Konzert am Samstag.</p>
+                <p>Du solltest dich <input type="text" data-answer="um" id="answer9"> deine Gesundheit kümmern.</p>
+                <p>Ich lade dich <input type="text" data-answer="zu" id="answer10"> meiner Geburtstagsfeier ein.</p>
+                <p>Er beteiligt sich <input type="text" data-answer="an" id="answer11"> dem Projekt.</p>
+                <p>Sie träumt <input type="text" data-answer="von" id="answer12"> einer besseren Zukunft.</p>
+                <p>Wir sprechen <input type="text" data-answer="über" id="answer13"> unsere Pläne für den Urlaub.</p>
+                <p>Ich konzentriere mich <input type="text" data-answer="auf" id="answer14"> meine Arbeit.</p>
+                <p>Sie entschuldigt sich <input type="text" data-answer="für" id="answer15"> ihre Verspätung.</p>
+                <p>Er wartet <input type="text" data-answer="auf" id="answer16"> den Zug am Bahnhof.</p>
+                <p>Herr Weber bedankt sich <input type="text" data-answer="für" id="answer17"> ihre Unterstützung.</p>
+                <p>Sie denkt <input type="text" data-answer="an" id="answer18"> ihre Familie.</p>
+                <p>Du musst dich <input type="text" data-answer="auf" id="answer19"> die Prüfung vorbereiten.</p>
+                <p>Er beschäftigt sich <input type="text" data-answer="mit" id="answer20"> den neuen Technologien.</p>
+            </div>
+        </div>
+
+        <button class="check-button" onclick="checkAnswers()">Antworten überprüfen</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('input[type="text"]');
+            let allCorrect = true;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.className = 'correct';
+                } else {
+                    input.className = 'incorrect';
+                    allCorrect = false;
+                }
+            });
+            
+            if (allCorrect) {
+                alert('Herzlichen Glückwunsch! Alle Antworten sind richtig!');
+            } else {
+                alert('Einige Antworten sind noch nicht korrekt. Versuchen Sie es noch einmal!');
+            }
+        }
+    </script>
+</body>
+</html> 

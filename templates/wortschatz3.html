@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wortschatz - B2</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+        }
+
+        .input-field {
+            width: 150px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+
+        .word-options {
+            font-style: italic;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wortschatz - B2</h1>
+        
+        <div class="exercise">
+            <h2>Aufgabe:</h2>
+            <p>Ergänzen Sie die Texte mit den richtigen Wörtern.</p>
+            
+            <div class="exercise">
+                <div class="word-options">angenommen - Missverständnis - Verzögerung - erhalten</div>
+                <div class="text">
+                    <p>Kunde: „Ich habe mein Paket noch nicht <input type="text" class="input-field" data-answer="erhalten">. Können Sie mir helfen?"</p>
+                    <p>Mitarbeiter: „Es tut mir leid für die <input type="text" class="input-field" data-answer="Verzögerung">. Ich werde den Status des Pakets sofort überprüfen."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">effektiv - angewiesen - unfair - beschäftigt</div>
+                <div class="text">
+                    <p>Kollege A: „Ich finde es <input type="text" class="input-field" data-answer="unfair">, dass ich die Präsentation alleine machen muss."</p>
+                    <p>Kollege B: „Das tut mir leid. Ich war mit einem anderen Projekt <input type="text" class="input-field" data-answer="beschäftigt">, aber ich helfe dir gerne beim nächsten Mal."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">Hochzeit - schade - leider - Geburtstag</div>
+                <div class="text">
+                    <p>Freund A: „Ich kann an diesem Wochenende nicht zu deinem <input type="text" class="input-field" data-answer="Geburtstag"> kommen."</p>
+                    <p>Freund B: „Das ist <input type="text" class="input-field" data-answer="schade">! Ich hoffe, wir können uns bald treffen und feiern, wenn du Zeit hast."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">werde - rechtzeitig - derzeit - machen - verbessere - heute</div>
+                <div class="text">
+                    <p>Lehrer: „Ihr habt die Hausaufgaben nicht <input type="text" class="input-field" data-answer="rechtzeitig"> abgegeben. Das ist nicht akzeptabel."</p>
+                    <p>Schüler: „Es tut mir leid. Ich hatte einige persönliche Probleme. Ich <input type="text" class="input-field" data-answer="werde"> es beim nächsten Mal besser <input type="text" class="input-field" data-answer="machen">."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">Umtausch - wenn - das - dass - Kauf</div>
+                <div class="text">
+                    <p>Kunde: „Das Produkt, <input type="text" class="input-field" data-answer="das"> ich gekauft habe, funktioniert nicht richtig."</p>
+                    <p>Verkäufer: „Es tut mir leid, das zu hören. Ich kann Ihnen einen <input type="text" class="input-field" data-answer="Umtausch"> oder eine Rückerstattung anbieten."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">zu Ende - hinzufügen - vollständig - schicken - schreiben</div>
+                <div class="text">
+                    <p>Arbeitgeber: „Ihr Bericht war nicht <input type="text" class="input-field" data-answer="vollständig">. Bitte überarbeiten Sie ihn."</p>
+                    <p>Mitarbeiter: „Ich verstehe. Ich werde die fehlenden Informationen schnell <input type="text" class="input-field" data-answer="hinzufügen"> und Ihnen den Bericht erneut <input type="text" class="input-field" data-answer="schicken">."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">mehr - darüber - darauf - wieder - dann</div>
+                <div class="text">
+                    <p>Nachbar A: „Es gibt immer <input type="text" class="input-field" data-answer="wieder"> Probleme mit Ihrem Parkplatz. Ich kann nicht einparken!"</p>
+                    <p>Nachbar B: „Es tut mir leid, das war nicht meine Absicht. Ich werde <input type="text" class="input-field" data-answer="darauf"> achten, dass es nicht mehr passiert."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">Aspekt - um - für - Punkt</div>
+                <div class="text">
+                    <p>Freund A: „Ich finde, dass wir mehr Zeit <input type="text" class="input-field" data-answer="für"> unsere Treffen einplanen sollten."</p>
+                    <p>Freund B: „Das ist ein guter <input type="text" class="input-field" data-answer="Punkt">. Vielleicht können wir einen regelmäßigen Termin festlegen."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">im - bei - von - mich - zu - mir - sich - am</div>
+                <div class="text">
+                    <p>Lehrer: „Ich habe das Gefühl, dass einige <input type="text" class="input-field" data-answer="von"> Ihnen nicht aktiv <input type="text" class="input-field" data-answer="am"> Unterricht teilnehmen."</p>
+                    <p>Schüler: „Das tut mir leid. Manchmal fühle ich <input type="text" class="input-field" data-answer="mich"> unsicher, aber ich werde versuchen, aktiver <input type="text" class="input-field" data-answer="zu"> sein."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">beobachtet - unterstrichen - überprüfen - bemerkt</div>
+                <div class="text">
+                    <p>Kunde: „Ich habe einen Fehler in meiner Rechnung <input type="text" class="input-field" data-answer="bemerkt">."</p>
+                    <p>Mitarbeiter: „Es tut mir leid, dass das passiert ist. Lassen Sie uns das sofort <input type="text" class="input-field" data-answer="überprüfen"> und korrigieren."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">mit - zu - Termine - Zeit</div>
+                <div class="text">
+                    <p>Kollege A: „Ich finde, dass wir die Teammeetings effizienter gestalten sollten."</p>
+                    <p>Kollege B: „Ich stimme Ihnen <input type="text" class="input-field" data-answer="zu">. Vielleicht sollten wir eine Agenda erstellen und die <input type="text" class="input-field" data-answer="Zeit"> besser nutzen."</p>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="word-options">Teil - mir - Folge - ihnen - dir - zusammen - allein</div>
+                <div class="text">
+                    <p>Freund A: „Ich kann die letzte <input type="text" class="input-field" data-answer="Folge"> der Serie nicht finden."</p>
+                    <p>Freund B: „Das ist ärgerlich! Ich kann <input type="text" class="input-field" data-answer="dir"> helfen, sie zu suchen und wir können sie <input type="text" class="input-field" data-answer="zusammen"> anschauen."</p>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const inputs = document.querySelectorAll('.input-field');
+            let allCorrect = true;
+            let feedback = '';
+
+            inputs.forEach(input => {
+                const userAnswer = input.value.toLowerCase().trim();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+
+                if (userAnswer === correctAnswer) {
+                    input.style.backgroundColor = '#e6ffe6';
+                    feedback += `Richtig! ${input.value} ist korrekt.<br>`;
+                } else {
+                    input.style.backgroundColor = '#ffe6e6';
+                    feedback += `Falsch! Die richtige Antwort ist: ${correctAnswer}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 

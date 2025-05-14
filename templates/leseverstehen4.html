@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseverstehen - A1</title>
+    <style>
+        :root {
+            --primary-color: #ffa500;
+            --secondary-color: #fff5e6;
+            --text-color: #333;
+            --success-color: #4CAF50;
+            --error-color: #f44336;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            line-height: 2;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+
+        .options {
+            margin: 10px 0;
+        }
+
+        .option {
+            margin: 5px 0;
+        }
+
+        .check-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .check-button:hover {
+            background-color: #ff8c00;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: var(--success-color);
+        }
+
+        .incorrect {
+            color: var(--error-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leseverstehen - A1</h1>
+        
+        <div class="exercise">
+            <h2>Marco lernt Deutsch</h2>
+            
+            <div class="text">
+                <p>Ich heiße Marco und komme aus Italien. Ich bin 27 Jahre alt und lebe in Italien, aber jetzt bin ich schon etwa vier Monate in Deutschland, in Berlin. Ich bin ein Student und mache gleichzeitig Musik mit der Gruppe "SOWIESO". Musik machen ist nur mein Hobby.</p>
+                <p>Die Gruppe ist aus Deutschland, aber nur ich bin aus dem Ausland. Ich kenne sie schon seit fünf Jahren. Ich lebe mit dem Schlagzeuger zusammen. Er heißt Max. Max studiert nicht. Er arbeitet als Mechaniker. Er verdient also schon Geld und deshalb bezahlt er die Miete. Ich möchte eigentlich auch Geld geben, aber er sagt:"Später!"</p>
+                <p>Wir möchten zusammen deutsche Musik machen. Deshalb lerne ich gerade Deutsch. Ich singe und möchte auch Lyrics schreiben. Ich schreibe gerne. Ich mache jeden Tag von 10.00 Uhr bis 12.00 Uhr einen Sprachkurs. Ich kann schon ein Buch auf Deutsch lesen. Natürlich ist es sehr leicht. Ich mache auch oft Fehler. Dann verbessern meine Freunde die Fehler. So lerne ich auch gut. In fünf Monaten möchten wir ein Konzert an der Universität Berlin geben. Nicht nur Rock-Musik auf Englisch, sondern auch Deutsche Musik möchten wir dann spielen. Ich möchte auch gut auf Deutsch singen. Damit sind auch die Zuschauer zufrieden. Oder nicht?</p>
+            </div>
+
+            <div class="questions">
+                <div class="question">
+                    <p>1. Woher kommt Marco?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q1" value="a"> a) Berlin
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="b"> b) Spanien
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="c"> c) Deutschland
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q1" value="d" data-correct="true"> d) Italien
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. Wie lange ist er in Berlin?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q2" value="a"> a) 27 Jahre
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="b"> b) vier Monate
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="c" data-correct="true"> c) ungefähr vier Monate
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q2" value="d"> d) vier Jahre
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>3. Was ist er von Beruf?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q3" value="a"> a) Mechaniker
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="b" data-correct="true"> b) Student
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="c"> c) Schüler
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q3" value="d"> d) Musiker
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>4. Wer verdient Geld?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q4" value="a"> a) Marco
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="b"> b) Marcos Freunde
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="c"> c) die Gruppe
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q4" value="d" data-correct="true"> d) Max
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>5. Welche Sprache lernt er?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q5" value="a"> a) Englisch
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="b"> b) Italienisch
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="c"> c) Deutsch und Englisch
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q5" value="d" data-correct="true"> d) Deutsch
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>6. Welche Musikart möchte die Gruppe machen?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q6" value="a"> a) Volksmusik
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="b"> b) Rock-Musik
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="c" data-correct="true"> c) Deutsche Musik
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q6" value="d"> d) Englische Musik
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>7. Wie lange macht er den Sprachkurs pro Tag?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q7" value="a" data-correct="true"> a) zwei Stunden
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="b"> b) jeden Tag
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="c"> c) zwei Tage
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q7" value="d"> d) drei Stunden
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>8. Was verbessern seine Freunde?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q8" value="a"> a) Texte
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="b"> b) Briefe
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="c" data-correct="true"> c) Fehler
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q8" value="d"> d) Musik
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>9. Muss die Gruppe ein Interview machen?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q9" value="a"> a) Natürlich
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="b" data-correct="true"> b) Nein
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="c"> c) Doch
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q9" value="d"> d) Ja
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>10. Marco möchte gut auf Deutsch singen, denn er spricht gerne Deutsch?</p>
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="q10" value="a"> a) Doch
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="b"> b) Nie
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="c" data-correct="true"> c) Nein
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="q10" value="d"> d) Ja
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="check-button" onclick="checkAnswers()">Kontrollieren</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const questions = document.querySelectorAll('.question');
+            let allCorrect = true;
+            let feedback = '';
+
+            questions.forEach((question, index) => {
+                const selectedOption = question.querySelector('input[type="radio"]:checked');
+                const correctOption = question.querySelector('input[data-correct="true"]');
+                
+                if (!selectedOption) {
+                    feedback += `Frage ${index + 1}: Bitte wählen Sie eine Antwort.<br>`;
+                    allCorrect = false;
+                } else if (selectedOption.value === correctOption.value) {
+                    feedback += `Frage ${index + 1}: Richtig!<br>`;
+                } else {
+                    feedback += `Frage ${index + 1}: Falsch! Die richtige Antwort ist: ${correctOption.value}<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.innerHTML = feedback;
+            feedbackDiv.className = allCorrect ? 'feedback correct' : 'feedback incorrect';
+        }
+    </script>
+</body>
+</html> 
